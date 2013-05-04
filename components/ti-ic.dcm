@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0  Date: Sat 04 May 2013 03:30:43 PM CDT
+#
+$CMP TLC5940
+D TI TLC5940 16-channel LED Driver with Dot-correction and Greyscale PWM Brightness control
+K LED Driver 16 PWM
+F http://www.ti.com/lit/ds/symlink/tlc5940.pdf
+$ENDCMP
+#
+#End Doc Library
