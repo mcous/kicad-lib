@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Sat 04 May 2013 03:03:23 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: Sat 04 May 2013 06:19:03 PM CDT
 #
 $CMP CRYSTAL
 D Crystal
@@ -15,6 +15,11 @@ D Resistor
 K R Resistor
 $ENDCMP
 #
+$CMP R-ARRAY_X8-BUSSED
+D 8 Resistor Bussed Array
+K resistor array bussed
+$ENDCMP
+#
 $CMP RGB-LED_6pin
 D Cree SMD PLCC-6 RGB LED
 K RGB LED SMD
@@ -25,6 +30,11 @@ $CMP SPST
 D Single Pole Single Throw Pushbutton
 K SPST button
 F http://www.sparkfun.com/datasheets/Components/Buttons/SMD-Button.pdf
+$ENDCMP
+#
+$CMP SPST_X8
+D 8-position SPST switch
+K DIP switch SPST
 $ENDCMP
 #
 $CMP VCC_REG
