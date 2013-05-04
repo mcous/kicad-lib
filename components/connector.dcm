@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0  Date: Sat 04 May 2013 04:22:14 PM CDT
+#
+$CMP 8P8C_CUSTOM
+D 8P8C (RJ-45) jack for custom applications
+K 8P8C RJ45 J-45 ethernet cat5 cat6
+$ENDCMP
+#
+#End Doc Library
