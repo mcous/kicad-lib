@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0  Date: Sat 04 May 2013 05:03:40 PM CDT
+#
+$CMP MAX3232
+D MAX3232 TTL to RS232 Converter
+K RS232
+F http://datasheets.maximintegrated.com/en/ds/MAX3222-MAX3241.pdf
+$ENDCMP
+#
+#End Doc Library
