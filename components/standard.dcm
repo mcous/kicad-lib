@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Sat 04 May 2013 06:19:03 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: Sat 04 May 2013 06:54:53 PM CDT
 #
 $CMP CRYSTAL
 D Crystal
@@ -8,6 +8,11 @@ $ENDCMP
 $CMP LED
 D Light Emitting Diode
 K LED
+$ENDCMP
+#
+$CMP PTC
+D PTC Resettable Fuse
+K PTC fuse reset
 $ENDCMP
 #
 $CMP R

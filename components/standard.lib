@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Sat 04 May 2013 06:19:03 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Sat 04 May 2013 06:54:53 PM CDT
 #encoding utf-8
 #
 # C
@@ -70,6 +70,21 @@ P 6 0 1 0  -15 50  5 90  -5 95  10 100  15 85  5 90 F
 P 6 0 1 0  15 35  35 75  25 80  40 85  45 70  35 75 F
 X A 1 -150 0 100 R 40 40 1 1 P
 X K 2 150 0 100 L 40 40 1 1 P
+ENDDRAW
+ENDDEF
+#
+# PTC
+#
+DEF PTC F 0 40 Y Y 1 F N
+F0 "F" -50 100 60 H V C CNN
+F1 "PTC" 0 -110 60 H V C CNN
+DRAW
+P 2 0 1 0  -100 0  -90 0 N
+P 2 0 1 0  100 0  90 0 N
+P 3 0 1 0  -90 -50  -60 -50  60 50 N
+P 11 0 1 0  -90 0  -80 30  -60 -30  -40 30  -20 -30  0 30  20 -30  40 30  60 -30  80 30  90 0 N
+X ~ 1 -200 0 100 R 50 50 1 1 P
+X ~ 2 200 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
