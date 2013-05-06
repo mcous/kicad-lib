@@ -1,7 +1,8 @@
-licence
-=======
-this work is licensed under a creative commons attribution-sharealike 3.0 unported license
+# licence
+copyright 2013 by michael cousins
 
-human readable: http://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+this work is made available under the terms of the creative commons attribution-sharealike 3.0 unported license
 
-lawyer readable: http://creativecommons.org/licenses/by-sa/3.0/legalcode
+## creative commons by-sa 3.0
+* human readable: http://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+* lawyer readable: http://creativecommons.org/licenses/by-sa/3.0/legalcode
