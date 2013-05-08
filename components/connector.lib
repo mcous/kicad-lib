@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Tue 07 May 2013 07:24:48 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Wed 08 May 2013 06:03:33 PM CDT
 #encoding utf-8
 #
 # 12PIN_HEADER
@@ -8,6 +8,10 @@ F0 "P" -50 400 60 H V C CNN
 F1 "12PIN_HEADER" 0 -350 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
+$FPLIST
+ SIP12
+ DIP12
+$ENDFPLIST
 DRAW
 S -50 300 50 -300 0 1 0 f
 X ~ 1 -200 250 150 R 50 50 1 1 P

@@ -1,0 +1,61 @@
+PCBNEW-LibModule-V1  Wed 08 May 2013 06:43:52 PM CDT
+# encoding utf-8
+Units mm
+$INDEX
+SPST_4-pin-thru
+$EndINDEX
+$MODULE SPST_4-pin-thru
+Po 0 0 0 15 518AE2EE 00000000 ~~
+Li SPST_4-pin-thru
+Sc 0
+AR 
+Op 0 0 0
+T0 0 5 1.524 1.524 0 0.3048 N I 21 N "SPST_4-pin-thru"
+T1 -1.5 -4.5 1.524 1.524 0 0.3048 N I 21 N "VAL**"
+DS 3 3 4.5 3 0.381 21
+DS 4.5 3 4.5 1 0.381 21
+DS 4.5 1 3 1 0.381 21
+DS 3 -3 4.5 -3 0.381 21
+DS 4.5 -3 4.5 -1 0.381 21
+DS 4.5 -1 3 -1 0.381 21
+DS -3 3 -4.5 3 0.381 21
+DS -4.5 3 -4.5 1 0.381 21
+DS -4.5 1 -3 1 0.381 21
+DS -3 -1 -4.5 -1 0.381 21
+DS -3 -3 -4.5 -3 0.381 21
+DS -4.5 -3 -4.5 -1 0.381 21
+DC 0 0 0 -1.5 0.381 21
+DS -3 -3 -3 3 0.381 21
+DS -3 3 3 3 0.381 21
+DS 3 3 3 -3 0.381 21
+DS 3 -3 -3 -3 0.381 21
+$PAD
+Sh "1" C 1.8 1.8 0 0 0
+Dr 1 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -3.25 2.25
+$EndPAD
+$PAD
+Sh "1" C 1.8 1.8 0 0 0
+Dr 1 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3.25 2.25
+$EndPAD
+$PAD
+Sh "2" C 1.8 1.8 0 0 0
+Dr 1 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -3.25 -2.25
+$EndPAD
+$PAD
+Sh "2" C 1.8 1.8 0 0 0
+Dr 1 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3.25 -2.25
+$EndPAD
+$EndMODULE SPST_4-pin-thru
+$EndLIBRARY
