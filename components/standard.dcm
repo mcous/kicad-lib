@@ -1,4 +1,14 @@
-EESchema-DOCLIB  Version 2.0  Date: Sat 04 May 2013 06:54:53 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: Tue 07 May 2013 08:35:55 PM CDT
+#
+$CMP C
+D Non-polarized Capacitor
+K cap capacitor
+$ENDCMP
+#
+$CMP C_POL
+D Polarized Capacitor
+K cap capacitor pol polarized
+$ENDCMP
 #
 $CMP CRYSTAL
 D Crystal
@@ -25,7 +35,7 @@ D 8 Resistor Bussed Array
 K resistor array bussed
 $ENDCMP
 #
-$CMP RGB-LED_6pin
+$CMP RGB-LED_6PIN
 D Cree SMD PLCC-6 RGB LED
 K RGB LED SMD
 F http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLV6AFKB.pdf
