@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Tue 21 May 2013 04:14:40 PM CDT
+PCBNEW-LibModule-V1  Tue 21 May 2013 04:37:18 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
@@ -94,6 +94,7 @@ Sc 0
 AR 
 Op 0 0 0
 .LocalClearance 0.2
+At SMD
 T0 0 2.75 1 1 0 0.15 N I 21 N "TQFN16_ep"
 T1 0 -2.75 1 1 0 0.15 N I 21 N "VAL**"
 DC -1.5 -1.5 -1.5 -1.75 0.2032 21
@@ -224,7 +225,7 @@ Po 0 0
 $EndPAD
 $EndMODULE TQFN16_ep
 $MODULE TQFN24_ep
-Po 0 0 0 15 519BD62F 00000000 ~~
+Po 0 0 0 15 519BE87C 00000000 ~~
 Li TQFN24_ep
 Sc 0
 AR 
@@ -244,42 +245,42 @@ Sh "1" R 0.7 0.25 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -3.45 -2
+Po -1.725 -1
 $EndPAD
 $PAD
 Sh "2" R 0.7 0.25 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -3.45 -1.2
+Po -1.725 -0.6
 $EndPAD
 $PAD
 Sh "3" R 0.7 0.25 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -3.45 -0.4
+Po -1.725 -0.2
 $EndPAD
 $PAD
 Sh "4" R 0.7 0.25 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -3.45 0.4
+Po -1.725 0.2
 $EndPAD
 $PAD
 Sh "5" R 0.7 0.25 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -3.45 1.2
+Po -1.725 0.6
 $EndPAD
 $PAD
 Sh "6" R 0.7 0.25 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -3.45 2
+Po -1.725 1
 $EndPAD
 $PAD
 Sh "7" R 0.7 0.25 0 0 900
@@ -417,7 +418,7 @@ Po 0 0
 $EndPAD
 $EndMODULE TQFN24_ep
 $MODULE VQFN40_ep
-Po 0 0 0 15 519BE39F 00000000 ~~
+Po 0 0 0 15 519BE902 00000000 ~~
 Li VQFN40_ep
 Sc 0
 AR 
@@ -425,6 +426,7 @@ Op 0 0 0
 .SolderMask 0.07
 .SolderPaste -0.025
 .LocalClearance 0.2
+At SMD
 T0 0 4.5 1 1 0 0.15 N I 21 N "VQFN40_ep"
 T1 0 -4.25 1 1 0 0.15 N I 21 N "VAL**"
 DC -3.25 -3.25 -3 -3 0.2032 21
@@ -502,35 +504,35 @@ Sh "1" O 0.85 0.28 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -5.95 -4.5
+Po -2.975 -2.25
 $EndPAD
 $PAD
 Sh "2" O 0.85 0.28 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -5.95 -3.5
+Po -2.975 -1.75
 $EndPAD
 $PAD
 Sh "3" O 0.85 0.28 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -5.95 -2.5
+Po -2.975 -1.25
 $EndPAD
 $PAD
 Sh "4" O 0.85 0.28 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -5.95 -1.5
+Po -2.975 -0.75
 $EndPAD
 $PAD
 Sh "5" O 0.85 0.28 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po -5.95 -0.5
+Po -2.975 -0.25
 $EndPAD
 $PAD
 Sh "6" O 0.85 0.28 0 0 0
