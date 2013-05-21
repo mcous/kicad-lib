@@ -1,8 +1,9 @@
-PCBNEW-LibModule-V1  Wed 08 May 2013 06:52:08 PM CDT
+PCBNEW-LibModule-V1  Tue 21 May 2013 05:18:35 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
 2x3-array
+2x5-array
 8P8C_thru
 $EndINDEX
 $MODULE 2x3-array
@@ -61,6 +62,92 @@ Ne 0 ""
 Po 2.54 -1.27
 $EndPAD
 $EndMODULE 2x3-array
+$MODULE 2x5-array
+Po 0 0 0 15 519BF2B7 00000000 ~~
+Li 2x5-array
+Sc 0
+AR 
+Op 0 0 0
+T0 0 3.81 1.524 1.524 0 0.3048 N I 21 N "2x5-array"
+T1 0 -3.81 1.524 1.524 0 0.3048 N I 21 N "VAL**"
+DS 6.35 -2.54 6.35 2.54 0.381 21
+DS 6.35 2.54 1.27 2.54 0.381 21
+DS 6.35 -2.54 1.27 -2.54 0.381 21
+DC -6.604 2.794 -6.35 2.54 0.381 21
+DS -6.35 -2.54 -6.35 2.54 0.381 21
+DS -6.35 2.54 1.27 2.54 0.381 21
+DS 1.27 -2.54 -6.35 -2.54 0.381 21
+$PAD
+Sh "10" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 12.7 -2.54
+$EndPAD
+$PAD
+Sh "9" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 12.7 2.54
+$EndPAD
+$PAD
+Sh "8" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7.62 -2.54
+$EndPAD
+$PAD
+Sh "7" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7.62 2.54
+$EndPAD
+$PAD
+Sh "1" R 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -5.08 1.27
+$EndPAD
+$PAD
+Sh "2" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -5.08 -1.27
+$EndPAD
+$PAD
+Sh "3" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2.54 1.27
+$EndPAD
+$PAD
+Sh "4" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2.54 -1.27
+$EndPAD
+$PAD
+Sh "5" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 1.27
+$EndPAD
+$PAD
+Sh "6" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -1.27
+$EndPAD
+$EndMODULE 2x5-array
 $MODULE 8P8C_thru
 Po 0 0 0 15 51899AE4 00000000 ~~
 Li 8P8C_thru
