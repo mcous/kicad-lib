@@ -1,0 +1,16 @@
+PCBNEW-LibModule-V1  Tue 21 May 2013 02:43:27 PM CDT
+# encoding utf-8
+Units mm
+$INDEX
+TDFN8_ep
+$EndINDEX
+$MODULE TDFN8_ep
+Po 0 0 0 15 519BCE10 00000000 ~~
+Li TDFN8_ep
+Sc 0
+AR 
+Op 0 0 0
+T0 0 4.5 1 1 0 0.15 N I 21 N "TDFN8_ep"
+T1 0 -3.25 1 1 0 0.15 N I 21 N "VAL**"
+$EndMODULE TDFN8_ep
+$EndLIBRARY
