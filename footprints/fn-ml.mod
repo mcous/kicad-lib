@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Tue 21 May 2013 04:37:18 PM CDT
+PCBNEW-LibModule-V1  Wed 22 May 2013 12:35:16 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
@@ -8,12 +8,14 @@ TQFN24_ep
 VQFN40_ep
 $EndINDEX
 $MODULE TDFN8_ep
-Po 0 0 0 15 519BD097 00000000 ~~
+Po 0 0 0 15 519D01A5 00000000 ~~
 Li TDFN8_ep
 Sc 0
 AR 
 Op 0 0 0
-.LocalClearance 0.2
+.SolderMask 0.15
+.SolderPaste -0.025
+.LocalClearance 0.15
 At SMD
 T0 0 2 1 1 0 0.15 N I 21 N "TDFN8_ep"
 T1 0 -2.5 1 1 0 0.15 N I 21 N "VAL**"
@@ -22,6 +24,70 @@ DS -1.5 -1 -1.5 1 0.2032 21
 DS -1.5 1 1.5 1 0.2032 21
 DS 1.5 1 1.5 -1 0.2032 21
 DS 1.5 -1 -1.5 -1 0.2032 21
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 -0.5
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.5 -0.5
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.5 -0.5
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.5 0
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.5 0.5
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 0.5
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.5 0.5
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.5 0
+.SolderPaste -0.001
+$EndPAD
 $PAD
 Sh "1" R 0.7 0.3 0 0 0
 Dr 0 0 0
@@ -81,18 +147,28 @@ $EndPAD
 $PAD
 Sh "0" R 1.75 1.63 0 0 0
 Dr 0 0 0
-At SMD N 00888000
+At SMD N 00808000
 Ne 0 ""
 Po 0 0
 .SolderPaste -0.3
 $EndPAD
+$PAD
+Sh "" R 0.4 0.4 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 0
+.SolderPaste -0.001
+$EndPAD
 $EndMODULE TDFN8_ep
 $MODULE TQFN16_ep
-Po 0 0 0 15 519BDBD3 00000000 ~~
+Po 0 0 0 15 519CF1BF 00000000 ~~
 Li TQFN16_ep
 Sc 0
 AR 
 Op 0 0 0
+.SolderMask 0.15
+.SolderPaste -0.025
 .LocalClearance 0.2
 At SMD
 T0 0 2.75 1 1 0 0.15 N I 21 N "TQFN16_ep"
@@ -103,6 +179,70 @@ DS -1 -1.5 1.5 -1.5 0.2032 21
 DS -1.5 -1 -1 -1.5 0.2032 21
 DS -1.5 1.5 1.5 1.5 0.2032 21
 DS 1.5 1.5 1.5 -1.5 0.2032 21
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 -0.4
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.4 -0.4
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.4 -0.4
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.4 0
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.4 0.4
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 0.4
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.4 0.4
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.4 0
+.SolderPaste -0.001
+$EndPAD
 $PAD
 Sh "1" R 0.8 0.3 0 0 0
 Dr 0 0 0
@@ -218,18 +358,28 @@ $EndPAD
 $PAD
 Sh "0" R 1.23 1.23 0 0 0
 Dr 0 0 0
-At SMD N 00888000
+At SMD N 00808000
 Ne 0 ""
 Po 0 0
 .SolderPaste -0.2
 $EndPAD
+$PAD
+Sh "" R 0.3 0.3 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 0
+.SolderPaste -0.001
+$EndPAD
 $EndMODULE TQFN16_ep
 $MODULE TQFN24_ep
-Po 0 0 0 15 519BE87C 00000000 ~~
+Po 0 0 0 15 519CF389 00000000 ~~
 Li TQFN24_ep
 Sc 0
 AR 
 Op 0 0 0
+.SolderMask 0.15
+.SolderPaste -0.025
 .LocalClearance 0.15
 At SMD
 T0 0 3.25 1 1 0 0.15 N I 21 N "TQFN24_ep"
@@ -240,6 +390,70 @@ DS -1.2 -1.8 1.8 -1.8 0.2032 21
 DS -1.8 -1.2 -1.2 -1.8 0.2032 21
 DS -1.8 1.8 1.8 1.8 0.2032 21
 DS 1.8 1.8 1.8 -1.8 0.2032 21
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 -0.7
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.7 -0.7
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.7 -0.7
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.7 0
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po -0.7 0.7
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 0.7
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.7 0.7
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0.7 0
+.SolderPaste -0.001
+$EndPAD
 $PAD
 Sh "1" R 0.7 0.25 0 0 0
 Dr 0 0 0
@@ -411,14 +625,22 @@ $EndPAD
 $PAD
 Sh "0" R 2.24 2.24 0 0 0
 Dr 0 0 0
-At SMD N 00888000
+At SMD N 00808000
 Ne 0 ""
 Po 0 0
 .SolderPaste -0.5
 $EndPAD
+$PAD
+Sh "" R 0.6 0.6 0 0 0
+Dr 0 0 0
+At HOLE N 00080000
+Ne 0 ""
+Po 0 0
+.SolderPaste -0.001
+$EndPAD
 $EndMODULE TQFN24_ep
 $MODULE VQFN40_ep
-Po 0 0 0 15 519BE902 00000000 ~~
+Po 0 0 0 15 519CF452 00000000 ~~
 Li VQFN40_ep
 Sc 0
 AR 
@@ -441,7 +663,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po -1.5 -1.5
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "" R 1.2 1.2 0 0 0
@@ -449,7 +671,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po 0 -1.5
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "" R 1.2 1.2 0 0 0
@@ -457,7 +679,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po 1.5 -1.5
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "" R 1.2 1.2 0 0 0
@@ -465,7 +687,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po -1.5 0
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "" R 1.2 1.2 0 0 0
@@ -473,7 +695,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po -1.5 1.5
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "" R 1.2 1.2 0 0 0
@@ -481,7 +703,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po 0 1.5
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "" R 1.2 1.2 0 0 0
@@ -489,7 +711,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po 1.5 1.5
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "" R 1.2 1.2 0 0 0
@@ -497,7 +719,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po 1.5 0
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "1" O 0.85 0.28 0 0 0
@@ -793,7 +1015,7 @@ Dr 0 0 0
 At HOLE N 00080000
 Ne 0 ""
 Po 0 0
-.SolderPaste -0.01
+.SolderPaste -0.001
 $EndPAD
 $EndMODULE VQFN40_ep
 $EndLIBRARY

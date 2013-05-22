@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Tue 21 May 2013 12:21:55 PM CDT
+PCBNEW-LibModule-V1  Wed 22 May 2013 12:46:35 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
@@ -11,6 +11,9 @@ Li SPST_4-pin-sm
 Sc 0
 AR 
 Op 0 0 0
+.SolderMask 0.2
+.SolderPaste -0.1
+.LocalClearance 0.2
 At SMD
 T0 0 4.572 1.524 1.524 0 0.3048 N I 21 N "SPST_4-pin-sm"
 T1 0 -4.064 1.524 1.524 0 0.3048 N I 21 N "VAL**"
