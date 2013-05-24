@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Wed 22 May 2013 10:50:45 AM CDT
+PCBNEW-LibModule-V1  Fri 24 May 2013 12:41:37 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
@@ -7,12 +7,11 @@ $INDEX
 PLCC6
 $EndINDEX
 $MODULE 0402(1005m)_led
-Po 0 0 0 15 519CE8BE 00000000 ~~
+Po 0 0 0 15 519FA4CD 00000000 ~~
 Li 0402(1005m)_led
 Sc 0
 AR 
 Op 0 0 0
-.LocalClearance 0.1
 At SMD
 T0 0 1.4 1 1 0 0.15 N I 21 N "0402(1005m)_led"
 T1 0 -1.6 1 1 0 0.15 N I 21 N "VAL**"
@@ -32,18 +31,18 @@ DS 0.2 -0.8 0.2 -0.4 0.127 21
 DS 0.2 -0.4 -0.2 -0.6 0.127 21
 DS -0.4 -0.6 0.4 -0.6 0.127 21
 $PAD
-Sh "1" R 0.5 0.5 0 0 0
+Sh "1" R 0.4 0.5 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
 Ne 0 ""
-Po -0.45 0
+Po -0.4 0
 $EndPAD
 $PAD
-Sh "2" R 0.5 0.5 0 0 0
+Sh "2" R 0.4 0.5 0 0 0
 Dr 0 0 0
 At SMD N 00A88000
 Ne 0 ""
-Po 0.45 0
+Po 0.4 0
 $EndPAD
 $EndMODULE 0402(1005m)_led
 $MODULE 0404(1010m)_4pin-led
