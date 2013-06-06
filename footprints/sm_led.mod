@@ -1,9 +1,10 @@
-PCBNEW-LibModule-V1  Fri 24 May 2013 12:41:37 PM CDT
+PCBNEW-LibModule-V1  Thu 06 Jun 2013 06:27:51 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
 0402(1005m)_led
 0404(1010m)_4pin-led
+0603(1608m)_led
 PLCC6
 $EndINDEX
 $MODULE 0402(1005m)_led
@@ -89,6 +90,43 @@ Ne 0 ""
 Po -0.425 0.425
 $EndPAD
 $EndMODULE 0404(1010m)_4pin-led
+$MODULE 0603(1608m)_led
+Po 0 0 0 15 51B11AEB 00000000 ~~
+Li 0603(1608m)_led
+Sc 0
+AR 
+Op 0 0 0
+.SolderPaste -0.025
+At SMD
+T0 0 2.1 1.524 1.524 0 0.3048 N I 21 N "0603(1608m)_led"
+T1 0 -2.7 1.524 1.524 0 0.3048 N I 21 N "VAL**"
+DS -0.2 -0.9 -0.7 -0.9 0.127 21
+DS 0.2 -0.9 0.7 -0.9 0.127 21
+DS -0.2 -0.9 0.2 -1.1 0.127 21
+DS 0.2 -1.1 0.2 -0.7 0.127 21
+DS 0.2 -0.7 -0.2 -0.9 0.127 21
+DS -0.2 -0.7 -0.2 -1.1 0.127 21
+DS -1.3 0.6 -1.3 -0.6 0.2 21
+DS -1.3 -0.6 -0.8 -0.6 0.2 21
+DS -1.3 0.6 -0.8 0.6 0.2 21
+DS 1.3 -0.6 1.3 0.6 0.2 21
+DS 1.3 0.6 0.8 0.6 0.2 21
+DS 1.3 -0.6 0.8 -0.6 0.2 21
+$PAD
+Sh "1" R 0.7 0.7 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -0.7 0
+$EndPAD
+$PAD
+Sh "2" R 0.7 0.7 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 0.7 0
+$EndPAD
+$EndMODULE 0603(1608m)_led
 $MODULE PLCC6
 Po 0 0 0 15 5186F834 00000000 ~~
 Li PLCC6
