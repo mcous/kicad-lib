@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Wed 22 May 2013 10:56:50 AM CDT
+PCBNEW-LibModule-V1  Thu 06 Jun 2013 06:24:56 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
@@ -45,9 +45,7 @@ Li 0603(1608m)
 Sc 0
 AR 
 Op 0 0 0
-.SolderMask 0.15
 .SolderPaste -0.025
-.LocalClearance 0.15
 At SMD
 T0 0 2.1 1.524 1.524 0 0.3048 N I 21 N "0603(1608m)"
 T1 0 -1.9 1.524 1.524 0 0.3048 N I 21 N "VAL**"

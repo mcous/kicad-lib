@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Wed 22 May 2013 01:45:09 PM CDT
+PCBNEW-LibModule-V1  Thu 13 Jun 2013 08:14:52 AM CDT
 # encoding utf-8
 Units mm
 $INDEX
@@ -13,6 +13,7 @@ Op 0 0 0
 .SolderMask 0.1
 .SolderPaste -0.025
 .LocalClearance 0.15
+At SMD
 T0 0 6.45 1.524 1.524 0 0.3048 N I 21 N "MICROUSB_sm"
 T1 0 -6.5 1.524 1.524 0 0.3048 N I 21 N "VAL**"
 DS 2.8 -3.75 -2.2 -3.75 0.2 21
