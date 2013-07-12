@@ -1,12 +1,6 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 12 Jul 2013 12:08:58 AM CDT
+EESchema-DOCLIB  Version 2.0  Date: Fri 12 Jul 2013 12:23:51 AM CDT
 #
 $CMP DRV8834_SOP
-D Dual Bridge 1.5A - 2.2A Peak Stepper Driver with Step/Dir Input
-K stepper hbridge h-bridge step direction
-F http://www.ti.com/lit/ds/symlink/drv8834.pdf
-$ENDCMP
-#
-$CMP DRV8834_TSOP
 D Dual Bridge 1.5A - 2.2A Peak Stepper Driver with Step/Dir Input
 K stepper hbridge h-bridge step direction
 F http://www.ti.com/lit/ds/symlink/drv8834.pdf
