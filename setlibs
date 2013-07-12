@@ -4,25 +4,100 @@
 # http://www.github.com/mcous/kicad-lib
 # this script file released into the public domain
 
-# setlibs: adds or replaces the libraries of a kicad project using the libraries from github.com/mcous/kicad-lib
+# setlibs: adds or replaces the libraries of a kicad project with these libraries
 #   usage: setlibs [flags] /path/to/project.pro
 #   flags: 
-# TODO:     -a, --append      = append libraries rather than replacing them
-# TODO:     -b, --before      = if appending, append new libraries before old ones (does not apply to power library)
+# TODO:-a, --append      = append libraries rather than replacing them
+# TODO:-b, --before      = if appending, append new libraries before old ones (does not apply to power library)
 #     -c, --components  = only do component files
 #     -f, --footprints  = only do footprint files
 #     -h, --help        = display this little summary
-# TODO:    -v, --version     = display version number of the library
+# TODO:-v, --version     = display version number of the library
 
-# parse input
-# TODO
-if [ $1 ]
-  then
-  echo "$1"
-#  run
-else
-  help
-fi
+# valid parameters
+SHORT_FLAGS=("c" "f" "h")
+LONG_FLAGS=("components" "footprints" "help")
+
+# functions
+function input () {
+  # parse input
+  checkinput $@
+  # if [ $1 ] && [ $2 ]
+  #   then
+  #   echo "i dunno"
+  # elif [ $1 ]
+  #   then
+  #   run "--null" $1
+  # else
+  #   help
+  # fi
+}
+
+# help function
+function help () {
+  echo "setlibs: adds or replaces the libraries of a kicad project using the libraries from github.com/mcous/kicad-lib"
+  echo "  usage: setlibs [flags] /path/to/project.pro"
+  echo "  flags: "
+  echo "TODO:-a, --append      = append libraries rather than replacing them"
+  echo "TODO:-p, --prepend     = prepend libraries rather than replacing (does not apply to power library)"
+  echo "     -c, --components  = only do component files"
+  echo "     -f, --footprints  = only do footprint files"
+  echo "     -h, --help        = display this little summary"
+  echo "TODO:-v, --version     = display version number of the library"
+  return
+}
+
+# check the input to make sure that any options are correct and the file exists
+function checkinput () {
+  local numShort=0
+  local numLong=0
+  local numProj=0
+  local numInv=0
+
+  local shortMatch="^-[a-z]{1}$"
+  local longMatch="^-{2}[a-z]+$"
+  local proMatch="[a-z]+\.pro"
+
+  for ARG in "$@"
+  do
+    echo "checking $ARG"
+    # check if its a short flag
+    if [[ $ARG =~ $shortMatch ]]
+      then
+      # check if it's a valid short flag
+      local flag=${ARG:1}
+      echo "$flag is short option"
+    # else check of its a long flag
+    elif [[ $ARG =~ $longMatch ]]
+      then
+      # check if it's a valid long flag
+      local flag=${ARG:2}
+      echo "$flag is long option"
+
+    # else check if its a project file
+    elif [[ $ARG =~ $proMatch ]]
+      then
+      # check if the project exists
+      PRJ=$ARG
+      echo "$PRJ is project file"
+    # else input is invalid
+    else
+      numInv+=1
+      echo "$ARG is not valid input"
+      return
+    fi
+  done
+
+}
+
+# do the magic
+function run {
+  echo "flags: $1"
+  echo "project: $2"
+}
+
+# start the script
+input $@
 
 # program
 #function run() {
@@ -52,16 +127,3 @@ fi
 # insert footprint libraries into project file
 # TODO
 #}
-
-# help function
-function help () {
-  echo "setlibs: adds or replaces the libraries of a kicad project using the libraries from github.com/mcous/kicad-lib";
-  echo "  usage: setlibs [flags] /path/to/project.pro";
-  echo "  flags: ";
-  echo "TODO:     -a, --append      = append libraries rather than replacing them";
-  echo "TODO:     -b, --before      = if appending, append new libraries before old ones (does not apply to power library)";
-  echo "    -c, --components  = only do component files";
-  echo "    -f, --footprints  = only do footprint files";
-  echo "    -h, --help        = display this little summary";
-  echo "TODO:    -v, --version     = display version number of the library";
-}
