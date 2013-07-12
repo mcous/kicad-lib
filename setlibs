@@ -18,13 +18,14 @@
 # TODO
 if [ $1 ]
   then
-  run
+  echo "$1"
+#  run
 else
   help
 fi
 
 # program
-function run() {
+#function run() {
 # get list of component libraries from kicad-lib/components
 # DEBUG - echo list
 # TODO
@@ -50,10 +51,10 @@ function run() {
 
 # insert footprint libraries into project file
 # TODO
-}
+#}
 
 # help function
-function help() {
+function help () {
   echo "setlibs: adds or replaces the libraries of a kicad project using the libraries from github.com/mcous/kicad-lib";
   echo "  usage: setlibs [flags] /path/to/project.pro";
   echo "  flags: ";
