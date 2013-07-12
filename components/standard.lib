@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Mon 10 Jun 2013 03:20:04 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 12 Jul 2013 12:13:07 AM CDT
 #encoding utf-8
 #
 # C
@@ -304,7 +304,6 @@ F0 "IC" -100 200 60 H V C CNN
 F1 "VCC_REG" 0 -200 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
-ALIAS TO220
 $FPLIST
  TO220
  TO-220
