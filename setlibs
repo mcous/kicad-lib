@@ -239,7 +239,7 @@ function fixCompLibDir () {
   # find the header to start the section
   local secStart=`sed -n "/^\[$COMP_DIR_HEADING_MATCH\]$/ =" $P`
   echo "comp lib dir section starts @ $secStart"
-  local secEnd=`sed -n "$secStart,$ /$HEADER_FORMAT/ =" $P`
+  local secEnd=`sed -n "$secStart,$ /$HEADER_FORMAT/ =" $P` # fix this
   echo "comp lib dir section ends @ $secEnd"
   # find the end of the section
   # search for the library line in that range
