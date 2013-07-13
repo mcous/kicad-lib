@@ -5,7 +5,7 @@
 # this script file released into the public domain
 
 # setlibs: adds or replaces the libraries of a kicad project with these libraries
-#   usage: setlibs [flags] /path/to/project.pro
+#   usage: setlibs [flags] /path/to/project.pro [/paths/to/more/projects.pro]
 #   flags: 
 # TODO:-a, --append      = append libraries rather than replacing them
 # TODO:-b, --before      = if appending, append new libraries before old ones (does not apply to power library)
@@ -17,6 +17,10 @@
 # valid parameters
 SHORT_FLAGS=("c" "f" "h")
 LONG_FLAGS=("components" "footprints" "help")
+
+# current program options
+OPTS=()
+PRJ=()
 
 # functions
 function input () {
@@ -49,45 +53,79 @@ function help () {
 
 # check the input to make sure that any options are correct and the file exists
 function checkinput () {
-  local numShort=0
-  local numLong=0
-  local numProj=0
-  local numInv=0
+  local inv=()
 
   local shortMatch="^-[a-z]{1}$"
-  local longMatch="^-{2}[a-z]+$"
-  local proMatch="[a-z]+\.pro"
+  local longMatch="^-{2}[a-z][a-z]+$"
+  local proMatch="[a-z]+\.pro$"
 
   for ARG in "$@"
   do
     echo "checking $ARG"
+    local valid=false
     # check if its a short flag
     if [[ $ARG =~ $shortMatch ]]
       then
       # check if it's a valid short flag
       local flag=${ARG:1}
-      echo "$flag is short option"
+      for VALIDOPT in "${SHORT_FLAGS[@]}"
+      do
+        if [ "$flag" = "$VALIDOPT" ]
+          then
+          valid=true
+          echo "adding $flag to OPTS"
+          OPTS+=$VALIDOPT
+          break
+        fi
+      done
+      #echo "$flag is short option"
+
     # else check of its a long flag
     elif [[ $ARG =~ $longMatch ]]
       then
       # check if it's a valid long flag
       local flag=${ARG:2}
-      echo "$flag is long option"
+      for VALIDOPT in "${LONG_FLAGS[@]}"
+      do
+        if [ "$flag" = "$VALIDOPT" ]
+          then
+          echo "adding $flag to OPTS"
+          OPTS+=$VALIDOPT
+          break
+        fi
+      done
+      #echo "$flag is long option"
 
     # else check if its a project file
     elif [[ $ARG =~ $proMatch ]]
       then
-      # check if the project exists
-      PRJ=$ARG
-      echo "$PRJ is project file"
+      # check if file exists
+      if [ -e $ARG ]
+        then
+        PRJ+=$ARG
+        valid=true
+      else
+        echo "$ARG does not exist"
+      fi
+
     # else input is invalid
-    else
-      numInv+=1
-      echo "$ARG is not valid input"
-      return
+    #else
+      #numInv+=1
+    #  echo "$ARG is not valid input"
+      #return
+    fi
+
+    if ! $valid
+      then
+      inv+="$ARG "
     fi
   done
+  echo "Invalid inputs: $inv"
+}
 
+# check for conflicting options and set script flags
+function checkopts () {
+  echo "checking"
 }
 
 # do the magic
