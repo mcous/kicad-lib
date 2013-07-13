@@ -4,8 +4,10 @@
 # http://www.github.com/mcous/kicad-lib
 # this script file released into the public domain
 
-# setlibs: adds or replaces the libraries of a kicad project with these libraries
+# setlibs - adds or replaces the libraries of a kicad project with these libraries
+#
 #   usage: setlibs [flags] /path/to/project.pro [/paths/to/more/projects.pro]
+#
 #   flags: 
 # TODO:-a, --append      = append libraries rather than replacing them
 # TODO:-b, --before      = if appending, append new libraries before old ones (does not apply to power library)
@@ -15,70 +17,87 @@
 # TODO:-v, --version     = display version number of the library
 
 # valid parameters
-SHORT_FLAGS=("c" "f" "h")
-LONG_FLAGS=("components" "footprints" "help")
+SHORT_FLAGS=("a" "p" "c" "f" "h")
+LONG_FLAGS=("append" "prepend" "components" "footprints" "help")
+
+# script flags
+REPLACE=true
+APPEND=false
+PREPEND=false
+COMPONENTS=true
+FOOTPRINTS=true
 
 # current program options
 OPTS=()
 PRJ=()
 
 # functions
-function input () {
+function go () {
   # parse input
   checkinput $@
-  # if [ $1 ] && [ $2 ]
-  #   then
-  #   echo "i dunno"
-  # elif [ $1 ]
-  #   then
-  #   run "--null" $1
-  # else
-  #   help
-  # fi
+  # check options are good
+  checkopts
+  # run with it
+  run
 }
 
 # help function
 function help () {
-  echo "setlibs: adds or replaces the libraries of a kicad project using the libraries from github.com/mcous/kicad-lib"
-  echo "  usage: setlibs [flags] /path/to/project.pro"
+  echo ""
+  echo "setlibs - adds or replaces the libraries of a kicad project with the libraries from github.com/mcous/kicad-lib"
+  echo "  default behavior: removes all component and footprint libraries in project file and replaces them with new libraries"
+  echo "  usage: ./setlibs [flags] [paths to .pro files]"
+  echo "  examples:"
+  echo "    replace all libraries in two projects:"
+  echo "      ./setlibs path/to/project1.pro path/to/project2.pro"
+  echo "    append only the footprint libraries to a project"
+  echo "      ./setlibs --append --footprints path/to/project.pro"
   echo "  flags: "
-  echo "TODO:-a, --append      = append libraries rather than replacing them"
-  echo "TODO:-p, --prepend     = prepend libraries rather than replacing (does not apply to power library)"
-  echo "     -c, --components  = only do component files"
-  echo "     -f, --footprints  = only do footprint files"
-  echo "     -h, --help        = display this little summary"
-  echo "TODO:-v, --version     = display version number of the library"
-  return
+  echo "    -a, --append      = append new libraries rather than replacing them"
+  echo "    -p, --prepend     = prepend new libraries (will keep power component library at top)"
+  echo "    -c, --components  = only do component files"
+  echo "    -f, --footprints  = only do footprint files"
+  echo "    -h, --help        = display this little summary"
+  exit 0
 }
 
-# check the input to make sure that any options are correct and the file exists
+# check the input to make sure that any options are correct and the file(s) exists
 function checkinput () {
-  local inv=()
+  local inv=false
 
-  local shortMatch="^-[a-z]{1}$"
+  local shortMatch="^-[a-z]+$"
+  local chainedShortMatch="^-[a-z]+$"
   local longMatch="^-{2}[a-z][a-z]+$"
   local proMatch="[a-z]+\.pro$"
 
   for ARG in "$@"
   do
-    echo "checking $ARG"
     local valid=false
     # check if its a short flag
     if [[ $ARG =~ $shortMatch ]]
       then
-      # check if it's a valid short flag
-      local flag=${ARG:1}
-      for VALIDOPT in "${SHORT_FLAGS[@]}"
+      # break up the options if needed
+      local len=${#ARG}
+      while [ $len -gt 1 ]
       do
-        if [ "$flag" = "$VALIDOPT" ]
-          then
-          valid=true
-          echo "adding $flag to OPTS"
-          OPTS+=$VALIDOPT
-          break
-        fi
+        # check if it's a valid short flag
+        local flag=${ARG:($len-1):1}
+        for VALIDOPT in "${SHORT_FLAGS[@]}"
+        do
+          if [ "$flag" = "$VALIDOPT" ]
+            then
+            valid=true
+            OPTS+=("$VALIDOPT")
+            break
+          fi
+        done
+        let "len -= 1"
       done
-      #echo "$flag is short option"
+      # if invalid input
+      if ! $valid
+        then
+        echo "ERROR: $ARG is not a valid option"
+      fi
 
     # else check of its a long flag
     elif [[ $ARG =~ $longMatch ]]
@@ -89,12 +108,15 @@ function checkinput () {
       do
         if [ "$flag" = "$VALIDOPT" ]
           then
-          echo "adding $flag to OPTS"
-          OPTS+=$VALIDOPT
+          valid=true
+          OPTS+=("$VALIDOPT")
           break
         fi
       done
-      #echo "$flag is long option"
+      if ! $valid
+        then
+        echo "ERROR: $ARG is not a valid option"
+      fi
 
     # else check if its a project file
     elif [[ $ARG =~ $proMatch ]]
@@ -102,40 +124,97 @@ function checkinput () {
       # check if file exists
       if [ -e $ARG ]
         then
-        PRJ+=$ARG
+        PRJ+=("$ARG")
         valid=true
       else
-        echo "$ARG does not exist"
+        echo "ERROR: $ARG does not exist"
       fi
 
     # else input is invalid
-    #else
-      #numInv+=1
-    #  echo "$ARG is not valid input"
-      #return
+    else
+      echo "ERROR: $ARG is not valid input"
     fi
 
     if ! $valid
       then
-      inv+="$ARG "
+      inv=true
     fi
   done
-  echo "Invalid inputs: $inv"
+
+  # if there were errors
+  if $inv
+    then
+    help
+  fi
 }
 
 # check for conflicting options and set script flags
 function checkopts () {
-  echo "checking"
+  # set the flags
+  for OP in ${OPTS[@]}
+  do
+    if [ "${OP:0:1}" = "h" ]
+      then
+      help
+    elif [ "${OP:0:1}" = "a" ]
+      then
+      APPEND=true
+      REPLACE=false
+    elif [ "${OP:0:1}" = "p" ]
+      then
+      PREPEND=true
+      REPLACE=false
+    elif [ "${OP:0:1}" = "c" ]
+      then
+      FOOTPRINTS=false
+    elif [ "${OP:0:1}" = "f" ]
+      then
+      COMPONENTS=false
+    fi
+  done
+
+  local inv=false
+  # make sure there are no conflicting flags
+  if $APPEND && $PREPEND
+    then
+    echo "ERROR: append and prepend options are mutually exclusive"
+    inv=true
+  fi
+  if ! $FOOTPRINTS && ! $COMPONENTS
+    then
+    echo "ERROR: components-only and footprints-only options are mutually exclusive"
+    inv=true
+  fi
+  # also make sure there are project files
+  if [ ! "${PRJ[0]}" ]
+    then
+    echo "ERROR: no kicad project file entered"
+    inv=true
+  fi
+
+  if $inv
+    then
+    help
+  fi
 }
 
 # do the magic
 function run {
-  echo "flags: $1"
-  echo "project: $2"
+  echo "running on ${#PRJ[*]} projects:"
+  for FILE in "${PRJ[@]}"
+  do
+    echo "$FILE"
+  done
+  echo "with these options:"
+  echo "replace libraries: $REPLACE"
+  echo "append libraries: $APPEND"
+  echo "prepend libraries: $PREPEND"
+  echo "use components: $COMPONENTS"
+  echo "use footprints: $FOOTPRINTS"
 }
 
 # start the script
-input $@
+go $@
 
 # program
 #function run() {
