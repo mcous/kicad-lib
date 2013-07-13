@@ -16,9 +16,19 @@
 #     -h, --help        = display this little summary
 # TODO:-v, --version     = display version number of the library
 
+# constants
+# kicad project file options
+readonly COMP_DIR_HEADING_MATCH=""
+readonly COMP_DIR_MATCH=""
+readonly COMP_LIB_HEADING_MATCH=""
+readonly COMP_LIB_MATCH=""
+readonly FOOT_DIR_HEADING_MATCH=""
+readonly FOOT_DIR_MATCH=""
+readonly FOOT_LIB_HEADING_MATCH=""
+readonly FOOT_LIB_MATCH=""
 # valid parameters
-SHORT_FLAGS=("a" "p" "c" "f" "h")
-LONG_FLAGS=("append" "prepend" "components" "footprints" "help")
+readonly SHORT_FLAGS=("a" "p" "c" "f" "h")
+readonly LONG_FLAGS=("append" "prepend" "components" "footprints" "help")
 
 # script flags
 REPLACE=true
@@ -30,6 +40,10 @@ FOOTPRINTS=true
 # current program options
 OPTS=()
 PRJ=()
+
+# library lists
+COMPS=()
+FOOTS=()
 
 # functions
 function go () {
@@ -198,12 +212,20 @@ function checkopts () {
   fi
 }
 
+function buildCompsList () {
+  local dir=$(dirname "${BASH_SOURCE[0]}")"/*"
+  for F in $dir
+  do
+    echo "hey look: $F"
+  done
+}
+
 # do the magic
 function run {
   echo "running on ${#PRJ[*]} projects:"
-  for FILE in "${PRJ[@]}"
+  for P in "${PRJ[@]}"
   do
-    echo "$FILE"
+    echo "$P"
   done
   echo "with these options:"
   echo "replace libraries: $REPLACE"
@@ -211,6 +233,19 @@ function run {
   echo "prepend libraries: $PREPEND"
   echo "use components: $COMPONENTS"
   echo "use footprints: $FOOTPRINTS"
+
+  # do this for every project
+  for P in "${PRJ[@]}"
+  do
+    echo "taking care of $P"
+    
+    # let's start with the components
+    if $COMPONENTS
+      then
+      # um, get component list
+      buildCompsList
+    fi
+  done
 }
 
 # start the script
