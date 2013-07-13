@@ -18,13 +18,14 @@
 
 # constants
 # kicad project file options
-readonly COMP_DIR_HEADING_MATCH="[eeschema]"
+readonly HEADER_FORMAT="^\[[A-Za-z]+\]$"
+readonly COMP_DIR_HEADING_MATCH="eeschema"
 readonly COMP_DIR_MATCH="LibDir"
-readonly COMP_LIB_HEADING_MATCH="[eeschema/libraries]"
+readonly COMP_LIB_HEADING_MATCH="eeschema/libraries"
 readonly COMP_LIB_MATCH="LibName[0-9]"
-readonly FOOT_DIR_HEADING_MATCH="[pcbnew/libraries]"
+readonly FOOT_DIR_HEADING_MATCH="pcbnew/libraries"
 readonly FOOT_DIR_MATCH="LibDir"
-readonly FOOT_LIB_HEADING_MATCH="[pcbnew/libraries]"
+readonly FOOT_LIB_HEADING_MATCH="pcbnew/libraries"
 readonly FOOT_LIB_MATCH="LibName[0-9]"
 # valid parameters
 readonly SHORT_FLAGS=("a" "p" "c" "f" "h")
@@ -68,7 +69,7 @@ function help () {
   echo "      ./setlibs --append --footprints path/to/project.pro"
   echo "  flags: "
   echo "    -a, --append      = append new libraries rather than replacing them"
-  echo "    -p, --prepend     = prepend new libraries (will keep power component library at top)"
+  echo "    -p, --prepend     = prepend new libraries (will keep power component library at top)" # reconsider this
   echo "    -c, --components  = only do component files"
   echo "    -f, --footprints  = only do footprint files"
   echo "    -h, --help        = display this little summary"
@@ -258,7 +259,24 @@ function run {
       then
       # um, get component list
       buildCompsList
-      # find the line in the pro file with 
+
+      # edit the library path
+        # find the header to start the section
+        # find the end of the section
+        # search for the library line
+          # if append or prepend, append to the end
+          # if replace, straight up replace that shit
+
+      # edit the libraries
+        # find the beginning of the section
+        # find the end of the section
+          # if append or prepend, get your library numbers figured out
+            # new libraries will need numbering, old ones could need to be fixed
+          # if replace, my life is easier
+          # change lines until either list runs out
+            # if new list, delete the remaining lines in the old list
+            # elif the old list, insert remaining lines from the new list
+        # output fixed project
     fi
     # then the footprints
     if $FOOTPRINTS
