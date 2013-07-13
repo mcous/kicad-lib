@@ -18,14 +18,14 @@
 
 # constants
 # kicad project file options
-readonly COMP_DIR_HEADING_MATCH=""
-readonly COMP_DIR_MATCH=""
-readonly COMP_LIB_HEADING_MATCH=""
-readonly COMP_LIB_MATCH=""
-readonly FOOT_DIR_HEADING_MATCH=""
-readonly FOOT_DIR_MATCH=""
-readonly FOOT_LIB_HEADING_MATCH=""
-readonly FOOT_LIB_MATCH=""
+readonly COMP_DIR_HEADING_MATCH="[eeschema]"
+readonly COMP_DIR_MATCH="LibDir"
+readonly COMP_LIB_HEADING_MATCH="[eeschema/libraries]"
+readonly COMP_LIB_MATCH="LibName[0-9]"
+readonly FOOT_DIR_HEADING_MATCH="[pcbnew/libraries]"
+readonly FOOT_DIR_MATCH="LibDir"
+readonly FOOT_LIB_HEADING_MATCH="[pcbnew/libraries]"
+readonly FOOT_LIB_MATCH="LibName[0-9]"
 # valid parameters
 readonly SHORT_FLAGS=("a" "p" "c" "f" "h")
 readonly LONG_FLAGS=("append" "prepend" "components" "footprints" "help")
@@ -214,13 +214,24 @@ function checkopts () {
 
 function buildCompsList () {
   local dir=$(dirname "${BASH_SOURCE[0]}")"/components/*.lib"
+  for C in $dir
+  do
+    local f=`basename $C`
+    COMPS+=(${f%%.lib})
+    #echo "hey look: $f"
+  done
+  echo "component libraries: ${COMPS[@]}"
+}
+
+function buildFootsList () {
+  local dir=$(dirname "${BASH_SOURCE[0]}")"/footprints/*.mod"
   for F in $dir
   do
-    f="${`basename $F`%%.lib}"
-    #local file = 
-    echo "hey look: $f"
-    # echo f | sed -e 's/'
+    local f=`basename $F`
+    FOOTS+=(${f%%.mod})
+    #echo "hey look: $f"
   done
+  echo "footprint libraries: ${FOOTS[@]}"
 }
 
 # do the magic
@@ -247,7 +258,14 @@ function run {
       then
       # um, get component list
       buildCompsList
+      # find the line in the pro file with 
     fi
+    # then the footprints
+    if $FOOTPRINTS
+      then
+      buildFootsList
+    fi
+
   done
 }
 
