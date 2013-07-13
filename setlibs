@@ -235,6 +235,19 @@ function buildFootsList () {
   echo "footprint libraries: ${FOOTS[@]}"
 }
 
+function fixCompLibDir () {
+  # find the header to start the section
+  local secStart=`sed -n "/^\[$COMP_DIR_HEADING_MATCH\]$/ =" $P`
+  echo "comp lib dir section starts @ $secStart"
+  local secEnd=`sed -n "$secStart,$ /$HEADER_FORMAT/ =" $P`
+  echo "comp lib dir section ends @ $secEnd"
+  # find the end of the section
+  # search for the library line in that range
+  # if append or prepend, append new dir to the end
+  # if replace, straight up replace that shit
+  # if no lib line found, add the line
+}
+
 # do the magic
 function run {
   echo "running on ${#PRJ[*]} projects:"
@@ -261,15 +274,12 @@ function run {
       buildCompsList
 
       # edit the library path
-        # find the header to start the section
-        # find the end of the section
-        # search for the library line
-          # if append or prepend, append to the end
-          # if replace, straight up replace that shit
+      fixCompLibDir
 
       # edit the libraries
         # find the beginning of the section
         # find the end of the section
+        # in the resulting range:
           # if append or prepend, get your library numbers figured out
             # new libraries will need numbering, old ones could need to be fixed
           # if replace, my life is easier
@@ -277,6 +287,7 @@ function run {
             # if new list, delete the remaining lines in the old list
             # elif the old list, insert remaining lines from the new list
         # output fixed project
+
     fi
     # then the footprints
     if $FOOTPRINTS
@@ -289,32 +300,3 @@ function run {
 
 # start the script
 go $@
-
-# program
-#function run() {
-# get list of component libraries from kicad-lib/components
-# DEBUG - echo list
-# TODO
-
-# get list of footprint libraries from kicad-lib/footprints
-# DEBUG - echo list
-# TODO
-
-# insert path to components into project file
-# TODO
-
-# insert path to footprints into project file
-# TODO
-
-# delete old component libraries in project file
-# TODO
-
-# delete old footprint libraries in project file
-# TODO
-
-# insert component libraries into project file
-# TODO
-
-# insert footprint libraries into project file
-# TODO
-#}
