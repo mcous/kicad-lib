@@ -213,10 +213,13 @@ function checkopts () {
 }
 
 function buildCompsList () {
-  local dir=$(dirname "${BASH_SOURCE[0]}")"/*"
+  local dir=$(dirname "${BASH_SOURCE[0]}")"/components/*.lib"
   for F in $dir
   do
-    echo "hey look: $F"
+    f="${`basename $F`%%.lib}"
+    #local file = 
+    echo "hey look: $f"
+    # echo f | sed -e 's/'
   done
 }
 
