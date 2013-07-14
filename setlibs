@@ -19,14 +19,14 @@
 # constants
 # kicad project file options
 readonly HEAD_MATCH="[[]"
-readonly COMP_DIR_HEAD_MATCH="eeschema"
-readonly COMP_DIR_MATCH="LibDir"
-readonly COMP_LIB_HEAD_MATCH="eeschema\/libraries"
-readonly COMP_LIB_MATCH="LibName[0-9]"
-readonly FOOT_DIR_HEAD_MATCH="pcbnew/libraries"
-readonly FOOT_DIR_MATCH="LibDir"
-readonly FOOT_LIB_HEAD_MATCH="pcbnew/libraries"
-readonly FOOT_LIB_MATCH="LibName[0-9]"
+readonly C_DIR_HEAD_MATCH="eeschema"
+readonly C_DIR_MATCH="LibDir"
+readonly C_LIB_HEAD_MATCH="eeschema\/libraries"
+readonly C_LIB_MATCH="LibName[0-9]"
+readonly F_DIR_HEAD_MATCH="pcbnew\/libraries"
+readonly F_DIR_MATCH="LibDir"
+readonly F_LIB_HEAD_MATCH="pcbnew\/libraries"
+readonly F_LIB_MATCH="LibName[0-9]"
 # valid parameters
 readonly SHORT_FLAGS=("a" "p" "c" "f" "h")
 readonly LONG_FLAGS=("append" "prepend" "components" "footprints" "help")
@@ -236,29 +236,53 @@ function buildFootsList () {
 }
 
 function getBoundries () {
-  # hey look grep works. oops.
+  # hey look grep works to get all the headings. oops.
   local headings=`grep -n "$HEAD_MATCH" $P`
-  #echo "${headings[@]}"
-
-  echo "sed'ing headings:" 
-  echo "$headings"
-  #COMPBOUND=`echo "$headings" | sed 's/:.*//'`
-  #echo "result: $COMPBOUND"
+  
   if $COMPONENTS
     then
-    COMPBOUND=( `echo "$headings" | sed -n "/$COMP_LIB_HEAD_MATCH/ {
-      s/:.*//p
-      n
-      s/:.*//p
-    }"` )
-    echo "${COMPBOUND[@]}"
+    # get the line number bounds of the component libraries
+    C_LIB_BOUND=( `echo "$headings" | sed -n "/$C_LIB_HEAD_MATCH/ { s/:.*//p; n; s/:.*//p; }"` )
+    if [ ! ${C_LIB_BOUND[1]} ]
+      then
+      C_LIB_BOUND[1]='$'
+    fi
+    #echo "component library bounds: ${C_LIB_BOUND[@]}"
+    # do the same for the directory
+    C_DIR_BOUND=( `echo "$headings" | sed -n "/$C_DIR_HEAD_MATCH/ { s/:.*//p; n; s/:.*//p; }"` )
+    if [ ! ${C_DIR_BOUND[1]} ]
+      then
+      C_DIR_BOUND[1]='$'
+    fi
+    #echo "component directory bounds: ${C_DIR_BOUND[@]}"
   fi
-  #ok how about sed now to give me some line numbers
+
+  if $FOOTPRINTS
+    then
+    # get the line number bounds of the footprint libraries
+    F_LIB_BOUND=( `echo "$headings" | sed -n "/$F_LIB_HEAD_MATCH/ { s/:.*//p; n; s/:.*//p; }"` )
+    if [ ! ${F_LIB_BOUND[1]} ]
+      then
+      F_LIB_BOUND[1]='$'
+    fi
+    #echo "footprint library bounds: ${F_LIB_BOUND[@]}"
+    # do the same for the directory
+    F_DIR_BOUND=( `echo "$headings" | sed -n "/$F_DIR_HEAD_MATCH/ { s/:.*//p; n; s/:.*//p; }"` )
+    if [ ! ${F_DIR_BOUND[1]} ]
+      then
+      F_DIR_BOUND[1]='$'
+    fi
+    #echo "footprint directory bounds: ${F_DIR_BOUND[@]}"
+  fi
   # find the end of the section
   # search for the library line in that range
   # if append or prepend, append new dir to the end
   # if replace, straight up replace that shit
   # if no lib line found, add the line
+}
+
+function fixDirs () {
+  if $COMPONENTS
 }
 
 # do the magic
