@@ -18,14 +18,14 @@
 
 # constants
 # kicad project file options
-readonly HEADER_FORMAT="^\[[A-Za-z]+\]$"
-readonly COMP_DIR_HEADING_MATCH="eeschema"
+readonly HEAD_MATCH="[[]"
+readonly COMP_DIR_HEAD_MATCH="eeschema"
 readonly COMP_DIR_MATCH="LibDir"
-readonly COMP_LIB_HEADING_MATCH="eeschema/libraries"
+readonly COMP_LIB_HEAD_MATCH="eeschema\/libraries"
 readonly COMP_LIB_MATCH="LibName[0-9]"
-readonly FOOT_DIR_HEADING_MATCH="pcbnew/libraries"
+readonly FOOT_DIR_HEAD_MATCH="pcbnew/libraries"
 readonly FOOT_DIR_MATCH="LibDir"
-readonly FOOT_LIB_HEADING_MATCH="pcbnew/libraries"
+readonly FOOT_LIB_HEAD_MATCH="pcbnew/libraries"
 readonly FOOT_LIB_MATCH="LibName[0-9]"
 # valid parameters
 readonly SHORT_FLAGS=("a" "p" "c" "f" "h")
@@ -221,7 +221,7 @@ function buildCompsList () {
     COMPS+=(${f%%.lib})
     #echo "hey look: $f"
   done
-  echo "component libraries: ${COMPS[@]}"
+  #echo "component libraries: ${COMPS[@]}"
 }
 
 function buildFootsList () {
@@ -232,15 +232,25 @@ function buildFootsList () {
     FOOTS+=(${f%%.mod})
     #echo "hey look: $f"
   done
-  echo "footprint libraries: ${FOOTS[@]}"
+  #echo "footprint libraries: ${FOOTS[@]}"
 }
 
-function fixCompLibDir () {
-  # find the header to start the section
-  local secStart=`sed -n "/^\[$COMP_DIR_HEADING_MATCH\]$/ =" $P`
-  echo "comp lib dir section starts @ $secStart"
-  local secEnd=`sed -n "$secStart,$ /$HEADER_FORMAT/ =" $P` # fix this
-  echo "comp lib dir section ends @ $secEnd"
+function getBoundries () {
+  # hey look grep works. oops.
+  local headings=`grep -n "$HEAD_MATCH" $P`
+  #echo "${headings[@]}"
+
+  if $COMPONENTS
+    then
+    COMPBOUND=`echo "$headings" | sed -n "/$COMP_LIB_HEAD_MATCH/ {
+      p
+      n
+      p
+      q
+    }"`
+    echo "$COMPBOUND"
+  fi
+  #ok how about sed now to give me some line numbers
   # find the end of the section
   # search for the library line in that range
   # if append or prepend, append new dir to the end
@@ -267,14 +277,16 @@ function run {
   do
     echo "taking care of $P"
     
+    # get necessary section boundries
+    getBoundries
+
     # let's start with the components
     if $COMPONENTS
       then
       # um, get component list
       buildCompsList
 
-      # edit the library path
-      fixCompLibDir
+      # edit the library path    
 
       # edit the libraries
         # find the beginning of the section
