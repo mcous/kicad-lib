@@ -242,12 +242,12 @@ function getBoundries () {
 
   if $COMPONENTS
     then
-    COMPBOUND=`echo "$headings" | sed -n "/$COMP_LIB_HEAD_MATCH/ {
+    COMPBOUND=( `echo "$headings" | sed -n "/$COMP_LIB_HEAD_MATCH/ {
       p
       n
       p
       q
-    }"`
+    }"` )
     echo "$COMPBOUND"
   fi
   #ok how about sed now to give me some line numbers
