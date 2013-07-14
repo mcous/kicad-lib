@@ -56,6 +56,13 @@ function go () {
   run
 }
 
+# get the absolute location of the script so I can get directory paths
+# solution from http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
+function getScriptLoc () {
+  SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+  #echo "script is running from: $SCRIPT_DIR"
+}
+
 # help function
 function help () {
   echo ""
@@ -214,7 +221,7 @@ function checkopts () {
 }
 
 function buildCompsList () {
-  local dir=$(dirname "${BASH_SOURCE[0]}")"/components/*.lib"
+  local dir="$SCRIPT_DIR/components/*.lib"
   for C in $dir
   do
     local f=`basename $C`
@@ -225,7 +232,7 @@ function buildCompsList () {
 }
 
 function buildFootsList () {
-  local dir=$(dirname "${BASH_SOURCE[0]}")"/footprints/*.mod"
+  local dir="$SCRIPT_DIR/footprints/*.mod"
   for F in $dir
   do
     local f=`basename $F`
@@ -283,30 +290,46 @@ function getBoundries () {
 
 function fixDirs () {
   if $COMPONENTS
+    local compdir="$SCRIPT_DIR/components"
+    echo "component directory: $compdir"
+    then
+    if $REPLACE
+      then
+      echo "replacing component directory"
+      sed "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P.old >$P
+    else
+      echo "appending component directory"
+    fi
+  fi
 }
 
 # do the magic
 function run {
-  echo "running on ${#PRJ[*]} projects:"
-  for P in "${PRJ[@]}"
-  do
-    echo "$P"
-  done
-  echo "with these options:"
-  echo "replace libraries: $REPLACE"
-  echo "append libraries: $APPEND"
-  echo "prepend libraries: $PREPEND"
-  echo "use components: $COMPONENTS"
-  echo "use footprints: $FOOTPRINTS"
+  # get the directory of the script for later
+  getScriptLoc
+ 
+  #echo "running on ${#PRJ[*]} projects:"
+  #for P in "${PRJ[@]}"
+  #do
+  #  echo "$P"
+  #done
+  #echo "with these options:"
+  #echo "replace libraries: $REPLACE"
+  #echo "append libraries: $APPEND"
+  #echo "prepend libraries: $PREPEND"
+  #echo "use components: $COMPONENTS"
+  #echo "use footprints: $FOOTPRINTS"
 
   # do this for every project
   for P in "${PRJ[@]}"
   do
     echo "taking care of $P"
-    
+    # back that shit up
+    cp -f "$P" "$P".old
     # get necessary section boundries
     getBoundries
-
+    # fix the diretories
+    fixDirs
     # let's start with the components
     if $COMPONENTS
       then
