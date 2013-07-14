@@ -240,15 +240,18 @@ function getBoundries () {
   local headings=`grep -n "$HEAD_MATCH" $P`
   #echo "${headings[@]}"
 
+  echo "sed'ing headings:" 
+  echo "$headings"
+  #COMPBOUND=`echo "$headings" | sed 's/:.*//'`
+  #echo "result: $COMPBOUND"
   if $COMPONENTS
     then
     COMPBOUND=( `echo "$headings" | sed -n "/$COMP_LIB_HEAD_MATCH/ {
-      p
+      s/:.*//p
       n
-      p
-      q
+      s/:.*//p
     }"` )
-    echo "$COMPBOUND"
+    echo "${COMPBOUND[@]}"
   fi
   #ok how about sed now to give me some line numbers
   # find the end of the section
