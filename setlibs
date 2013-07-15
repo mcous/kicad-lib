@@ -19,17 +19,25 @@
 # constants
 # kicad project file options
 readonly HEAD_MATCH="[[]"
-readonly C_DIR_HEAD_MATCH="eeschema"
-readonly C_DIR_MATCH="LibDir"
-readonly C_LIB_HEAD_MATCH="eeschema/libraries"
-readonly C_LIB_MATCH="LibName[0-9]"
-readonly F_DIR_HEAD_MATCH="pcbnew/libraries"
-readonly F_DIR_MATCH="LibDir"
-readonly F_LIB_HEAD_MATCH="pcbnew/libraries"
-readonly F_LIB_MATCH="LibName[0-9]"
+# readonly C_DIR_HEAD_MATCH="eeschema"
+# readonly C_DIR_MATCH="LibDir"
+# readonly C_LIB_HEAD_MATCH="eeschema/libraries"
+# readonly C_LIB_MATCH="LibName[0-9]"
+# readonly F_DIR_HEAD_MATCH="pcbnew/libraries"
+# readonly F_DIR_MATCH="LibDir"
+# readonly F_LIB_HEAD_MATCH="pcbnew/libraries"
+# readonly F_LIB_MATCH="LibName[0-9]"
 # valid parameters
 readonly SHORT_FLAGS=("a" "p" "c" "f" "h")
 readonly LONG_FLAGS=("append" "prepend" "components" "footprints" "help")
+
+# new and improved stuff
+readonly C_DIR_HEAD="eeschema"
+readonly C_DIR_MATCH=( "LibDir" )
+readonly C_LIB_HEAD="eeschema/libraries"
+readonly C_LIB_MATCH=( "LibName" )
+readonly F_LIB_DIR_HEAD="pcbnew/libraries"
+readonly F_LIB_DIR_MATCH=( "LibDir" "LibName ")
 
 # script flags
 REPLACE=true
@@ -246,140 +254,146 @@ function buildLists () {
   fi
 }
 
-# get the heading locations in the pro files for seds
-function getBoundries () {
-  # hey look grep works to get all the headings. oops.
-  local headings=`grep -n "$HEAD_MATCH" $P`
-  local inv=false
+# # get the heading locations in the pro files for seds
+# function getBoundries () {
+#   # hey look grep works to get all the headings. oops.
+#   local headings=`grep -n "$HEAD_MATCH" $P`
+#   local inv=false
   
-  if $COMPONENTS
-    then
-    # get the line number bounds of the component libraries
-    C_LIB_BOUND=( `echo "$headings" | sed -n "\:$C_LIB_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
-    if [ ! ${C_LIB_BOUND[0]} ]
-      then
-      echo -e "ERROR: invalid kicad project file: [$C_LIB_HEAD_MATCH] not found"
-      inv=true
-    fi
-    if [ ! ${C_LIB_BOUND[1]} ]
-      then
-      C_LIB_BOUND[1]='$'
-    fi
-    #echo "component library bounds: ${C_LIB_BOUND[@]}"
-    # do the same for the directory
-    C_DIR_BOUND=( `echo "$headings" | sed -n "\:$C_DIR_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
-    if [ ! ${C_DIR_BOUND[0]} ]
-      then
-      echo -e "ERROR: invalid kicad project file: [$C_DIR_HEAD_MATCH] not found"
-      inv=true
-    fi
-    if [ ! ${C_DIR_BOUND[1]} ]
-      then
-      C_DIR_BOUND[1]='$'
-    fi
-    #echo "component directory bounds: ${C_DIR_BOUND[@]}"
-  fi
+#   if $COMPONENTS
+#     then
+#     # get the line number bounds of the component libraries
+#     C_LIB_BOUND=( `echo "$headings" | sed -n "\:$C_LIB_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
+#     if [ ! ${C_LIB_BOUND[0]} ]
+#       then
+#       echo -e "ERROR: invalid kicad project file: [$C_LIB_HEAD_MATCH] not found"
+#       inv=true
+#     fi
+#     if [ ! ${C_LIB_BOUND[1]} ]
+#       then
+#       C_LIB_BOUND[1]='$'
+#     fi
+#     #echo "component library bounds: ${C_LIB_BOUND[@]}"
+#     # do the same for the directory
+#     C_DIR_BOUND=( `echo "$headings" | sed -n "\:$C_DIR_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
+#     if [ ! ${C_DIR_BOUND[0]} ]
+#       then
+#       echo -e "ERROR: invalid kicad project file: [$C_DIR_HEAD_MATCH] not found"
+#       inv=true
+#     fi
+#     if [ ! ${C_DIR_BOUND[1]} ]
+#       then
+#       C_DIR_BOUND[1]='$'
+#     fi
+#     #echo "component directory bounds: ${C_DIR_BOUND[@]}"
+#   fi
 
-  if $FOOTPRINTS
-    then
-    # get the line number bounds of the footprint libraries
-    F_LIB_BOUND=( `echo "$headings" | sed -n "\:$F_LIB_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
-    if [ ! ${F_LIB_BOUND[0]} ]
-      then
-      echo -e "ERROR: invalid kicad project file: [$F_LIB_HEAD_MATCH] not found"
-      inv=true
-    fi
-    if [ ! ${F_LIB_BOUND[1]} ]
-      then
-      F_LIB_BOUND[1]='$'
-    fi
-    #echo "footprint library bounds: ${F_LIB_BOUND[@]}"
-    # do the same for the directory
-    F_DIR_BOUND=( `echo "$headings" | sed -n "\:$F_DIR_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
-    if [ ! ${F_DIR_BOUND[0]} ]
-      then
-      echo -e "ERROR: invalid kicad project file: [$F_DIR_HEAD_MATCH] not found"
-      inv=true
-    fi
-    if [ ! ${F_DIR_BOUND[1]} ]
-      then
-      F_DIR_BOUND[1]='$'
-    fi
-    #echo "footprint directory bounds: ${F_DIR_BOUND[@]}"
-  fi
+#   if $FOOTPRINTS
+#     then
+#     # get the line number bounds of the footprint libraries
+#     F_LIB_BOUND=( `echo "$headings" | sed -n "\:$F_LIB_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
+#     if [ ! ${F_LIB_BOUND[0]} ]
+#       then
+#       echo -e "ERROR: invalid kicad project file: [$F_LIB_HEAD_MATCH] not found"
+#       inv=true
+#     fi
+#     if [ ! ${F_LIB_BOUND[1]} ]
+#       then
+#       F_LIB_BOUND[1]='$'
+#     fi
+#     #echo "footprint library bounds: ${F_LIB_BOUND[@]}"
+#     # do the same for the directory
+#     F_DIR_BOUND=( `echo "$headings" | sed -n "\:$F_DIR_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
+#     if [ ! ${F_DIR_BOUND[0]} ]
+#       then
+#       echo -e "ERROR: invalid kicad project file: [$F_DIR_HEAD_MATCH] not found"
+#       inv=true
+#     fi
+#     if [ ! ${F_DIR_BOUND[1]} ]
+#       then
+#       F_DIR_BOUND[1]='$'
+#     fi
+#     #echo "footprint directory bounds: ${F_DIR_BOUND[@]}"
+#   fi
 
-  if $inv
-    then
-    help
-  fi
-  # find the end of the section
-  # search for the library line in that range
-  # if append or prepend, append new dir to the end
-  # if replace, straight up replace that shit
-  # if no lib line found, add the line
-}
+#   if $inv
+#     then
+#     help
+#   fi
+#   # find the end of the section
+#   # search for the library line in that range
+#   # if append or prepend, append new dir to the end
+#   # if replace, straight up replace that shit
+#   # if no lib line found, add the line
+# }
 
-# fix the directory lines in the pro file
-function fixDirs () {
-  if $COMPONENTS
-    then
-    local compdir="$SCRIPT_DIR/components"
-    echo "component directory: $compdir"
-    if $REPLACE
-      then
-      echo "replacing component directory"
-      sed "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
-      mv $P.temp $P
-    else
-      echo "appending component directory"
-      sed -e "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:\(LibDir=..*\):\1;$compdir:" -e t -e "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
-      mv $P.temp $P
-    fi
-  fi
+# # fix the directory lines in the pro file
+# function fixDirs () {
+#   if $COMPONENTS
+#     then
+#     local compdir="$SCRIPT_DIR/components"
+#     echo "component directory: $compdir"
+#     if $REPLACE
+#       then
+#       echo "replacing component directory"
+#       sed "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
+#       mv $P.temp $P
+#     else
+#       echo "appending component directory"
+#       sed -e "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:\(LibDir=..*\):\1;$compdir:" -e t -e "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
+#       mv $P.temp $P
+#     fi
+#   fi
 
-  if $FOOTPRINTS
-    then
-    local footdir="$SCRIPT_DIR/footprints"
-    echo "footprint directory: $footdir"
-    if $REPLACE
-      then
-      echo "replacing footprint directory"
-      sed "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:LibDir=.*:LibDir=$footdir:" <$P >$P.temp
-      mv $P.temp $P
-    else
-      echo "appending footprint directory"
-      sed -e "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:\(LibDir=..*\):\1;$footdir:" -e t -e "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
-      mv $P.temp $P
-    fi
-  fi
-}
+#   if $FOOTPRINTS
+#     then
+#     local footdir="$SCRIPT_DIR/footprints"
+#     echo "footprint directory: $footdir"
+#     if $REPLACE
+#       then
+#       echo "replacing footprint directory"
+#       sed "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:LibDir=.*:LibDir=$footdir:" <$P >$P.temp
+#       mv $P.temp $P
+#     else
+#       echo "appending footprint directory"
+#       sed -e "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:\(LibDir=..*\):\1;$footdir:" -e t -e "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
+#       mv $P.temp $P
+#     fi
+#   fi
+# }
 
-# fix the library lines in the pro file
-function fixLibs () {
-  echo "fixing libraries"
-  if $COMPONENTS
-    then
-    echo "fixing component libraries"
-    local libStart=1
-    local insertAfter="$C_LIB_HEAD_MATCH"
-    if $REPLACE
-      then
-      echo "deleting old libraries"
-      sed -e "${C_LIB_BOUND[0]},${C_LIB_BOUND[1]} s/$C_LIB_MATCH.*//" -e '/^$/ d' <$P >$P.temp
-      mv $P.temp $P
-    else
-      # gonna need library numbering
-      #echo "last lib: "
-      local libs=( `sed -n "${C_LIB_BOUND[0]},${C_LIB_BOUND[1]} s:$C_LIB_MATCH.*:&:p " <$P` )
-      libStart=`echo "${libs[${#libs[@]} - 1]}" | grep -o [0-9][0-9]*`
-      let libStart++
-      echo "libstart: $libStart"
-    fi
-  fi
-}
+# # fix the library lines in the pro file
+# function fixLibs () {
+#   echo "fixing libraries"
+#   if $COMPONENTS
+#     then
+#     echo "fixing component libraries"
+#     local libStart=1
+#     local insertAfter="$C_LIB_HEAD_MATCH"
+#     if $REPLACE
+#       then
+#       echo "deleting old libraries"
+#       sed -e "${C_LIB_BOUND[0]},${C_LIB_BOUND[1]} s/$C_LIB_MATCH.*//" -e '/^$/ d' <$P >$P.temp
+#       mv $P.temp $P
+#     else
+#       # gonna need library numbering
+#       #echo "last lib: "
+#       local libs=( `sed -n "${C_LIB_BOUND[0]},${C_LIB_BOUND[1]} s:$C_LIB_MATCH.*:&:p " <$P` )
+#       libStart=`echo "${libs[${#libs[@]} - 1]}" | grep -o [0-9][0-9]*`
+#       let libStart++
+#       #echo "libstart: $libStart"
+#     fi
+#     # insert the new libraries in
+#     for lib in ${COMPS[@]}
+#     do
+#       echo "LibName$libStart=$lib"
+#       let libStart++
+#     done
+#   fi
+# }
 
 # do the magic
-function run {
+function run () {
   # get the directory of the script for later
   getScriptLoc
  
@@ -401,11 +415,14 @@ function run {
     echo "taking care of $P"
     # back that shit up
     cp -f "$P" "$P".old
+    # create my temp file
+    rm $P.temp
+    touch $P.temp
 
     # get necessary section boundries
-    getBoundries
+    #getBoundries
     # fix the diretories
-    fixDirs
+    #fixDirs
     # build the lists of libraries
     buildLists
 
@@ -422,10 +439,91 @@ function run {
         # output fixed project
 
     # finally, fix the libraries
-    fixLibs
-
+    #fixLibs
+    readAndBuild
   done
 }
 
+# different kind of magic?
+function readAndBuild () {
+  # variables
+  local currHead=""
+  local inIndex=0
+  local increment=1
+  local inRead=0
+  local outIndex=0
+  local outLine=""
+  local match=()
+  local append=false
+
+  # read the file into an array - cupper limit is 500 just in case
+  while read currLine && (( inRead < 500 ))
+  do
+    echo "$currLine"
+    outLine=$currLine
+    let inRead++
+    write=true
+    #let inIndex++
+
+    # check that we're doing something
+    if (( $inRead < $inIndex )); then
+      # catch up
+      continue
+    fi
+
+    # check for heading
+    if [[ $currLine =~ $HEAD_MATCH ]]; then
+      currHead=$currLine
+      echo "heading found: $currHead"
+      # set matches accordingly
+      if [[ $currHead =~ $C_LIB_HEAD ]]; then
+        echo "component library heading found"
+        match=( ${C_LIB_MATCH[@]} )
+      elif [[ $currHead =~ $C_DIR_HEAD ]]; then
+        echo "component directory heading found"
+        match=( ${C_DIR_MATCH[@]} )
+      elif [[ $currHead =~ $F_LIB_DIR_HEAD ]]; then
+        echo "footprint library/directory heading found"
+        match=( ${F_LIB_DIR_MATCH[@]} )
+      else
+        match=()
+      fi
+      echo "looking for: ${match[@]}"
+
+    # if it's not a heading, check for a match
+    else
+      local currMatch=0
+      for m in ${match[@]}; do
+        echo "looking for $m in $currLine"
+        if [[ $currLine =~ $m ]]; then
+          echo "$m found in $currLine"
+          # remove it from the match array
+          match=(${match[@]:0:$currMatch} ${match[@]:$(($currMatch + 1))})
+          echo "$m removed from match array"
+          echo "match array: ${match[@]}"
+          # ok all possible options:
+          #if ; then
+
+          #fi
+          # break the loop, move on to next line
+          break
+        fi
+        let currMatch++
+      done
+    fi
+
+    if $write
+      then
+      echo "$outLine" >> $P.temp
+    fi
+
+    #let inIndex+=$increment
+  done <$P
+}
+
+# debugging on/off
+function echo () {
+  command echo $@ #>> /dev/null
+}
 # start the script
 go $@
