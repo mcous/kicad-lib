@@ -220,28 +220,33 @@ function checkopts () {
   fi
 }
 
-function buildCompsList () {
-  local dir="$SCRIPT_DIR/components/*.lib"
-  for C in $dir
-  do
-    local f=`basename $C`
-    COMPS+=(${f%%.lib})
-    #echo "hey look: $f"
-  done
-  #echo "component libraries: ${COMPS[@]}"
+function buildLists () {
+  if $COMPONENTS
+    then
+    local dir="$SCRIPT_DIR/components/*.lib"
+    for C in $dir
+    do
+      local f=`basename $C`
+      COMPS+=(${f%%.lib})
+      #echo "hey look: $f"
+    done
+    #echo "component libraries: ${COMPS[@]}"
+  fi
+
+  if $FOOTPRINTS
+    then
+    local dir="$SCRIPT_DIR/footprints/*.mod"
+    for F in $dir
+    do
+      local f=`basename $F`
+      FOOTS+=(${f%%.mod})
+      #echo "hey look: $f"
+    done
+    #echo "footprint libraries: ${FOOTS[@]}"
+  fi
 }
 
-function buildFootsList () {
-  local dir="$SCRIPT_DIR/footprints/*.mod"
-  for F in $dir
-  do
-    local f=`basename $F`
-    FOOTS+=(${f%%.mod})
-    #echo "hey look: $f"
-  done
-  #echo "footprint libraries: ${FOOTS[@]}"
-}
-
+# get the heading locations in the pro files for seds
 function getBoundries () {
   # hey look grep works to get all the headings. oops.
   local headings=`grep -n "$HEAD_MATCH" $P`
@@ -314,6 +319,7 @@ function getBoundries () {
   # if no lib line found, add the line
 }
 
+# fix the directory lines in the pro file
 function fixDirs () {
   if $COMPONENTS
     then
@@ -348,6 +354,30 @@ function fixDirs () {
   fi
 }
 
+# fix the library lines in the pro file
+function fixLibs () {
+  echo "fixing libraries"
+  if $COMPONENTS
+    then
+    echo "fixing component libraries"
+    local libStart=1
+    local insertAfter="$C_LIB_HEAD_MATCH"
+    if $REPLACE
+      then
+      echo "deleting old libraries"
+      sed -e "${C_LIB_BOUND[0]},${C_LIB_BOUND[1]} s/$C_LIB_MATCH.*//" -e '/^$/ d' <$P >$P.temp
+      mv $P.temp $P
+    else
+      # gonna need library numbering
+      #echo "last lib: "
+      local libs=( `sed -n "${C_LIB_BOUND[0]},${C_LIB_BOUND[1]} s:$C_LIB_MATCH.*:&:p " <$P` )
+      libStart=`echo "${libs[${#libs[@]} - 1]}" | grep -o [0-9][0-9]*`
+      let libStart++
+      echo "libstart: $libStart"
+    fi
+  fi
+}
+
 # do the magic
 function run {
   # get the directory of the script for later
@@ -371,19 +401,13 @@ function run {
     echo "taking care of $P"
     # back that shit up
     cp -f "$P" "$P".old
-    # make my working file
-    #cp -f "$P" "$P".temp
+
     # get necessary section boundries
     getBoundries
     # fix the diretories
     fixDirs
-    # let's start with the components
-    if $COMPONENTS
-      then
-      # um, get component list
-      buildCompsList
-
-      # edit the library path    
+    # build the lists of libraries
+    buildLists
 
       # edit the libraries
         # find the beginning of the section
@@ -397,12 +421,8 @@ function run {
             # elif the old list, insert remaining lines from the new list
         # output fixed project
 
-    fi
-    # then the footprints
-    if $FOOTPRINTS
-      then
-      buildFootsList
-    fi
+    # finally, fix the libraries
+    fixLibs
 
   done
 }
