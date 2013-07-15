@@ -21,11 +21,11 @@
 readonly HEAD_MATCH="[[]"
 readonly C_DIR_HEAD_MATCH="eeschema"
 readonly C_DIR_MATCH="LibDir"
-readonly C_LIB_HEAD_MATCH="eeschema\/libraries"
+readonly C_LIB_HEAD_MATCH="eeschema/libraries"
 readonly C_LIB_MATCH="LibName[0-9]"
-readonly F_DIR_HEAD_MATCH="pcbnew\/libraries"
+readonly F_DIR_HEAD_MATCH="pcbnew/libraries"
 readonly F_DIR_MATCH="LibDir"
-readonly F_LIB_HEAD_MATCH="pcbnew\/libraries"
+readonly F_LIB_HEAD_MATCH="pcbnew/libraries"
 readonly F_LIB_MATCH="LibName[0-9]"
 # valid parameters
 readonly SHORT_FLAGS=("a" "p" "c" "f" "h")
@@ -245,18 +245,29 @@ function buildFootsList () {
 function getBoundries () {
   # hey look grep works to get all the headings. oops.
   local headings=`grep -n "$HEAD_MATCH" $P`
+  local inv=false
   
   if $COMPONENTS
     then
     # get the line number bounds of the component libraries
-    C_LIB_BOUND=( `echo "$headings" | sed -n "/$C_LIB_HEAD_MATCH/ { s/:.*//p; n; s/:.*//p; }"` )
+    C_LIB_BOUND=( `echo "$headings" | sed -n "\:$C_LIB_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
+    if [ ! ${C_LIB_BOUND[0]} ]
+      then
+      echo -e "ERROR: invalid kicad project file: [$C_LIB_HEAD_MATCH] not found"
+      inv=true
+    fi
     if [ ! ${C_LIB_BOUND[1]} ]
       then
       C_LIB_BOUND[1]='$'
     fi
     #echo "component library bounds: ${C_LIB_BOUND[@]}"
     # do the same for the directory
-    C_DIR_BOUND=( `echo "$headings" | sed -n "/$C_DIR_HEAD_MATCH/ { s/:.*//p; n; s/:.*//p; }"` )
+    C_DIR_BOUND=( `echo "$headings" | sed -n "\:$C_DIR_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
+    if [ ! ${C_DIR_BOUND[0]} ]
+      then
+      echo -e "ERROR: invalid kicad project file: [$C_DIR_HEAD_MATCH] not found"
+      inv=true
+    fi
     if [ ! ${C_DIR_BOUND[1]} ]
       then
       C_DIR_BOUND[1]='$'
@@ -267,19 +278,34 @@ function getBoundries () {
   if $FOOTPRINTS
     then
     # get the line number bounds of the footprint libraries
-    F_LIB_BOUND=( `echo "$headings" | sed -n "/$F_LIB_HEAD_MATCH/ { s/:.*//p; n; s/:.*//p; }"` )
+    F_LIB_BOUND=( `echo "$headings" | sed -n "\:$F_LIB_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
+    if [ ! ${F_LIB_BOUND[0]} ]
+      then
+      echo -e "ERROR: invalid kicad project file: [$F_LIB_HEAD_MATCH] not found"
+      inv=true
+    fi
     if [ ! ${F_LIB_BOUND[1]} ]
       then
       F_LIB_BOUND[1]='$'
     fi
     #echo "footprint library bounds: ${F_LIB_BOUND[@]}"
     # do the same for the directory
-    F_DIR_BOUND=( `echo "$headings" | sed -n "/$F_DIR_HEAD_MATCH/ { s/:.*//p; n; s/:.*//p; }"` )
+    F_DIR_BOUND=( `echo "$headings" | sed -n "\:$F_DIR_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
+    if [ ! ${F_DIR_BOUND[0]} ]
+      then
+      echo -e "ERROR: invalid kicad project file: [$F_DIR_HEAD_MATCH] not found"
+      inv=true
+    fi
     if [ ! ${F_DIR_BOUND[1]} ]
       then
       F_DIR_BOUND[1]='$'
     fi
     #echo "footprint directory bounds: ${F_DIR_BOUND[@]}"
+  fi
+
+  if $inv
+    then
+    help
   fi
   # find the end of the section
   # search for the library line in that range
@@ -290,15 +316,34 @@ function getBoundries () {
 
 function fixDirs () {
   if $COMPONENTS
+    then
     local compdir="$SCRIPT_DIR/components"
     echo "component directory: $compdir"
-    then
     if $REPLACE
       then
       echo "replacing component directory"
-      sed "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P.old >$P
+      sed "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
+      mv $P.temp $P
     else
       echo "appending component directory"
+      sed -e "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:\(LibDir=..*\):\1;$compdir:" -e t -e "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
+      mv $P.temp $P
+    fi
+  fi
+
+  if $FOOTPRINTS
+    then
+    local footdir="$SCRIPT_DIR/footprints"
+    echo "footprint directory: $footdir"
+    if $REPLACE
+      then
+      echo "replacing footprint directory"
+      sed "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:LibDir=.*:LibDir=$footdir:" <$P >$P.temp
+      mv $P.temp $P
+    else
+      echo "appending footprint directory"
+      sed -e "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:\(LibDir=..*\):\1;$footdir:" -e t -e "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
+      mv $P.temp $P
     fi
   fi
 }
@@ -326,6 +371,8 @@ function run {
     echo "taking care of $P"
     # back that shit up
     cp -f "$P" "$P".old
+    # make my working file
+    #cp -f "$P" "$P".temp
     # get necessary section boundries
     getBoundries
     # fix the diretories
