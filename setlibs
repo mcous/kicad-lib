@@ -19,25 +19,21 @@
 # constants
 # kicad project file options
 readonly HEAD_MATCH="[[]"
-# readonly C_DIR_HEAD_MATCH="eeschema"
-# readonly C_DIR_MATCH="LibDir"
-# readonly C_LIB_HEAD_MATCH="eeschema/libraries"
-# readonly C_LIB_MATCH="LibName[0-9]"
-# readonly F_DIR_HEAD_MATCH="pcbnew/libraries"
-# readonly F_DIR_MATCH="LibDir"
-# readonly F_LIB_HEAD_MATCH="pcbnew/libraries"
-# readonly F_LIB_MATCH="LibName[0-9]"
-# valid parameters
-readonly SHORT_FLAGS=("a" "p" "c" "f" "h")
-readonly LONG_FLAGS=("append" "prepend" "components" "footprints" "help")
-
-# new and improved stuff
+readonly LIB_MATCH="LibName"
+readonly DIR_MATCH="LibDir"
+readonly UPDATE_MATCH="update"
+# what goes where
 readonly C_DIR_HEAD="eeschema"
-readonly C_DIR_MATCH=( "LibDir" )
+readonly C_DIR_MATCH=( $DIR_MATCH )
 readonly C_LIB_HEAD="eeschema/libraries"
-readonly C_LIB_MATCH=( "LibName" )
+readonly C_LIB_MATCH=( $LIB_MATCH )
 readonly F_LIB_DIR_HEAD="pcbnew/libraries"
-readonly F_LIB_DIR_MATCH=( "LibDir" "LibName ")
+readonly F_LIB_DIR_MATCH=( $LIB_MATCH $DIR_MATCH )
+
+readonly SHORT_FLAGS=("a" "p" "c" "f" "h" "v")
+readonly LONG_FLAGS=("append" "prepend" "components" "footprints" "help" "verbose")
+
+
 
 # script flags
 REPLACE=true
@@ -54,6 +50,9 @@ PRJ=()
 COMPS=()
 FOOTS=()
 
+# debugging
+VERBOSE=false
+
 # functions
 function go () {
   # parse input
@@ -68,7 +67,7 @@ function go () {
 # solution from http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
 function getScriptLoc () {
   SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-  #echo "script is running from: $SCRIPT_DIR"
+  echov "script is running from: $SCRIPT_DIR"
 }
 
 # help function
@@ -200,6 +199,9 @@ function checkopts () {
     elif [ "${OP:0:1}" = "f" ]
       then
       COMPONENTS=false
+    elif [ "${OP:0:1}" = "v" ]
+      then
+      VERBOSE=true
     fi
   done
 
@@ -236,9 +238,8 @@ function buildLists () {
     do
       local f=`basename $C`
       COMPS+=(${f%%.lib})
-      #echo "hey look: $f"
     done
-    #echo "component libraries: ${COMPS[@]}"
+    echov "component libraries: ${COMPS[@]}"
   fi
 
   if $FOOTPRINTS
@@ -248,282 +249,243 @@ function buildLists () {
     do
       local f=`basename $F`
       FOOTS+=(${f%%.mod})
-      #echo "hey look: $f"
     done
-    #echo "footprint libraries: ${FOOTS[@]}"
+    echov "footprint libraries: ${FOOTS[@]}"
   fi
 }
-
-# # get the heading locations in the pro files for seds
-# function getBoundries () {
-#   # hey look grep works to get all the headings. oops.
-#   local headings=`grep -n "$HEAD_MATCH" $P`
-#   local inv=false
-  
-#   if $COMPONENTS
-#     then
-#     # get the line number bounds of the component libraries
-#     C_LIB_BOUND=( `echo "$headings" | sed -n "\:$C_LIB_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
-#     if [ ! ${C_LIB_BOUND[0]} ]
-#       then
-#       echo -e "ERROR: invalid kicad project file: [$C_LIB_HEAD_MATCH] not found"
-#       inv=true
-#     fi
-#     if [ ! ${C_LIB_BOUND[1]} ]
-#       then
-#       C_LIB_BOUND[1]='$'
-#     fi
-#     #echo "component library bounds: ${C_LIB_BOUND[@]}"
-#     # do the same for the directory
-#     C_DIR_BOUND=( `echo "$headings" | sed -n "\:$C_DIR_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
-#     if [ ! ${C_DIR_BOUND[0]} ]
-#       then
-#       echo -e "ERROR: invalid kicad project file: [$C_DIR_HEAD_MATCH] not found"
-#       inv=true
-#     fi
-#     if [ ! ${C_DIR_BOUND[1]} ]
-#       then
-#       C_DIR_BOUND[1]='$'
-#     fi
-#     #echo "component directory bounds: ${C_DIR_BOUND[@]}"
-#   fi
-
-#   if $FOOTPRINTS
-#     then
-#     # get the line number bounds of the footprint libraries
-#     F_LIB_BOUND=( `echo "$headings" | sed -n "\:$F_LIB_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
-#     if [ ! ${F_LIB_BOUND[0]} ]
-#       then
-#       echo -e "ERROR: invalid kicad project file: [$F_LIB_HEAD_MATCH] not found"
-#       inv=true
-#     fi
-#     if [ ! ${F_LIB_BOUND[1]} ]
-#       then
-#       F_LIB_BOUND[1]='$'
-#     fi
-#     #echo "footprint library bounds: ${F_LIB_BOUND[@]}"
-#     # do the same for the directory
-#     F_DIR_BOUND=( `echo "$headings" | sed -n "\:$F_DIR_HEAD_MATCH: { s/:.*//p; n; s/:.*//p; }"` )
-#     if [ ! ${F_DIR_BOUND[0]} ]
-#       then
-#       echo -e "ERROR: invalid kicad project file: [$F_DIR_HEAD_MATCH] not found"
-#       inv=true
-#     fi
-#     if [ ! ${F_DIR_BOUND[1]} ]
-#       then
-#       F_DIR_BOUND[1]='$'
-#     fi
-#     #echo "footprint directory bounds: ${F_DIR_BOUND[@]}"
-#   fi
-
-#   if $inv
-#     then
-#     help
-#   fi
-#   # find the end of the section
-#   # search for the library line in that range
-#   # if append or prepend, append new dir to the end
-#   # if replace, straight up replace that shit
-#   # if no lib line found, add the line
-# }
-
-# # fix the directory lines in the pro file
-# function fixDirs () {
-#   if $COMPONENTS
-#     then
-#     local compdir="$SCRIPT_DIR/components"
-#     echo "component directory: $compdir"
-#     if $REPLACE
-#       then
-#       echo "replacing component directory"
-#       sed "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
-#       mv $P.temp $P
-#     else
-#       echo "appending component directory"
-#       sed -e "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:\(LibDir=..*\):\1;$compdir:" -e t -e "${C_DIR_BOUND[0]},${C_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
-#       mv $P.temp $P
-#     fi
-#   fi
-
-#   if $FOOTPRINTS
-#     then
-#     local footdir="$SCRIPT_DIR/footprints"
-#     echo "footprint directory: $footdir"
-#     if $REPLACE
-#       then
-#       echo "replacing footprint directory"
-#       sed "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:LibDir=.*:LibDir=$footdir:" <$P >$P.temp
-#       mv $P.temp $P
-#     else
-#       echo "appending footprint directory"
-#       sed -e "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:\(LibDir=..*\):\1;$footdir:" -e t -e "${F_DIR_BOUND[0]},${F_DIR_BOUND[1]} s:LibDir=.*:LibDir=$compdir:" <$P >$P.temp
-#       mv $P.temp $P
-#     fi
-#   fi
-# }
-
-# # fix the library lines in the pro file
-# function fixLibs () {
-#   echo "fixing libraries"
-#   if $COMPONENTS
-#     then
-#     echo "fixing component libraries"
-#     local libStart=1
-#     local insertAfter="$C_LIB_HEAD_MATCH"
-#     if $REPLACE
-#       then
-#       echo "deleting old libraries"
-#       sed -e "${C_LIB_BOUND[0]},${C_LIB_BOUND[1]} s/$C_LIB_MATCH.*//" -e '/^$/ d' <$P >$P.temp
-#       mv $P.temp $P
-#     else
-#       # gonna need library numbering
-#       #echo "last lib: "
-#       local libs=( `sed -n "${C_LIB_BOUND[0]},${C_LIB_BOUND[1]} s:$C_LIB_MATCH.*:&:p " <$P` )
-#       libStart=`echo "${libs[${#libs[@]} - 1]}" | grep -o [0-9][0-9]*`
-#       let libStart++
-#       #echo "libstart: $libStart"
-#     fi
-#     # insert the new libraries in
-#     for lib in ${COMPS[@]}
-#     do
-#       echo "LibName$libStart=$lib"
-#       let libStart++
-#     done
-#   fi
-# }
 
 # do the magic
 function run () {
   # get the directory of the script for later
   getScriptLoc
  
-  #echo "running on ${#PRJ[*]} projects:"
-  #for P in "${PRJ[@]}"
-  #do
-  #  echo "$P"
-  #done
-  #echo "with these options:"
-  #echo "replace libraries: $REPLACE"
-  #echo "append libraries: $APPEND"
-  #echo "prepend libraries: $PREPEND"
-  #echo "use components: $COMPONENTS"
-  #echo "use footprints: $FOOTPRINTS"
+  echov "running on ${#PRJ[*]} projects"
 
   # do this for every project
-  for P in "${PRJ[@]}"
-  do
-    echo "taking care of $P"
+  for P in "${PRJ[@]}"; do
+    echo "fixing $P"
+    echov "with these options:"
+    echov -e "\treplace libraries: $REPLACE"
+    echov -e "\tappend libraries: $APPEND"
+    echov -e "\tprepend libraries: $PREPEND"
+    echov -e "\tuse components: $COMPONENTS"
+    echov -e "\tuse footprints: $FOOTPRINTS"
     # back that shit up
     cp -f "$P" "$P".old
+    echo "$P backed up to $P.old"
     # create my temp file
-    rm $P.temp
+    rm -f $P.temp
     touch $P.temp
 
-    # get necessary section boundries
-    #getBoundries
-    # fix the diretories
-    #fixDirs
-    # build the lists of libraries
+    # build the library lists
     buildLists
-
-      # edit the libraries
-        # find the beginning of the section
-        # find the end of the section
-        # in the resulting range:
-          # if append or prepend, get your library numbers figured out
-            # new libraries will need numbering, old ones could need to be fixed
-          # if replace, my life is easier
-          # change lines until either list runs out
-            # if new list, delete the remaining lines in the old list
-            # elif the old list, insert remaining lines from the new list
-        # output fixed project
-
-    # finally, fix the libraries
-    #fixLibs
+    # read in the old file and build the new
     readAndBuild
+
+    # clean up
+    cleanup
+
+    # notify
+    echo "new libraries added to $P"
   done
 }
 
-# different kind of magic?
+# reads in the project file line by line and outputs to $P.temp accordingly
 function readAndBuild () {
   # variables
   local currHead=""
-  local inIndex=0
-  local increment=1
-  local inRead=0
-  local outIndex=0
   local outLine=""
   local match=()
-  local append=false
+  local lookingForEnd=false
+  local currMatch=""
+  local libCount
+  local libList=()
 
   # read the file into an array - cupper limit is 500 just in case
   while read currLine && (( inRead < 500 ))
   do
-    echo "$currLine"
+    echov -e "in:\t$currLine"
     outLine=$currLine
-    let inRead++
-    write=true
-    #let inIndex++
+    local write=true
 
-    # check that we're doing something
-    if (( $inRead < $inIndex )); then
-      # catch up
-      continue
+    # check for end of section
+    if $lookingForEnd && ! [[ $currLine =~ $currMatch ]]; then
+      echov "end of section found for $currMatch"
+      lookingForEnd=false
+      if [[ $currMatch =~ $LIB_MATCH ]]; then
+        # components
+        if [[ $currHead =~ $C_LIB_HEAD ]]; then
+          if $PREPEND; then
+            libList=( ${COMPS[@]} ${libList[@]} )
+            echov "prepending component libraries"
+          elif $APPEND; then
+            libList=( ${libList[@]} ${COMPS[@]}  )
+            echov "appending component libraries" 
+          else
+            libList=${COMPS[@]}
+            echov "replacing component libraries"
+          fi
+        # footprints
+        elif [[ $currHead =~ $F_LIB_HEAD ]]; then
+          if $PREPEND; then
+            libList=( ${FOOTS[@]} ${libList[@]} )
+            echov "prepending footprint libraries"
+          elif $APPEND; then
+            libList=( ${libList[@]} ${FOOTS[@]}  )
+            echov "appending footprint libraries"
+          else
+            libList=${FOOTS[@]}
+            echov "replacing footprint libraries"
+          fi
+        fi
+
+        # loop and fix the libs
+        local libNum=1
+        for li in ${libList[@]}; do
+          local output="$LIB_MATCH$libNum=$li"
+          echov -e "out:\t$output"
+          echo $output >> $P.temp
+          let libNum++
+        done
+        echov "all libraries outputted"
+      fi
+      #echov -e "\n"
     fi
 
+    # reset curren match
+    currMatch=""
+
+    # check for last updated
+    if [[ $currLine =~ $UPDATE_MATCH ]]; then
+      local now=`date +"%d/%m/%Y %T"`
+      outLine="$UPDATE_MATCH=$now"
     # check for heading
-    if [[ $currLine =~ $HEAD_MATCH ]]; then
+    elif [[ $currLine =~ $HEAD_MATCH ]]; then
       currHead=$currLine
-      echo "heading found: $currHead"
       # set matches accordingly
       if [[ $currHead =~ $C_LIB_HEAD ]]; then
-        echo "component library heading found"
+        echov "component library heading found"
         match=( ${C_LIB_MATCH[@]} )
+        echov "now looking for: ${match[@]}"
+        libList=()
+        libCount=0
       elif [[ $currHead =~ $C_DIR_HEAD ]]; then
-        echo "component directory heading found"
+        echov "component directory heading found"
         match=( ${C_DIR_MATCH[@]} )
+        echov "now looking for: ${match[@]}"
       elif [[ $currHead =~ $F_LIB_DIR_HEAD ]]; then
-        echo "footprint library/directory heading found"
+        echov "footprint library/directory heading found"
         match=( ${F_LIB_DIR_MATCH[@]} )
+        echov "now looking for: ${match[@]}"
+        libList=()
+        libCount=0
       else
         match=()
       fi
-      echo "looking for: ${match[@]}"
 
     # if it's not a heading, check for a match
     else
-      local currMatch=0
-      for m in ${match[@]}; do
-        echo "looking for $m in $currLine"
-        if [[ $currLine =~ $m ]]; then
-          echo "$m found in $currLine"
-          # remove it from the match array
-          match=(${match[@]:0:$currMatch} ${match[@]:$(($currMatch + 1))})
-          echo "$m removed from match array"
-          echo "match array: ${match[@]}"
-          # ok all possible options:
-          #if ; then
+      local removeMatch=false
 
-          #fi
-          # break the loop, move on to next line
-          break
+      for m in ${match[@]}; do
+        if [[ $currLine =~ $m ]]; then
+          echov "$m found in $currLine"
+          currMatch=$m
         fi
-        let currMatch++
       done
+
+      # directory line match
+      if [[ $currMatch =~ $DIR_MATCH ]]; then
+        if [[ $currHead =~ $C_DIR_HEAD ]]; then
+          local d="$SCRIPT_DIR/components"
+        elif [[ $currHead =~ $F_LIB_DIR_HEAD ]]; then
+          local d="$SCRIPT_DIR/footprints"
+        fi
+        # if replace or directory line is empty, just put in the directory
+        local emptyLine="=$"
+        if $REPLACE || [[ $currLine =~ $emptyLine ]]; then
+          echov "replacing directory"
+          outLine="$DIR_MATCH=$d"
+        # if not replace, then add it to the end with a semicolon
+        else
+          echov "appending directory"
+          outLine="$outLine;$d"
+        fi
+        # remove match from array
+        removeMatch=true
+          
+      # library line match - build array if not replacing
+      elif [[ $currMatch =~ $LIB_MATCH ]]; then
+        removeMatch=false
+        lookingForEnd=true
+        write=false
+        if ! $REPLACE; then
+          libList+=( `echo $currLine | grep -o '[^=]*$'` )
+          let libCount++
+        fi
+      fi
+
+      # remove from the match array if necessary
+      if $removeMatch; then
+        match=( ${match[@]/$m/} )
+      fi
     fi
 
     if $write
       then
+      echov -e "out:\t$outLine\n"
       echo "$outLine" >> $P.temp
     fi
-
-    #let inIndex+=$increment
   done <$P
+
+  # if end of file reached and still looking for the end of a section, take care of it
+  if $lookingForEnd; then
+    echov "end of file"
+    if [[ $currMatch =~ $LIB_MATCH ]]; then
+      echov "fixing libraries"
+      # components
+      if [[ $currHead =~ $C_LIB_HEAD ]]; then
+        if $PREPEND; then
+          libList=( ${COMPS[@]} ${libList[@]} )
+        elif $APPEND; then
+          libList=( ${libList[@]} ${COMPS[@]}  )
+        else
+          libList=${COMPS[@]}
+        fi
+      # footprints
+      elif [[ $currHead =~ $F_LIB_DIR_HEAD ]]; then
+        if $PREPEND; then
+          libList=( ${FOOTS[@]} ${libList[@]} )
+        elif $APPEND; then
+          libList=( ${libList[@]} ${FOOTS[@]}  )
+        else
+          libList=${FOOTS[@]}
+        fi
+      fi
+
+      # loop and fix the libs
+      local libNum=1
+      for li in ${libList[@]}; do
+        local output="$LIB_MATCH$libNum=$li"
+        echov -e "out:\t$output"
+        echo $output >> $P.temp
+        let libNum++
+      done
+      echov "all libraries outputted"
+    fi
+  fi
+}
+
+function cleanup () {
+  mv -f $P.temp $P
 }
 
 # debugging on/off
-function echo () {
-  command echo $@ #>> /dev/null
+function echov () {
+  if $VERBOSE; then
+    command echo $@
+  fi
 }
+
 # start the script
 go $@
