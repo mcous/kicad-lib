@@ -95,28 +95,21 @@ function help () {
 # check the input to make sure that any options are correct and the file(s) exists
 function checkinput () {
   local inv=false
-
   local shortMatch="^-[a-z]+$"
-  local chainedShortMatch="^-[a-z]+$"
   local longMatch="^-{2}[a-z][a-z]+$"
   local proMatch="[a-z]+\.pro$"
 
-  for ARG in "$@"
-  do
+  for ARG in "$@"; do
     local valid=false
     # check if its a short flag
-    if [[ $ARG =~ $shortMatch ]]
-      then
+    if [[ $ARG =~ $shortMatch ]]; then
       # break up the options if needed
       local len=${#ARG}
-      while [ $len -gt 1 ]
-      do
+      while [ $len -gt 1 ]; do
         # check if it's a valid short flag
         local flag=${ARG:($len-1):1}
-        for VALIDOPT in "${SHORT_FLAGS[@]}"
-        do
-          if [ "$flag" = "$VALIDOPT" ]
-            then
+        for VALIDOPT in "${SHORT_FLAGS[@]}"; do
+          if [ "$flag" = "$VALIDOPT" ]; then
             valid=true
             OPTS+=("$VALIDOPT")
             break
@@ -125,36 +118,29 @@ function checkinput () {
         let "len -= 1"
       done
       # if invalid input
-      if ! $valid
-        then
+      if ! $valid; then
         echo "ERROR: $ARG is not a valid option"
       fi
 
     # else check of its a long flag
-    elif [[ $ARG =~ $longMatch ]]
-      then
+    elif [[ $ARG =~ $longMatch ]]; then
       # check if it's a valid long flag
       local flag=${ARG:2}
-      for VALIDOPT in "${LONG_FLAGS[@]}"
-      do
-        if [ "$flag" = "$VALIDOPT" ]
-          then
+      for VALIDOPT in "${LONG_FLAGS[@]}"; do
+        if [ "$flag" = "$VALIDOPT" ]; then
           valid=true
           OPTS+=("$VALIDOPT")
           break
         fi
       done
-      if ! $valid
-        then
+      if ! $valid; then
         echo "ERROR: $ARG is not a valid option"
       fi
 
     # else check if its a project file
-    elif [[ $ARG =~ $proMatch ]]
-      then
+    elif [[ $ARG =~ $proMatch ]]; then
       # check if file exists
-      if [ -e $ARG ]
-        then
+      if [ -e $ARG ]; then
         PRJ+=( $ARG )
         valid=true
       else
@@ -166,15 +152,14 @@ function checkinput () {
       echo "ERROR: $ARG is not valid input"
     fi
 
-    if ! $valid
-      then
+    # throw the invalid flag
+    if ! $valid; then
       inv=true
     fi
   done
 
-  # if there were errors
-  if $inv
-    then
+  # if there were errors, help and exit
+  if $inv; then
     help
   fi
 }
@@ -182,73 +167,59 @@ function checkinput () {
 # check for conflicting options and set script flags
 function checkopts () {
   # set the flags
-  for OP in ${OPTS[@]}
-  do
-    if [ "${OP:0:1}" = "h" ]
-      then
+  for OP in ${OPTS[@]}; do
+    if [ "${OP:0:1}" = "h" ]; then
       help
-    elif [ "${OP:0:1}" = "a" ]
-      then
+    elif [ "${OP:0:1}" = "a" ]; then
       APPEND=true
       REPLACE=false
-    elif [ "${OP:0:1}" = "p" ]
-      then
+    elif [ "${OP:0:1}" = "p" ]; then
       PREPEND=true
       REPLACE=false
-    elif [ "${OP:0:1}" = "c" ]
-      then
+    elif [ "${OP:0:1}" = "c" ]; then
       FOOTPRINTS=false
-    elif [ "${OP:0:1}" = "f" ]
-      then
+    elif [ "${OP:0:1}" = "f" ]; then
       COMPONENTS=false
-    elif [ "${OP:0:1}" = "v" ]
-      then
+    elif [ "${OP:0:1}" = "v" ]; then
       VERBOSE=true
     fi
   done
 
   local inv=false
   # make sure there are no conflicting flags
-  if $APPEND && $PREPEND
-    then
+  if $APPEND && $PREPEND; then
     echo "ERROR: append and prepend options are mutually exclusive"
     inv=true
   fi
-  if ! $FOOTPRINTS && ! $COMPONENTS
-    then
+  if ! $FOOTPRINTS && ! $COMPONENTS; then
     echo "ERROR: components-only and footprints-only options are mutually exclusive"
     inv=true
   fi
   # also make sure there are project files
-  if [ ! "${PRJ[0]}" ]
-    then
-    echo "ERROR: no kicad project file entered"
+  if [ ! "${PRJ[0]}" ]; then
+    echo "ERROR: no kicad project files entered"
     inv=true
   fi
 
-  if $inv
-    then
+  # if invalid flag, help and exit
+  if $inv; then
     help
   fi
 }
 
 function buildLists () {
-  if $COMPONENTS
-    then
+  if $COMPONENTS; then
     local dir="$SCRIPT_DIR/components/*.lib"
-    for C in $dir
-    do
+    for C in $dir; do
       local f=`basename $C`
       COMPS+=(${f%%.lib})
     done
     echov "component libraries: ${COMPS[@]}"
   fi
 
-  if $FOOTPRINTS
-    then
+  if $FOOTPRINTS; then
     local dir="$SCRIPT_DIR/footprints/*.mod"
-    for F in $dir
-    do
+    for F in $dir; do
       local f=`basename $F`
       FOOTS+=(${f%%.mod})
     done
@@ -294,20 +265,21 @@ function run () {
 
 # reads in the project file line by line and outputs to $P.temp accordingly
 function readAndBuild () {
-  # variables
+  # i/o
   local currHead=""
   local outLine=""
+  # input matching
   local match=()
-  local lookingForEnd=false
   local currMatch=""
-  local libCount
+  # library variables
+  local lookingForEnd=false
   local libList=()
 
   # read the file into an array - cupper limit is 500 just in case
-  while read currLine && (( inRead < 500 ))
-  do
+  while read currLine && (( inRead < 500 )); do
     echov -e "in:\t$currLine"
     outLine=$currLine
+    # default is write to output
     local write=true
 
     # check for end of section
@@ -370,7 +342,6 @@ function readAndBuild () {
         match=( ${C_LIB_MATCH[@]} )
         echov "now looking for: ${match[@]}"
         libList=()
-        libCount=0
       elif [[ $currHead =~ $C_DIR_HEAD ]] && $COMPONENTS; then
         echov "component directory heading found"
         match=( ${C_DIR_MATCH[@]} )
@@ -380,7 +351,6 @@ function readAndBuild () {
         match=( ${F_LIB_DIR_MATCH[@]} )
         echov "now looking for: ${match[@]}"
         libList=()
-        libCount=0
       else
         match=()
       fi
@@ -424,7 +394,6 @@ function readAndBuild () {
         write=false
         if ! $REPLACE; then
           libList+=( `echo $currLine | grep -o '[^=]*$'` )
-          let libCount++
         fi
       fi
 
