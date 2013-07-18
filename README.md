@@ -1,9 +1,12 @@
 # kicad-lib
-my component and footprint library for the [kicad pcb design suite](http://www.kicad-pcb.org/)
+My component and footprint library for the [KiCad PCB design suite](http://www.kicad-pcb.org/)
 
-## How to
+## Quick start
   1. Clone to wherever
-  2. Add the components folder in your eeschema library preferences
-  3. Add the .lib files for the components you need in the same preference page
-  4. Add the footprints folder in your pcbnew library preferences
-  5. Add the .mod files for the footprints you need in the same preference page
+  2. Close KiCad
+  3. Put the new libraries in a project:
+    * `$ ./setlibs path/to/project.pro` to completely replace the libraries in a project
+    * `$ ./setlibs --append path/to/project.pro` to append the libraries to a project (new libraries will have lower precedence than existing libraries)
+    * `$ ./setlibs --prepend path/to/project.pro` to prepend the libraries (new libraries will have higher precedence)
+    * `$ ./setlibs --help` to see your other options
+  4. Re-open KiCad and enjoy the new libraries
