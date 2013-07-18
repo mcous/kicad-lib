@@ -4,17 +4,21 @@
 # http://www.github.com/mcous/kicad-lib
 # this script file released into the public domain
 
-# setlibs - adds or replaces the libraries of a kicad project with these libraries
-#
-#   usage: setlibs [flags] /path/to/project.pro [/paths/to/more/projects.pro]
-#
-#   flags: 
-# TODO:-a, --append      = append libraries rather than replacing them
-# TODO:-b, --before      = if appending, append new libraries before old ones (does not apply to power library)
-#     -c, --components  = only do component files
-#     -f, --footprints  = only do footprint files
+# setlibs - adds or replaces the libraries of a kicad project with the libraries from github.com/mcous/kicad-lib
+#   default behavior: removes all component and footprint libraries in project file and replaces them with new libraries (excepting the power component library)
+#   usage: ./setlibs [flags] [paths to .pro files]
+#   examples:
+#     replace all libraries in two projects:
+#       ./setlibs path/to/project1.pro path/to/project2.pro
+#     append only the footprint libraries to a project
+#       ./setlibs --append --footprints path/to/project.pro
+#   flags:
+#     -a, --append      = append new libraries rather than replacing them
+#     -p, --prepend     = prepend new libraries rather than replacing them
+#     -c, --components  = only add component files
+#     -f, --footprints  = only add footprint files
+#     -v, --verbose     = verbose output
 #     -h, --help        = display this little summary
-# TODO:-v, --version     = display version number of the library
 
 # constants
 # kicad project file options
@@ -71,8 +75,8 @@ function getScriptLoc () {
 function help () {
   echo ""
   echo "setlibs - adds or replaces the libraries of a kicad project with the libraries from github.com/mcous/kicad-lib"
-  echo "  default behavior: removes all component and footprint libraries in project file and replaces them with new libraries"
-  echo "  usage: ./setlibs [flags] [paths to .pro files]"
+  echo "  default behavior: removes all component and footprint libraries in project file and replaces them with new libraries (excepting the power component library)"
+  echo "  usage: ./setlibs [flags] [paths/to/project/files]"
   echo "  examples:"
   echo "    replace all libraries in two projects:"
   echo "      ./setlibs path/to/project1.pro path/to/project2.pro"
@@ -80,9 +84,10 @@ function help () {
   echo "      ./setlibs --append --footprints path/to/project.pro"
   echo "  flags: "
   echo "    -a, --append      = append new libraries rather than replacing them"
-  echo "    -p, --prepend     = prepend new libraries (will keep power component library at top)" # reconsider this
-  echo "    -c, --components  = only do component files"
-  echo "    -f, --footprints  = only do footprint files"
+  echo "    -p, --prepend     = prepend new libraries rather than replacing them"
+  echo "    -c, --components  = only add component files"
+  echo "    -f, --footprints  = only add footprint files"
+  echo "    -v, --verbose     = verbose output"
   echo "    -h, --help        = display this little summary"
   exit 0
 }
@@ -150,7 +155,7 @@ function checkinput () {
       # check if file exists
       if [ -e $ARG ]
         then
-        PRJ+=("$ARG")
+        PRJ+=( $ARG )
         valid=true
       else
         echo "ERROR: $ARG does not exist"
