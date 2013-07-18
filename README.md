@@ -3,8 +3,8 @@ My component and footprint library for the [KiCad PCB design suite](http://www.k
 
 ## Quick start
   1. Clone to wherever
-  2. Close KiCad
-  3. Put the new libraries in a project:
+  2. `$ chmod +x setlibs`
+  3. Close KiCad and put the new libraries in a project:
     * `$ ./setlibs path/to/project.pro` to completely replace the libraries in a project
     * `$ ./setlibs --append path/to/project.pro` to append the libraries to a project (new libraries will have lower precedence than existing libraries)
     * `$ ./setlibs --prepend path/to/project.pro` to prepend the libraries (new libraries will have higher precedence)
