@@ -33,14 +33,14 @@ readonly F_LIB_DIR_MATCH=( $LIB_MATCH $DIR_MATCH )
 readonly SHORT_FLAGS=("a" "p" "c" "f" "h" "v")
 readonly LONG_FLAGS=("append" "prepend" "components" "footprints" "help" "verbose")
 
-
-
 # script flags
 REPLACE=true
 APPEND=false
 PREPEND=false
 COMPONENTS=true
 FOOTPRINTS=true
+# debugging
+VERBOSE=false
 
 # current program options
 OPTS=()
@@ -49,9 +49,6 @@ PRJ=()
 # library lists
 COMPS=()
 FOOTS=()
-
-# debugging
-VERBOSE=false
 
 # functions
 function go () {
@@ -322,7 +319,7 @@ function readAndBuild () {
             libList=( ${libList[@]} ${COMPS[@]}  )
             echov "appending component libraries" 
           else
-            libList=${COMPS[@]}
+            libList=( ${COMPS[@]} "power" )
             echov "replacing component libraries"
           fi
         # footprints
@@ -334,7 +331,7 @@ function readAndBuild () {
             libList=( ${libList[@]} ${FOOTS[@]}  )
             echov "appending footprint libraries"
           else
-            libList=${FOOTS[@]}
+            libList=( ${FOOTS[@]} )
             echov "replacing footprint libraries"
           fi
         fi
@@ -363,17 +360,17 @@ function readAndBuild () {
     elif [[ $currLine =~ $HEAD_MATCH ]]; then
       currHead=$currLine
       # set matches accordingly
-      if [[ $currHead =~ $C_LIB_HEAD ]]; then
+      if [[ $currHead =~ $C_LIB_HEAD ]] && $COMPONENTS; then
         echov "component library heading found"
         match=( ${C_LIB_MATCH[@]} )
         echov "now looking for: ${match[@]}"
         libList=()
         libCount=0
-      elif [[ $currHead =~ $C_DIR_HEAD ]]; then
+      elif [[ $currHead =~ $C_DIR_HEAD ]] && $COMPONENTS; then
         echov "component directory heading found"
         match=( ${C_DIR_MATCH[@]} )
         echov "now looking for: ${match[@]}"
-      elif [[ $currHead =~ $F_LIB_DIR_HEAD ]]; then
+      elif [[ $currHead =~ $F_LIB_DIR_HEAD ]] && $FOOTPRINTS; then
         echov "footprint library/directory heading found"
         match=( ${F_LIB_DIR_MATCH[@]} )
         echov "now looking for: ${match[@]}"
@@ -395,7 +392,7 @@ function readAndBuild () {
       done
 
       # directory line match
-      if [[ $currMatch =~ $DIR_MATCH ]]; then
+      if [[ $currMatch =~ $DIR_MATCH ]]; then 
         if [[ $currHead =~ $C_DIR_HEAD ]]; then
           local d="$SCRIPT_DIR/components"
         elif [[ $currHead =~ $F_LIB_DIR_HEAD ]]; then
@@ -404,8 +401,9 @@ function readAndBuild () {
         # if replace or directory line is empty, just put in the directory
         local emptyLine="=$"
         if $REPLACE || [[ $currLine =~ $emptyLine ]]; then
-          echov "replacing directory"
-          outLine="$DIR_MATCH=$d"
+          
+            echov "replacing directory"
+            outLine="$DIR_MATCH=$d"
         # if not replace, then add it to the end with a semicolon
         else
           echov "appending directory"
