@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:27:33 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:30:24 PM CDT
 #encoding utf-8
 #
 # C
@@ -9,7 +9,8 @@ F1 "C" -100 -125 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
 $FPLIST
- *0603*_cap
+ 0603(1608m)
+ 0402(1005m)
 $ENDFPLIST
 DRAW
 P 2 0 1 0  -50 0  -25 0 N
@@ -28,10 +29,6 @@ F0 "C" -55 95 60 H V C CNN
 F1 "C_POL" 10 -105 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
-$FPLIST
- *0603*_cap
- *2413*_cap
-$ENDFPLIST
 DRAW
 A 100 0 90 1463 -1463 0 1 10 N 25 50 25 -50
 P 2 0 1 0  -50 0  -25 0 N
