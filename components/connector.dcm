@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 03:23:43 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 05:19:11 PM CDT
 #
 $CMP 12PIN_HEADER
 D 12 pin connection
@@ -18,6 +18,12 @@ $ENDCMP
 $CMP LIPO
 D Lithium Polymer Battery Jack
 K lipo li lithium-ion batter rechargable
+$ENDCMP
+#
+$CMP MICROUSB
+D MicroUSB port
+K USB MicroUSB
+F http://www.sparkfun.com/datasheets/Prototyping/Micro-USB.pdf
 $ENDCMP
 #
 #End Doc Library
