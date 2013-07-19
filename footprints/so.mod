@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  Fri 19 Jul 2013 03:58:46 PM CDT
+PCBNEW-LibModule-V1  Fri 19 Jul 2013 04:11:09 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
@@ -13,7 +13,7 @@ SOT666
 TSSOP16
 $EndINDEX
 $MODULE HTSSOP28
-Po 0 0 0 15 51899E6A 00000000 ~~
+Po 0 0 0 15 51E9AB5E 00000000 ~~
 Li HTSSOP28
 Sc 0
 AR 
@@ -21,8 +21,8 @@ Op 0 0 0
 .SolderPaste -0.0254
 At SMD
 T0 0 6.49986 1.524 1.524 0 0.3048 N I 21 N "HTSSOP28"
-T1 -1.24968 -5.99948 1.524 1.524 0 0.3048 N I 21 N "VAL**"
-DC -1.00076 -4.0005 -1.00076 -4.50088 0.381 21
+T1 0.5 -6.5 1.524 1.524 0 0.3048 N I 21 N "VAL**"
+DC -3.04076 -5.7705 -3.04076 -6.27088 0.381 21
 DS -1.99898 4.84886 -2.19964 4.84886 0.381 21
 DS -2.19964 4.84886 -2.19964 -4.84886 0.381 21
 DS -1.99898 4.84886 2.19964 4.84886 0.381 21
@@ -227,164 +227,17 @@ $EndPAD
 $PAD
 Sh "0" R 3.40106 9.70026 0 0 0
 Dr 0 0 0
-At SMD N 00608000
+At SMD N 00808000
 Ne 0 ""
 Po 0 0
 $EndPAD
 $PAD
 Sh "0" R 2.6 6.6 0 0 0
 Dr 0 0 0
-At SMD N 00880000
+At SMD N 00080000
 Ne 0 ""
 Po 0 0
 .SolderPaste -0.09906
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 0 0
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 1.3 0
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po -1.3 0
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 1.3 1.3
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 0 1.3
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po -1.3 1.3
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po -1.3 2.6
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 0 2.6
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 1.3 2.6
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po -1.3 3.9
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 0 3.9
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 1.3 3.9
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po -1.3 -1.3
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 0 -1.3
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 1.3 -1.3
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po -1.3 -2.6
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 0 -2.6
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 1.3 -2.7
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po -1.3 -3.9
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 0 -3.9
-$EndPAD
-$PAD
-Sh "0" C 0.3 0.3 0 0 0
-Dr 0.3 0 0
-At STD N 0000FFFF
-Ne 0 ""
-Po 1.3 -3.9
 $EndPAD
 $EndMODULE HTSSOP28
 $MODULE MSOP10
