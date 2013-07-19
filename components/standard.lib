@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:30:24 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:31:57 PM CDT
 #encoding utf-8
 #
 # C
@@ -11,6 +11,7 @@ F3 "~" 0 0 60 H V C CNN
 $FPLIST
  0603(1608m)
  0402(1005m)
+ 1206(3216m)
 $ENDFPLIST
 DRAW
 P 2 0 1 0  -50 0  -25 0 N
