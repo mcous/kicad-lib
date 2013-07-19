@@ -1,8 +1,9 @@
-PCBNEW-LibModule-V1  Wed 22 May 2013 12:27:29 PM CDT
+PCBNEW-LibModule-V1  Fri 19 Jul 2013 03:58:46 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
 HTSSOP28
+MSOP10
 MSOP8
 SOIC16
 SOT23-5
@@ -386,6 +387,97 @@ Ne 0 ""
 Po 1.3 -3.9
 $EndPAD
 $EndMODULE HTSSOP28
+$MODULE MSOP10
+Po 0 0 0 15 51E9A883 00000000 ~~
+Li MSOP10
+Sc 0
+AR 
+Op 0 0 0
+.SolderMask 0.1
+.SolderPaste -0.025
+.LocalClearance 0.15
+At SMD
+T0 0 2.5 1 1 0 0.15 N I 21 N "MSOP10"
+T1 0 -2.5 1 1 0 0.15 N I 21 N "VAL**"
+DS -1.5 -0.5 -1.5 -0.7 0.15 21
+DS -1.5 -0.7 -0.7 -1.5 0.15 21
+DS -0.7 -1.5 -0.5 -1.5 0.15 21
+DS -1.5 1.5 -1.5 -0.5 0.15 21
+DS -1.5 1.5 1.5 1.5 0.15 21
+DS 1.5 1.5 1.5 -1.5 0.15 21
+DS 1.5 -1.5 -0.5 -1.5 0.15 21
+DC -1.5 -1.5 -1.3 -1.5 0.15 21
+$PAD
+Sh "1" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.2 -1
+$EndPAD
+$PAD
+Sh "2" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.2 -0.5
+$EndPAD
+$PAD
+Sh "3" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.2 0
+$EndPAD
+$PAD
+Sh "4" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.2 0.5
+$EndPAD
+$PAD
+Sh "5" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.2 1
+$EndPAD
+$PAD
+Sh "6" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.2 1
+$EndPAD
+$PAD
+Sh "7" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.2 0.5
+$EndPAD
+$PAD
+Sh "8" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.2 0
+$EndPAD
+$PAD
+Sh "9" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.2 -0.5
+$EndPAD
+$PAD
+Sh "10" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.2 -1
+$EndPAD
+$EndMODULE MSOP10
 $MODULE MSOP8
 Po 0 0 0 15 519CFAB1 00000000 ~~
 Li MSOP8
