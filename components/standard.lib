@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:25:25 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:27:33 PM CDT
 #encoding utf-8
 #
 # C
@@ -72,8 +72,8 @@ F1 "LED" 0 -100 50 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
 $FPLIST
- 0603_led
- 0402_led
+ 0603(1608m)_led
+ 0402(1005m)_led
 $ENDFPLIST
 DRAW
 P 2 0 1 0  -50 50  -50 -50 N
