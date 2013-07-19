@@ -1,7 +1,8 @@
-PCBNEW-LibModule-V1  Fri 19 Jul 2013 04:11:09 PM CDT
+PCBNEW-LibModule-V1  Fri 19 Jul 2013 04:33:24 PM CDT
 # encoding utf-8
 Units mm
 $INDEX
+HTSSOP24
 HTSSOP28
 MSOP10
 MSOP8
@@ -12,6 +13,206 @@ SOT563
 SOT666
 TSSOP16
 $EndINDEX
+$MODULE HTSSOP24
+Po 0 0 0 15 51E9B092 00000000 ~~
+Li HTSSOP24
+Sc 0
+AR 
+Op 0 0 0
+.SolderMask 0.7
+.SolderPaste -0.025
+At SMD
+T0 0 6.49986 1.524 1.524 0 0.3048 N I 21 N "HTSSOP24"
+T1 0.5 -6.5 1.524 1.524 0 0.3048 N I 21 N "VAL**"
+DC -2.9 -4.6 -2.6 -4.3 0.381 21
+DS -2.4 -4.1 2.4 -4.1 0.381 21
+DS 2.4 -4.1 2.4 4.1 0.381 21
+DS 2.4 4.1 -2.4 4.1 0.381 21
+DS -2.4 4.1 -2.4 -4.1 0.381 21
+$PAD
+Sh "19" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -0.325
+$EndPAD
+$PAD
+Sh "20" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -0.975
+$EndPAD
+$PAD
+Sh "21" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -1.625
+$EndPAD
+$PAD
+Sh "22" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -2.275
+$EndPAD
+$PAD
+Sh "23" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -2.925
+$EndPAD
+$PAD
+Sh "24" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -3.575
+$EndPAD
+$PAD
+Sh "18" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 0.325
+$EndPAD
+$PAD
+Sh "17" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 0.975
+$EndPAD
+$PAD
+Sh "16" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 1.625
+$EndPAD
+$PAD
+Sh "15" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 2.275
+$EndPAD
+$PAD
+Sh "14" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 2.925
+$EndPAD
+$PAD
+Sh "13" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 3.575
+$EndPAD
+$PAD
+Sh "12" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 3.575
+$EndPAD
+$PAD
+Sh "11" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 2.925
+$EndPAD
+$PAD
+Sh "10" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 2.275
+$EndPAD
+$PAD
+Sh "9" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 1.625
+$EndPAD
+$PAD
+Sh "8" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 0.975
+$EndPAD
+$PAD
+Sh "7" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 0.325
+$EndPAD
+$PAD
+Sh "1" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -3.575
+$EndPAD
+$PAD
+Sh "2" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -2.925
+$EndPAD
+$PAD
+Sh "3" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -2.275
+$EndPAD
+$PAD
+Sh "4" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -1.625
+$EndPAD
+$PAD
+Sh "5" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -0.975
+$EndPAD
+$PAD
+Sh "6" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -0.325
+$EndPAD
+$PAD
+Sh "0" R 3.4 7.8 0 0 0
+Dr 0 0 0
+At SMD N 00608000
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "0" R 2.4 3.3 0 0 0
+Dr 0 0 0
+At SMD N 00880000
+Ne 0 ""
+Po 0 0
+.SolderPaste -0.09906
+$EndPAD
+$EndMODULE HTSSOP24
 $MODULE HTSSOP28
 Po 0 0 0 15 51E9AB5E 00000000 ~~
 Li HTSSOP28
