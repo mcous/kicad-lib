@@ -1,4 +1,10 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 12 Jul 2013 12:23:51 AM CDT
+EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 02:09:39 PM CDT
+#
+$CMP CC_ISP
+D CC Debugger ISP Header
+K ISP cc debugger
+F http://www.ti.com/lit/ug/swru197e/swru197e.pdf
+$ENDCMP
 #
 $CMP DRV8834_SOP
 D Dual Bridge 1.5A - 2.2A Peak Stepper Driver with Step/Dir Input
