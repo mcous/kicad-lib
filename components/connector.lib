@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 05:19:11 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 05:37:16 PM CDT
 #encoding utf-8
 #
 # 12PIN_HEADER
@@ -78,6 +78,9 @@ F0 "BT" -50 100 60 H V C CNN
 F1 "LIPO" 50 -120 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
+$FPLIST
+ JST_PH_2-pin
+$ENDFPLIST
 DRAW
 S -150 50 150 -50 0 1 0 f
 P 2 0 1 0  -30 30  -30 -30 N
