@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Wed 08 May 2013 06:03:33 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 01:47:43 PM CDT
 #
 $CMP 12PIN_HEADER
 D 12 pin connection
@@ -8,6 +8,11 @@ $ENDCMP
 $CMP 8P8C_CUSTOM
 D 8P8C (RJ-45) jack for custom applications
 K 8P8C RJ45 J-45 ethernet cat5 cat6
+$ENDCMP
+#
+$CMP LIPO
+D Lithium Polymer Battery Jack
+K lipo li lithium-ion batter rechargable
 $ENDCMP
 #
 #End Doc Library
