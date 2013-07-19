@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 02:13:51 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 02:41:41 PM CDT
 #encoding utf-8
 #
 # ATMEGA328P_TQFP
@@ -51,8 +51,8 @@ ENDDEF
 #
 # AVR_ISP
 #
-DEF AVR_ISP J 0 40 Y Y 1 F N
-F0 "J" -200 250 60 H V C CNN
+DEF AVR_ISP P 0 40 Y Y 1 F N
+F0 "P" -200 250 60 H V C CNN
 F1 "AVR_ISP" 50 -250 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
