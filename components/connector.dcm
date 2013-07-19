@@ -1,6 +1,11 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 01:47:43 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 02:40:33 PM CDT
 #
 $CMP 12PIN_HEADER
+D 12 pin connection
+K header 12 debug
+$ENDCMP
+#
+$CMP 4PIN_HEADER
 D 12 pin connection
 K header 12 debug
 $ENDCMP
