@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 12 Jul 2013 12:13:07 AM CDT
+EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 11:10:47 AM CDT
 #
 $CMP C
 D Non-polarized Capacitor
@@ -18,6 +18,11 @@ $ENDCMP
 $CMP LED
 D Light Emitting Diode
 K LED
+$ENDCMP
+#
+$CMP POT
+D Potentiometer
+K pot trimpot variable resistor
 $ENDCMP
 #
 $CMP PTC
