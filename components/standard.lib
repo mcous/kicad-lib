@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:36:42 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:39:32 PM CDT
 #encoding utf-8
 #
 # C
@@ -225,7 +225,7 @@ F1 "SPST" 0 -95 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
 $FPLIST
- SPST
+ SPST_*
 $ENDFPLIST
 DRAW
 C -20 0 10 0 1 0 N
