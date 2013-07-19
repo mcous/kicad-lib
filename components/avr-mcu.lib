@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:19:51 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 03:37:30 PM CDT
 #encoding utf-8
 #
 # ATMEGA328P_TQFP
@@ -56,7 +56,7 @@ F1 "AVR_ISP" 50 -250 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
 $FPLIST
- 2x3
+ 2x3-array
 $ENDFPLIST
 DRAW
 S -250 150 250 -150 0 1 0 f
