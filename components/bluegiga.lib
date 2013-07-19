@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 01:05:22 PM CDT
+EESchema-LIBRARY Version 2.3  Date: Fri 19 Jul 2013 05:28:59 PM CDT
 #encoding utf-8
 #
 # BLE112-A
@@ -9,7 +9,7 @@ F1 "BLE112-A" 250 -1050 60 H V C CNN
 F2 "~" -100 -150 60 H V C CNN
 F3 "~" -100 -150 60 H V C CNN
 $FPLIST
- BLE112
+ BLE112-A
 $ENDFPLIST
 DRAW
 S -500 950 500 -950 0 1 0 f
