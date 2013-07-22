@@ -1,0 +1,43 @@
+PCBNEW-LibModule-V1  Fri 19 Jul 2013 06:00:32 PM CDT
+# encoding utf-8
+Units mm
+$INDEX
+BOURNS-3362P_pot
+$EndINDEX
+$MODULE BOURNS-3362P_pot
+Po 0 0 0 15 51E9C4E9 00000000 ~~
+Li BOURNS-3362P_pot
+Sc 0
+AR 
+Op 0 0 0
+T0 0 5.08 1 1 0 0.15 N I 21 N "BOURNS-3362P_pot"
+T1 0 -5.08 1 1 0 0.15 N I 21 N "VAL**"
+DS -3.5 1.5 -3.5 -3.5 0.381 21
+DS -1.5 3.5 3.5 3.5 0.381 21
+DS -3.5 1.5 -1.5 3.5 0.381 21
+DC -3 3 -3 3.5 0.381 21
+DS -3.5 -3.5 3.5 -3.5 0.381 21
+DS 3.5 -3.5 3.5 3.5 0.381 21
+$PAD
+Sh "1" R 1.4 1.4 0 0 0
+Dr 0.7 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2.54 0
+$EndPAD
+$PAD
+Sh "3" C 1.4 1.4 0 0 0
+Dr 0.7 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2.54 0
+$EndPAD
+$PAD
+Sh "2" C 1.4 1.4 0 0 0
+Dr 0.7 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 -2.54
+$EndPAD
+$EndMODULE BOURNS-3362P_pot
+$EndLIBRARY

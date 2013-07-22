@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 03:33:07 PM CDT
+#
+$CMP MIC5205
+D MIC5205 150mA Low-Noise LDO Regulator
+F http://www.micrel.com/_PDF/mic5205.pdf
+$ENDCMP
+#
+#End Doc Library
