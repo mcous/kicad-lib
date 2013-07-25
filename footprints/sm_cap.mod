@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  6/28/2013 6:46:42 PM
+PCBNEW-LibModule-V1  7/23/2013 9:39:20 AM
 # encoding utf-8
 Units mm
 $INDEX
@@ -69,13 +69,13 @@ Po 2.6 0
 $EndPAD
 $EndMODULE 2413(6032m)_cap
 $MODULE CYLIN_CAP
-Po 0 0 0 15 51CE203E 00000000 ~~
+Po 0 0 0 15 51EE94AA 00000000 ~~
 Li CYLIN_CAP
 Sc 0
 AR 
 Op 0 0 0
-T0 0 0 1 1 0 0.15 N V 21 N "CYLIN_CAP"
-T1 0 0 1 1 0 0.15 N V 21 N "VAL**"
+T0 -7.3 5.6 1 1 0 0.15 N V 21 N "CYLIN_CAP"
+T1 -6.6 -5 1 1 0 0.15 N V 21 N "VAL**"
 DS -4.2 -4.9 -3.5 -4.9 0.15 21
 DS -3.7 3.8 -4.3 3.8 0.15 21
 DS -4 3.5 -4 4.1 0.15 21
@@ -86,18 +86,18 @@ DS 2.4 4.2 4.2 2.4 0.15 21
 DS -2.4 4.2 -4.2 2.4 0.15 21
 DS -4.2 -4.2 4.2 -4.2 0.15 21
 $PAD
-Sh "1" R 0.9 3.4 0 0 0
+Sh "2" R 2 4 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po 0 3.2
+Po 0 -3.55
 $EndPAD
 $PAD
-Sh "2" R 0.9 3.4 0 0 0
+Sh "1" R 2 4 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po 0 -3.2
+Po 0 3.55
 $EndPAD
 $EndMODULE CYLIN_CAP
 $EndLIBRARY
