@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 06:02:58 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: 8/23/2013 10:48:30 AM
 #
 $CMP C
 D Non-polarized Capacitor
@@ -13,6 +13,11 @@ $ENDCMP
 $CMP CRYSTAL
 D Crystal
 K chrystal xtal oscillator
+$ENDCMP
+#
+$CMP L
+D Resistor
+K R Resistor
 $ENDCMP
 #
 $CMP LED
