@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 8/23/2013 5:11:39 PM
+EESchema-DOCLIB  Version 2.0  Date: 8/23/2013 5:58:42 PM
 #
 $CMP C
 D Non-polarized Capacitor
@@ -23,6 +23,11 @@ $ENDCMP
 $CMP LED
 D Light Emitting Diode
 K LED
+$ENDCMP
+#
+$CMP LED_RGB-CA
+D Common-anode RGB LED
+K RGB CA LED
 $ENDCMP
 #
 $CMP POT
