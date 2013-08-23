@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 8/23/2013 10:48:30 AM
+EESchema-DOCLIB  Version 2.0  Date: 8/23/2013 5:11:39 PM
 #
 $CMP C
 D Non-polarized Capacitor
@@ -60,6 +60,10 @@ $ENDCMP
 $CMP SPST_X8
 D 8-position SPST switch
 K DIP switch SPST
+$ENDCMP
+#
+$CMP TEST
+D Test point
 $ENDCMP
 #
 $CMP VCC_REG
