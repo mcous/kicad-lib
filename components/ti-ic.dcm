@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 8/22/2013 3:04:45 PM
+EESchema-DOCLIB  Version 2.0  Date: 8/23/2013 4:02:31 PM
 #
 $CMP CC_ISP
 D CC Debugger ISP Header
@@ -16,6 +16,17 @@ $CMP TLC5940_SOP
 D TI TLC5940 16-channel LED Driver with Dot-correction and Greyscale PWM Brightness control
 K LED Driver 16 PWM
 F http://www.ti.com/lit/ds/symlink/tlc5940.pdf
+$ENDCMP
+#
+$CMP TLC5951_QFN
+D TLC5951 Constant-current sink 24-LED PWM driver
+F http://www.ti.com/lit/ds/sbvs127b/sbvs127b.pdf
+$ENDCMP
+#
+$CMP TMP006
+D TMP006 IR Thermopile Sensor in Chip-Scale Package
+K temp temperature infrared
+F http://www.ti.com/lit/ds/symlink/tmp006.pdf
 $ENDCMP
 #
 #End Doc Library
