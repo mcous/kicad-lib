@@ -1,10 +1,11 @@
-PCBNEW-LibModule-V1  8/28/2013 12:59:26 PM
+PCBNEW-LibModule-V1  8/28/2013 2:27:28 PM
 # encoding utf-8
 Units mm
 $INDEX
 TDFN8_ep
 TQFN16_ep
 TQFN24_ep
+UFQFN48_ep
 VQFN20_ep
 VQFN40_ep
 $EndINDEX
@@ -640,6 +641,427 @@ Po 0 0
 .SolderPaste -0.001
 $EndPAD
 $EndMODULE TQFN24_ep
+$MODULE UFQFN48_ep
+Po 0 0 0 15 521E4F1A 00000000 ~~
+Li UFQFN48_ep
+Sc 0
+AR 
+Op 0 0 0
+T0 0 5.2 1 1 0 0.15 N I 21 N "UFQFN48_ep"
+T1 0 6.7 1 1 0 0.15 N I 21 N "VAL**"
+DC -4.6 -2.75 -4.4 -2.75 0.2032 21
+DS -3.5 3.5 -3.5 -3.2 0.2032 21
+DS -3.2 -3.5 3.5 -3.5 0.2032 21
+DS -3.5 -3.2 -3.2 -3.5 0.2032 21
+DS -3.5 3.5 3.5 3.5 0.2032 21
+DS 3.5 3.5 3.5 -3.5 0.2032 21
+$PAD
+Sh "1" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 -2.75
+$EndPAD
+$PAD
+Sh "2" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 -2.25
+$EndPAD
+$PAD
+Sh "3" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 -1.75
+$EndPAD
+$PAD
+Sh "4" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 -1.25
+$EndPAD
+$PAD
+Sh "5" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 -0.75
+$EndPAD
+$PAD
+Sh "6" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 -0.25
+$EndPAD
+$PAD
+Sh "7" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 0.25
+$EndPAD
+$PAD
+Sh "8" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 0.75
+$EndPAD
+$PAD
+Sh "9" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 1.25
+$EndPAD
+$PAD
+Sh "10" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 1.75
+$EndPAD
+$PAD
+Sh "11" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 2.25
+$EndPAD
+$PAD
+Sh "12" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.75 2.75
+$EndPAD
+$PAD
+Sh "13" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.75 3.75
+$EndPAD
+$PAD
+Sh "14" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.25 3.75
+$EndPAD
+$PAD
+Sh "15" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.75 3.75
+$EndPAD
+$PAD
+Sh "16" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.25 3.75
+$EndPAD
+$PAD
+Sh "17" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.75 3.75
+$EndPAD
+$PAD
+Sh "18" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.25 3.75
+$EndPAD
+$PAD
+Sh "19" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.25 3.75
+$EndPAD
+$PAD
+Sh "20" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.75 3.75
+$EndPAD
+$PAD
+Sh "21" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.25 3.75
+$EndPAD
+$PAD
+Sh "22" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.75 3.75
+$EndPAD
+$PAD
+Sh "23" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.25 3.75
+$EndPAD
+$PAD
+Sh "24" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.75 3.75
+$EndPAD
+$PAD
+Sh "25" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 2.75
+$EndPAD
+$PAD
+Sh "26" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 2.25
+$EndPAD
+$PAD
+Sh "27" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 1.75
+$EndPAD
+$PAD
+Sh "28" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 1.25
+$EndPAD
+$PAD
+Sh "29" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 0.75
+$EndPAD
+$PAD
+Sh "30" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 0.25
+$EndPAD
+$PAD
+Sh "31" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 -0.25
+$EndPAD
+$PAD
+Sh "32" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 -0.75
+$EndPAD
+$PAD
+Sh "33" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 -1.25
+$EndPAD
+$PAD
+Sh "34" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 -1.75
+$EndPAD
+$PAD
+Sh "35" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 -2.25
+$EndPAD
+$PAD
+Sh "36" R 0.55 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.75 -2.75
+$EndPAD
+$PAD
+Sh "37" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.75 -3.75
+$EndPAD
+$PAD
+Sh "38" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.25 -3.75
+$EndPAD
+$PAD
+Sh "39" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.75 -3.75
+$EndPAD
+$PAD
+Sh "40" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.25 -3.75
+$EndPAD
+$PAD
+Sh "41" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.75 -3.75
+$EndPAD
+$PAD
+Sh "42" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.25 -3.75
+$EndPAD
+$PAD
+Sh "43" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.25 -3.75
+$EndPAD
+$PAD
+Sh "44" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.75 -3.75
+$EndPAD
+$PAD
+Sh "45" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.25 -3.75
+$EndPAD
+$PAD
+Sh "46" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.75 -3.75
+$EndPAD
+$PAD
+Sh "47" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.25 -3.75
+$EndPAD
+$PAD
+Sh "48" R 0.55 0.3 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.75 -3.75
+$EndPAD
+$PAD
+Sh "0" R 5.6 5.6 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 1.8 0
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 1.8 1.8
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 0 1.8
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po -1.8 1.8
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po -1.8 0
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po -1.8 -1.8
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 0 -1.8
+$EndPAD
+$PAD
+Sh "0" R 1.4 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 1.8 -1.8
+$EndPAD
+$EndMODULE UFQFN48_ep
 $MODULE VQFN20_ep
 Po 0 0 0 15 521E39EA 00000000 ~~
 Li VQFN20_ep
