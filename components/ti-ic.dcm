@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 8/23/2013 6:02:08 PM
+EESchema-DOCLIB  Version 2.0  Date: 8/26/2013 3:20:01 PM
 #
 $CMP CC_ISP
 D CC Debugger ISP Header
@@ -27,6 +27,16 @@ $CMP TMP006
 D TMP006 IR Thermopile Sensor in Chip-Scale Package
 K temp temperature infrared
 F http://www.ti.com/lit/ds/symlink/tmp006.pdf
+$ENDCMP
+#
+$CMP TPD4S012
+D TPD4S012 ESD Solution for USB
+F http://www.ti.com/lit/ds/symlink/tpd4s012.pdf
+$ENDCMP
+#
+$CMP TPS763xx
+D TPS763xx 150mA Low-Noise LDO Regulator
+F http://www.ti.com/lit/ds/symlink/tps76330.pdf
 $ENDCMP
 #
 #End Doc Library
