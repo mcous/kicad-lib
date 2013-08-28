@@ -1,4 +1,10 @@
-EESchema-DOCLIB  Version 2.0  Date: 8/26/2013 3:20:01 PM
+EESchema-DOCLIB  Version 2.0  Date: 8/28/2013 12:40:49 PM
+#
+$CMP CC1101
+D CC1101 Low-Power Sub-1 GHz RF Transceiver
+K RFID DASH7 6LoWPAN
+F http://www.ti.com/lit/ds/symlink/cc1101.pdf
+$ENDCMP
 #
 $CMP CC_ISP
 D CC Debugger ISP Header
@@ -34,7 +40,7 @@ D TPD4S012 ESD Solution for USB
 F http://www.ti.com/lit/ds/symlink/tpd4s012.pdf
 $ENDCMP
 #
-$CMP TPS763xx
+$CMP TPS763XX
 D TPS763xx 150mA Low-Noise LDO Regulator
 F http://www.ti.com/lit/ds/symlink/tps76330.pdf
 $ENDCMP

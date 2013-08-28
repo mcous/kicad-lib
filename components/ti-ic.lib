@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 8/26/2013 3:20:01 PM
+EESchema-LIBRARY Version 2.3  Date: 8/28/2013 12:40:49 PM
 #encoding utf-8
 #
 # BQ2423X
@@ -38,7 +38,7 @@ F1 "CC1101" 300 -850 60 H V C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
 $FPLIST
- VQFN20
+ VQFN20_ep
 $ENDFPLIST
 DRAW
 S -500 750 500 -750 0 1 0 f
