@@ -1,10 +1,11 @@
-PCBNEW-LibModule-V1  Wed 22 May 2013 04:55:56 PM CDT
+PCBNEW-LibModule-V1  8/28/2013 12:35:12 PM
 # encoding utf-8
 Units mm
 $INDEX
 TDFN8_ep
 TQFN16_ep
 TQFN24_ep
+VQFN20_ep
 VQFN40_ep
 $EndINDEX
 $MODULE TDFN8_ep
@@ -639,6 +640,194 @@ Po 0 0
 .SolderPaste -0.001
 $EndPAD
 $EndMODULE TQFN24_ep
+$MODULE VQFN20_ep
+Po 0 0 0 15 521E34B8 00000000 ~~
+Li VQFN20_ep
+Sc 0
+AR 
+Op 0 0 0
+T0 0.1 3.7 1 1 0 0.15 N I 21 N "VQFN20_ep"
+T1 0.1 5.3 1 1 0 0.15 N I 21 N "VAL**"
+$PAD
+Sh "10" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2 3.95
+$EndPAD
+$PAD
+Sh "9" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1 3.95
+$EndPAD
+$PAD
+Sh "8" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0 3.95
+$EndPAD
+$PAD
+Sh "7" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.5 1.975
+$EndPAD
+$PAD
+Sh "6" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2 3.95
+$EndPAD
+$PAD
+Sh "20" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1 -1.975
+$EndPAD
+$PAD
+Sh "19" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.5 -1.975
+$EndPAD
+$PAD
+Sh "17" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0 -1.975
+$EndPAD
+$PAD
+Sh "17" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.5 -1.975
+$EndPAD
+$PAD
+Sh "16" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1 -1.975
+$EndPAD
+$PAD
+Sh "11" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.975 1
+$EndPAD
+$PAD
+Sh "12" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.975 0.5
+$EndPAD
+$PAD
+Sh "13" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.975 0
+$EndPAD
+$PAD
+Sh "14" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.975 -0.5
+$EndPAD
+$PAD
+Sh "15" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.975 -1
+$EndPAD
+$PAD
+Sh "1" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.975 -1
+$EndPAD
+$PAD
+Sh "2" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.975 -0.5
+$EndPAD
+$PAD
+Sh "3" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.975 0
+$EndPAD
+$PAD
+Sh "4" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.975 0.5
+$EndPAD
+$PAD
+Sh "5" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.975 1
+$EndPAD
+$PAD
+Sh "0" R 2.45 2.45 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "0" R 1 1 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po -0.65 0.65
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "0" R 1 1 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 0.65 0.65
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "0" R 1 1 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 0.65 -0.65
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "0" R 1 1 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po -0.65 -0.65
+.SolderPaste -0.001
+$EndPAD
+$EndMODULE VQFN20_ep
 $MODULE VQFN40_ep
 Po 0 0 0 15 519D3ED9 00000000 ~~
 Li VQFN40_ep
