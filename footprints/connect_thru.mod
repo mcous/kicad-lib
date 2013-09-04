@@ -1,12 +1,29 @@
-PCBNEW-LibModule-V1  Wed 22 May 2013 03:00:23 PM CDT
+PCBNEW-LibModule-V1  9/4/2013 5:28:20 PM
 # encoding utf-8
 Units mm
 $INDEX
+1x-pin
 1x2-array
 2x3-array
 2x5-array
 8P8C_thru
 $EndINDEX
+$MODULE 1x-pin
+Po 0 0 0 15 5227B3FA 00000000 ~~
+Li 1x-pin
+Sc 0
+AR 
+Op 0 0 0
+T0 0 2.9 0.762 0.762 0 0.1524 N I 21 N "1x-pin"
+T1 0 1.8 0.762 0.762 0 0.1524 N I 21 N "VAL**"
+$PAD
+Sh "1" C 1.7 1.7 0 0 0
+Dr 0.9 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 0 0
+$EndPAD
+$EndMODULE 1x-pin
 $MODULE 1x2-array
 Po 0 0 0 15 519D227F 00000000 ~~
 Li 1x2-array
