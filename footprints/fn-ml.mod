@@ -1,14 +1,75 @@
-PCBNEW-LibModule-V1  8/28/2013 2:45:31 PM
+PCBNEW-LibModule-V1  9/4/2013 5:31:20 PM
 # encoding utf-8
 Units mm
 $INDEX
+SON6
 TDFN8_ep
 TQFN16_ep
 TQFN24_ep
 UFQFN48_ep
+VQFN16_ep
 VQFN20_ep
 VQFN40_ep
 $EndINDEX
+$MODULE SON6
+Po 0 0 0 15 52279D7F 00000000 ~~
+Li SON6
+Sc 0
+AR 
+Op 0 0 0
+.SolderMask 0.05
+.SolderPaste -0.025
+At SMD
+T0 0 1.5 0.762 0.762 0 0.1524 N I 21 N "SON6"
+T1 0 2.6 0.762 0.762 0 0.1524 N I 21 N "VAL**"
+DC -1.2 -0.5 -1 -0.5 0.15 21
+DS -0.5 0.75 0.5 0.75 0.15 21
+DS 0.5 0.75 0.5 -0.75 0.15 21
+DS 0.5 -0.75 -0.5 -0.75 0.15 21
+DS -0.5 -0.75 -0.5 0.75 0.15 21
+$PAD
+Sh "1" R 0.52 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.385 -0.5
+$EndPAD
+$PAD
+Sh "2" R 0.52 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.385 0
+$EndPAD
+$PAD
+Sh "3" R 0.52 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.385 0.5
+$EndPAD
+$PAD
+Sh "4" R 0.52 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.385 0.5
+$EndPAD
+$PAD
+Sh "5" R 0.52 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.385 0
+$EndPAD
+$PAD
+Sh "6" R 0.52 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.385 -0.5
+$EndPAD
+$EndMODULE SON6
 $MODULE TDFN8_ep
 Po 0 0 0 15 519D3DA8 00000000 ~~
 Li TDFN8_ep
@@ -1063,8 +1124,177 @@ Ne 0 ""
 Po 1.8 -1.8
 $EndPAD
 $EndMODULE UFQFN48_ep
+$MODULE VQFN16_ep
+Po 0 0 0 15 52279943 00000000 ~~
+Li VQFN16_ep
+Sc 0
+AR 
+Op 0 0 0
+.SolderMask 0.07
+.SolderPaste -0.025
+At SMD
+T0 0 4 0.762 0.762 0 0.1524 N I 21 N "VQFN16_ep"
+T1 -1.25 2.9 0.762 0.762 0 0.1524 N I 21 N "VAL**"
+DC -2.4 -0.75 -2.25 -0.75 0.15 21
+DS -1.5 1.5 -1.5 -1.1 0.15 21
+DS -1.1 -1.5 1.5 -1.5 0.15 21
+DS -1.5 -1.1 -1.1 -1.5 0.15 21
+DS -1.5 1.5 1.5 1.5 0.15 21
+DS 1.5 1.5 1.5 -1.5 0.15 21
+$PAD
+Sh "1" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.475 -0.75
+$EndPAD
+$PAD
+Sh "2" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.475 -0.25
+$EndPAD
+$PAD
+Sh "3" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.475 0.25
+$EndPAD
+$PAD
+Sh "4" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.475 0.75
+$EndPAD
+$PAD
+Sh "5" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.75 1.475
+$EndPAD
+$PAD
+Sh "6" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.25 1.475
+$EndPAD
+$PAD
+Sh "7" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.25 1.475
+$EndPAD
+$PAD
+Sh "8" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.75 1.475
+$EndPAD
+$PAD
+Sh "9" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.475 0.75
+$EndPAD
+$PAD
+Sh "10" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.475 0.25
+$EndPAD
+$PAD
+Sh "11" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.475 -0.25
+$EndPAD
+$PAD
+Sh "12" O 0.85 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.475 -0.75
+$EndPAD
+$PAD
+Sh "13" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.75 -1.475
+$EndPAD
+$PAD
+Sh "14" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.25 -1.475
+$EndPAD
+$PAD
+Sh "15" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.25 -1.475
+$EndPAD
+$PAD
+Sh "16" O 0.85 0.28 0 0 900
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.75 -1.475
+$EndPAD
+$PAD
+Sh "0" R 1.7 1.7 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "0" R 0.7 0.7 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po -0.45 -0.45
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "0" R 0.7 0.7 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 0.45 -0.45
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "0" R 0.7 0.7 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po -0.45 0.45
+.SolderPaste -0.001
+$EndPAD
+$PAD
+Sh "0" R 0.7 0.7 0 0 0
+Dr 0 0 0
+At SMD N 00080000
+Ne 0 ""
+Po 0.45 0.45
+.SolderPaste -0.001
+$EndPAD
+$EndMODULE VQFN16_ep
 $MODULE VQFN20_ep
-Po 0 0 0 15 521E530F 00000000 ~~
+Po 0 0 0 15 5227B4B5 00000000 ~~
 Li VQFN20_ep
 Sc 0
 AR 
@@ -1128,7 +1358,7 @@ Ne 0 ""
 Po -0.5 -1.975
 $EndPAD
 $PAD
-Sh "17" O 0.85 0.28 0 0 900
+Sh "18" O 0.85 0.28 0 0 900
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
