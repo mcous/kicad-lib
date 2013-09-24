@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 8/23/2013 5:58:42 PM
+EESchema-DOCLIB  Version 2.0  Date: 9/24/2013 12:20:25 AM
 #
 $CMP C
 D Non-polarized Capacitor
@@ -15,6 +15,11 @@ D Crystal
 K chrystal xtal oscillator
 $ENDCMP
 #
+$CMP DCIN
+D DC Power Supply Input
+K DC VDC voltage
+$ENDCMP
+#
 $CMP L
 D Resistor
 K R Resistor
@@ -28,6 +33,11 @@ $ENDCMP
 $CMP LED_RGB-CA
 D Common-anode RGB LED
 K RGB CA LED
+$ENDCMP
+#
+$CMP LM1117
+D LM1117 1A Adjustable/Fixed Low Dropout Linear Regulator
+K LDO
 $ENDCMP
 #
 $CMP POT

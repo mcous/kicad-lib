@@ -1,4 +1,10 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 04:58:01 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: 9/24/2013 12:02:46 AM
+#
+$CMP DS3234
+D DS3234 SPI Bus Real-time Clock with Integrated Crystal
+K RTC
+F http://datasheets.maximintegrated.com/en/ds/DS3234.pdf
+$ENDCMP
 #
 $CMP MAX1555
 D MAX1555 1-Cell Lithium USB Battery Charger

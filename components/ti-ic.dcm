@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 9/19/2013 12:38:34 PM
+EESchema-DOCLIB  Version 2.0  Date: 9/24/2013 12:29:36 AM
 #
 $CMP CC1101
 D CC1101 Low-Power Sub-1 GHz RF Transceiver
@@ -27,6 +27,11 @@ $ENDCMP
 $CMP TLC5951_QFN
 D TLC5951 Constant-current sink 24-LED PWM driver
 F http://www.ti.com/lit/ds/sbvs127b/sbvs127b.pdf
+$ENDCMP
+#
+$CMP TLC5971_SOP
+D TLC5971 12-Channel, 16-Bit, Enhanced Spectrum, PWM, RGB, LED Driver with 3.3V Voltage Regulator
+F http://www.ti.com/lit/ds/symlink/tlc5971.pdf
 $ENDCMP
 #
 $CMP TMP006
