@@ -1,7 +1,12 @@
-EESchema-DOCLIB  Version 2.0  Date: 8/28/2013 2:47:31 PM
+EESchema-DOCLIB  Version 2.0  Date: 9/12/2013 2:51:47 PM
 #
 $CMP STM32L15XCC
 D STM32L15xCC Ultra-low-power 32-bit MCU ARM-based Cortex-M3
+F http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00048356.pdf
+$ENDCMP
+#
+$CMP STM32L15xRC_WLCSP
+D STM32L15xRx Ultra-low-power 32-bit MCU ARM-based Cortex-M3
 F http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00048356.pdf
 $ENDCMP
 #

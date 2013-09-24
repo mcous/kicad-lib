@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 9/4/2013 2:30:57 PM
+EESchema-DOCLIB  Version 2.0  Date: 9/19/2013 12:38:34 PM
 #
 $CMP CC1101
 D CC1101 Low-Power Sub-1 GHz RF Transceiver
@@ -38,6 +38,22 @@ $ENDCMP
 $CMP TPD4S012
 D TPD4S012 ESD Solution for USB
 F http://www.ti.com/lit/ds/symlink/tpd4s012.pdf
+$ENDCMP
+#
+$CMP TPS22910
+D TPS22910 Ultra-small Low-resistance Active-low Load Switch
+F http://www.ti.com/lit/ds/symlink/tps22910a.pdf
+$ENDCMP
+#
+$CMP TPS22930
+D TPS22930 Ultra-small Low-resistance Load Switch
+F http://www.ti.com/lit/ds/symlink/tps22930a.pdf
+$ENDCMP
+#
+$CMP TPS6102X
+D TPS6102x Synchronous Boost Converter
+K LiPo Buck Voltage
+F https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&ved=0CDUQFjAB&url=http%3A%2F%2Fwww.ti.com%2Flit%2Fds%2Fsymlink%2Ftps61029.pdf&ei=CXY4UufREqWqyQGKloG4Bw&usg=AFQjCNGCdXaADUo7lC82fyLXVkqoxFps4w&sig2=ALmgnA9FEQTkDKG-jdQ4xw&bvm=bv.52164340,d.aWc
 $ENDCMP
 #
 $CMP TPS763XX
