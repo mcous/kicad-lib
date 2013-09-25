@@ -1,9 +1,10 @@
-PCBNEW-LibModule-V1  9/19/2013 12:49:10 PM
+PCBNEW-LibModule-V1  9/24/2013 3:08:58 PM
 # encoding utf-8
 Units mm
 $INDEX
 0603(1608m)_cap
 0805(2012m)_tant-cap
+1206(3216m)_tant-cap
 1411(3528m)_tant-cap
 2413(6032m)_cap
 $EndINDEX
@@ -73,6 +74,43 @@ Ne 0 ""
 Po 0.8 0
 $EndPAD
 $EndMODULE 0805(2012m)_tant-cap
+$MODULE 1206(3216m)_tant-cap
+Po 0 0 0 15 5241F155 00000000 ~~
+Li 1206(3216m)_tant-cap
+Sc 0
+AR 
+Op 0 0 0
+At SMD
+T0 0 3.2 0.762 0.762 0 0.1524 N V 21 N "1206(3216m)_tant-cap"
+T1 -2.2 2 0.762 0.762 0 0.1524 N I 21 N "VAL**"
+DS 1.8 -1 2.6 -1 0.2032 21
+DS 2.6 -1 2.6 1 0.2032 21
+DS 2.6 1 1.8 1 0.2032 21
+DS -2.6 -0.6 -2.6 -1 0.2032 21
+DS -2.6 -1 -1.8 -1 0.2032 21
+DS -2.6 0.6 -2.6 1 0.2032 21
+DS -2.6 1 -1.8 1 0.2032 21
+DS -1.6 -0.8 -1.6 0.8 0.2032 21
+DS -1.6 0.8 1.6 0.8 0.2032 21
+DS 1.6 0.8 1.6 -0.8 0.2032 21
+DS 1.6 -0.8 -1.6 -0.8 0.2032 21
+DS -3 0.4 -3 -0.4 0.2032 21
+DS -3.4 0 -2.6 0 0.2032 21
+$PAD
+Sh "1" R 1.65 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.525 0
+$EndPAD
+$PAD
+Sh "2" R 1.65 1.4 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.525 0
+$EndPAD
+$EndMODULE 1206(3216m)_tant-cap
 $MODULE 1411(3528m)_tant-cap
 Po 0 0 0 15 523B33AA 00000000 ~~
 Li 1411(3528m)_tant-cap

@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 9/19/2013 5:50:31 PM
+EESchema-DOCLIB  Version 2.0  Date: 9/24/2013 10:07:14 AM
 #
 $CMP 10PIN_HEADER
 D 10 pin connection
@@ -23,9 +23,14 @@ $CMP 37PIN_MALE
 D 37-pin male connector
 $ENDCMP
 #
+$CMP 4PIN_FEMALE
+D 4 pin female connection
+K header 4 debug
+$ENDCMP
+#
 $CMP 4PIN_HEADER
-D 12 pin connection
-K header 12 debug
+D 4 pin connection
+K header 4 debug
 $ENDCMP
 #
 $CMP 8P8C_CUSTOM
