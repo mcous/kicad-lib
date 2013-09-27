@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  9/24/2013 6:44:39 PM
+PCBNEW-LibModule-V1  9/26/2013 11:06:40 PM
 # encoding utf-8
 Units mm
 $INDEX
@@ -17,12 +17,12 @@ SOT666
 TSSOP16
 $EndINDEX
 $MODULE HTSSOP20
-Po 0 0 0 15 524223D1 00000000 ~~
+Po 0 0 0 15 524503E8 00000000 ~~
 Li HTSSOP20
 Sc 0
 AR 
 Op 0 0 0
-.SolderMask 0.7
+.SolderMask 0.07
 .SolderPaste -0.025
 At SMD
 T0 0 -4 0.762 0.762 0 0.1524 N V 21 N "HTSSOP20"
@@ -161,17 +161,18 @@ $EndPAD
 $PAD
 Sh "0" R 3.4 6.5 0 0 0
 Dr 0 0 0
-At SMD N 00408000
+At SMD N 00008000
 Ne 0 ""
 Po 0 0
 $EndPAD
 $PAD
-Sh "0" R 2.77 3.45 0 0 0
+Sh "" R 2.77 3.45 0 0 0
 Dr 0 0 0
 At SMD N 00880000
 Ne 0 ""
 Po 0 0
-.SolderPaste -0.09906
+.SolderMask 0.001
+.SolderPaste -0.001
 $EndPAD
 $PAD
 Sh "12" R 1.6 0.3 0 0 0
@@ -189,12 +190,12 @@ Po 2.8 2.925
 $EndPAD
 $EndMODULE HTSSOP20
 $MODULE HTSSOP24
-Po 0 0 0 15 51E9B162 00000000 ~~
+Po 0 0 0 15 52450416 00000000 ~~
 Li HTSSOP24
 Sc 0
 AR 
 Op 0 0 0
-.SolderMask 0.7
+.SolderMask 0.07
 .SolderPaste -0.025
 At SMD
 T0 0 6.49986 1.524 1.524 0 0.3048 N I 21 N "HTSSOP24"
@@ -375,26 +376,28 @@ $EndPAD
 $PAD
 Sh "0" R 3.4 7.8 0 0 0
 Dr 0 0 0
-At SMD N 00408000
+At SMD N 00008000
 Ne 0 ""
 Po 0 0
 $EndPAD
 $PAD
-Sh "0" R 2.4 3.3 0 0 0
+Sh "" R 2.4 3.3 0 0 0
 Dr 0 0 0
 At SMD N 00A80000
 Ne 0 ""
 Po 0 0
-.SolderPaste -0.09906
+.SolderMask 0.001
+.SolderPaste -0.001
 $EndPAD
 $EndMODULE HTSSOP24
 $MODULE HTSSOP28
-Po 0 0 0 15 51E9B0EE 00000000 ~~
+Po 0 0 0 15 5245043C 00000000 ~~
 Li HTSSOP28
 Sc 0
 AR 
 Op 0 0 0
-.SolderPaste -0.0254
+.SolderMask 0.07
+.SolderPaste -0.025
 At SMD
 T0 0 6.49986 1.524 1.524 0 0.3048 N I 21 N "HTSSOP28"
 T1 0.5 -6.5 1.524 1.524 0 0.3048 N I 21 N "VAL**"
@@ -601,19 +604,20 @@ Ne 0 ""
 Po -2.79908 -0.32512
 $EndPAD
 $PAD
-Sh "0" R 3.40106 9.70026 0 0 0
+Sh "0" R 3.4 9.7 0 0 0
 Dr 0 0 0
-At SMD N 00408000
+At SMD N 00008000
 Ne 0 ""
 Po 0 0
 $EndPAD
 $PAD
-Sh "0" R 2.6 6.6 0 0 0
+Sh "" R 2.6 6.6 0 0 0
 Dr 0 0 0
 At SMD N 00880000
 Ne 0 ""
 Po 0 0
-.SolderPaste -0.09906
+.SolderMask 0.001
+.SolderPaste -0.001
 $EndPAD
 $EndMODULE HTSSOP28
 $MODULE MSOP10
