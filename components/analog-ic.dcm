@@ -1,4 +1,9 @@
-EESchema-DOCLIB  Version 2.0  Date: 9/4/2013 1:31:07 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/2/2013 11:51:18 PM
+#
+$CMP AD849X
+D AD849X Precision J/K Type Thermocouple Amplifier with Cold Junction Compensation
+F http://www.analog.com/static/imported-files/data_sheets/AD8494_8495_8496_8497.pdf
+$ENDCMP
 #
 $CMP ADMP404
 D ADMP404 Omnidirectional MEMS Microphone

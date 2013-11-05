@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 9/24/2013 10:07:14 AM
+EESchema-DOCLIB  Version 2.0  Date: 11/3/2013 3:42:32 PM
 #
 $CMP 10PIN_HEADER
 D 10 pin connection
@@ -8,6 +8,11 @@ $ENDCMP
 $CMP 12PIN_HEADER
 D 12 pin connection
 K header 12 debug
+$ENDCMP
+#
+$CMP 2PIN_FEMALE
+D 2 pin female connection
+K header 2 debug
 $ENDCMP
 #
 $CMP 37PIN_FEMALE
@@ -33,6 +38,16 @@ D 4 pin connection
 K header 4 debug
 $ENDCMP
 #
+$CMP 6PIN_FEMALE
+D 6 pin female connection
+K header 6 debug
+$ENDCMP
+#
+$CMP 6PIN_HEADER
+D 6 pin connection
+K header 6 debug
+$ENDCMP
+#
 $CMP 8P8C_CUSTOM
 D 8P8C (RJ-45) jack for custom applications
 K 8P8C RJ45 J-45 ethernet cat5 cat6
@@ -47,6 +62,10 @@ $CMP MICROUSB
 D MicroUSB port
 K USB MicroUSB
 F http://www.sparkfun.com/datasheets/Prototyping/Micro-USB.pdf
+$ENDCMP
+#
+$CMP THERMOCOUPLE
+D Thermocouple Jack
 $ENDCMP
 #
 #End Doc Library

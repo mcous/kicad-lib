@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 9/25/2013 10:49:09 AM
+EESchema-DOCLIB  Version 2.0  Date: 11/3/2013 11:13:53 PM
 #
 $CMP C
 D Non-polarized Capacitor
@@ -20,6 +20,10 @@ D DC Power Supply Input
 K DC VDC voltage
 $ENDCMP
 #
+$CMP FERRITE-BEAD
+D Ferrite bead
+$ENDCMP
+#
 $CMP L
 D Resistor
 K R Resistor
@@ -38,6 +42,16 @@ $ENDCMP
 $CMP LM1117
 D LM1117 1A Adjustable/Fixed Low Dropout Linear Regulator
 K LDO
+$ENDCMP
+#
+$CMP NPN-BJT
+D NPN Bipolar Junction Transistor
+K BJT
+$ENDCMP
+#
+$CMP NPN-BJT_SOT
+D NPN Bipolar Junction Small Outline Transistor
+K BJT
 $ENDCMP
 #
 $CMP POT

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0  Date: 11/2/2013 11:51:00 PM
+#
+$CMP SX12S01
+D SX12S01 12A Optically Isolated Non-Zero Cross SSR
+K solid state relay
+F http://www.sharpsma.com/webfm_send/317
+$ENDCMP
+#
+#End Doc Library
