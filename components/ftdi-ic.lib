@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 11/3/2013 6:55:39 PM
+EESchema-LIBRARY Version 2.3  Date: 11/7/2013 4:38:52 PM
 #encoding utf-8
 #
 # FT230X_SOP
@@ -6,8 +6,8 @@ EESchema-LIBRARY Version 2.3  Date: 11/3/2013 6:55:39 PM
 DEF FT230X_SOP IC 0 40 Y Y 1 F N
 F0 "IC" -250 800 60 H V C CNN
 F1 "FT230X_SOP" 50 -500 60 H V C CNN
-F2 "~" 0 0 60 H V C CNN
-F3 "~" 0 0 60 H V C CNN
+F2 "~" 0 0 60 H I C CNN
+F3 "~" 0 0 60 H I C CNN
 $FPLIST
  SSOP16
 $ENDFPLIST

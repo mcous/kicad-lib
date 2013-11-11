@@ -1,9 +1,15 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 03:37:30 PM CDT
+EESchema-DOCLIB  Version 2.0  Date: 11/6/2013 11:53:58 PM
 #
 $CMP ATMEGA328P_TQFP
 D ATMega328P Low-power High-performance MCU
 K ATMega 328 328P AVR
 F http://www.atmel.com/Images/Atmel-8271-8-bit-AVR-Microcontroller-ATmega48A-48PA-88A-88PA-168A-168PA-328-328P_datasheet.pdf
+$ENDCMP
+#
+$CMP ATTINY87/167_SO
+D ATTiny87/167 High Performance, Low Power AVR 8-bit Microcontroller
+K ATTiny MCU MPU
+F http://www.atmel.com/Images/doc8265.pdf
 $ENDCMP
 #
 $CMP AVR_ISP

@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 9/24/2013 4:17:57 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/6/2013 11:57:08 PM
 #
 $CMP CC1101
 D CC1101 Low-Power Sub-1 GHz RF Transceiver
@@ -32,6 +32,12 @@ $ENDCMP
 $CMP TLC5971_SOP
 D TLC5971 12-Channel, 16-Bit, Enhanced Spectrum, PWM, RGB, LED Driver with 3.3V Voltage Regulator
 F http://www.ti.com/lit/ds/symlink/tlc5971.pdf
+$ENDCMP
+#
+$CMP TLV713XX_SOT
+D TLV713 Capacitor-Free, 150-mA, Low-Dropout Regulator
+K LDO
+F http://www.ti.com/lit/ds/symlink/tlv71333p.pdf
 $ENDCMP
 #
 $CMP TMP006

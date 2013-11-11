@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  11/3/2013 11:02:26 PM
+PCBNEW-LibModule-V1  11/7/2013 2:16:43 AM
 # encoding utf-8
 Units mm
 $INDEX
@@ -17,6 +17,7 @@ SOT563
 SOT666
 SSOP16
 TSSOP16
+TSSOP20
 $EndINDEX
 $MODULE HTSSOP20
 Po 0 0 0 15 524503E8 00000000 ~~
@@ -1625,4 +1626,161 @@ Ne 0 ""
 Po -2.87528 2.27584
 $EndPAD
 $EndMODULE TSSOP16
+$MODULE TSSOP20
+Po 0 0 0 15 527B4C5D 00000000 ~~
+Li TSSOP20
+Sc 0
+AR 
+Op 0 0 0
+.SolderMask 0.07
+.SolderPaste -0.025
+At SMD
+T0 0 -4 0.762 0.762 0 0.1524 N V 21 N "TSSOP20"
+T1 -1.4 -5.2 0.762 0.762 0 0.1524 N I 21 N "VAL**"
+DC -4.2 -3 -4 -3 0.2032 21
+DS -2.2 -3.4 -2.2 3.4 0.2032 21
+DS -2.2 3.4 2.2 3.4 0.2032 21
+DS 2.2 3.4 2.2 -3.4 0.2032 21
+DS 2.2 -3.4 -2.2 -3.4 0.2032 21
+$PAD
+Sh "19" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -2.275
+$EndPAD
+$PAD
+Sh "20" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -2.925
+$EndPAD
+$PAD
+Sh "18" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -1.625
+$EndPAD
+$PAD
+Sh "17" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -0.975
+$EndPAD
+$PAD
+Sh "16" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 -0.325
+$EndPAD
+$PAD
+Sh "15" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 0.325
+$EndPAD
+$PAD
+Sh "14" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 0.975
+$EndPAD
+$PAD
+Sh "13" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 1.625
+$EndPAD
+$PAD
+Sh "10" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 2.925
+$EndPAD
+$PAD
+Sh "9" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 2.275
+$EndPAD
+$PAD
+Sh "8" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 1.625
+$EndPAD
+$PAD
+Sh "7" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 0.975
+$EndPAD
+$PAD
+Sh "1" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -2.925
+$EndPAD
+$PAD
+Sh "2" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -2.275
+$EndPAD
+$PAD
+Sh "3" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -1.625
+$EndPAD
+$PAD
+Sh "4" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -0.975
+$EndPAD
+$PAD
+Sh "5" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 -0.325
+$EndPAD
+$PAD
+Sh "6" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po -2.8 0.325
+$EndPAD
+$PAD
+Sh "12" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 2.275
+$EndPAD
+$PAD
+Sh "11" R 1.6 0.3 0 0 0
+Dr 0 0 0
+At SMD N 00A88000
+Ne 0 ""
+Po 2.8 2.925
+$EndPAD
+$EndMODULE TSSOP20
 $EndLIBRARY

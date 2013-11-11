@@ -1,7 +1,12 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/3/2013 3:42:32 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/6/2013 11:55:28 PM
 #
-$CMP 10PIN_HEADER
-D 10 pin connection
+$CMP 10PIN_JACK
+D 10 pin female jack
+K header 10 debug
+$ENDCMP
+#
+$CMP 10PIN_PLUG
+D 10 pin male plug
 K header 10 debug
 $ENDCMP
 #
