@@ -62,6 +62,11 @@ D NPN Bipolar Junction Small Outline Transistor
 K BJT
 $ENDCMP
 #
+$CMP PNP-BJT_SOT
+D PNP Bipolar Junction Small Outline Transistor
+K BJT SOT
+$ENDCMP
+#
 $CMP POT
 D Potentiometer
 K pot trimpot variable resistor
