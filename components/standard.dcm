@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/7/2013 4:20:09 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/12/2013 1:39:47 PM
 #
 $CMP C
 D Non-polarized Capacitor
@@ -54,6 +54,11 @@ D NPN Bipolar Junction Small Outline Transistor
 K BJT
 $ENDCMP
 #
+$CMP PNP-BJT_SOT
+D PNP Bipolar Junction Small Outline Transistor
+K BJT SOT
+$ENDCMP
+#
 $CMP POT
 D Potentiometer
 K pot trimpot variable resistor
@@ -98,6 +103,11 @@ $ENDCMP
 $CMP VCC_REG
 D 3-pin Voltage Regulator
 K voltage VCC regulator
+$ENDCMP
+#
+$CMP Ω
+D Resistor
+K R Resistor
 $ENDCMP
 #
 #End Doc Library
