@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0  Date: 1/20/2014 5:34:54 PM
+#
+$CMP 74HC595
+D 8-bit Serial-in Parallel/Serial-out Shift Register
+F http://www.onsemi.com/pub_link/Collateral/MC74HC595A-D.PDF
+$ENDCMP
+#
+#End Doc Library

@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0  Date: 11/6/2013 2:34:57 PM
+#
+$CMP PCF2129AT
+D PCF2129AT Integrated RTC, +/- 3 ppm TCXO and Quartz Crystal
+F http://www.nxp.com/documents/data_sheet/PCF2129AT.pdf
+$ENDCMP
+#
+#End Doc Library
