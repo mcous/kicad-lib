@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/7/2013 4:20:09 PM
+EESchema-DOCLIB  Version 2.0  Date: 1/20/2014 7:14:33 PM
 #
 $CMP C
 D Non-polarized Capacitor
@@ -15,6 +15,10 @@ D Crystal
 K chrystal xtal oscillator
 $ENDCMP
 #
+$CMP D
+D Diode
+$ENDCMP
+#
 $CMP DCIN
 D DC Power Supply Input
 K DC VDC voltage
@@ -22,6 +26,10 @@ $ENDCMP
 #
 $CMP FB
 D Ferrite bead
+$ENDCMP
+#
+$CMP FUSE
+D Fuse
 $ENDCMP
 #
 $CMP L
@@ -98,6 +106,10 @@ $ENDCMP
 $CMP VCC_REG
 D 3-pin Voltage Regulator
 K voltage VCC regulator
+$ENDCMP
+#
+$CMP VDR
+D Varistor
 $ENDCMP
 #
 #End Doc Library
