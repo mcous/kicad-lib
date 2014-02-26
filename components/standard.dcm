@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 1/20/2014 7:14:33 PM
+EESchema-DOCLIB  Version 2.0
 #
 $CMP C
 D Non-polarized Capacitor
@@ -62,6 +62,11 @@ D NPN Bipolar Junction Small Outline Transistor
 K BJT
 $ENDCMP
 #
+$CMP PNP-BJT_SOT
+D PNP Bipolar Junction Small Outline Transistor
+K BJT SOT
+$ENDCMP
+#
 $CMP POT
 D Potentiometer
 K pot trimpot variable resistor
@@ -86,6 +91,10 @@ $CMP RGB-LED_6PIN
 D Cree SMD PLCC-6 RGB LED
 K RGB LED SMD
 F http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLV6AFKB.pdf
+$ENDCMP
+#
+$CMP SCHOTTKY_DUAL-CC
+D Dual Common-Cathode Schottky Diode
 $ENDCMP
 #
 $CMP SPST
