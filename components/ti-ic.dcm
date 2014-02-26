@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/6/2013 11:57:08 PM
+EESchema-DOCLIB  Version 2.0
 #
 $CMP CC1101
 D CC1101 Low-Power Sub-1 GHz RF Transceiver
@@ -34,6 +34,12 @@ D TLC5971 12-Channel, 16-Bit, Enhanced Spectrum, PWM, RGB, LED Driver with 3.3V 
 F http://www.ti.com/lit/ds/symlink/tlc5971.pdf
 $ENDCMP
 #
+$CMP TLC59731
+D TLC59731 3-Channel, 8-Bit, PWM LED Driver with Single-Wire Interface
+K constant current sink TLC
+F http://www.ti.com/lit/ds/symlink/tlc59731.pdf
+$ENDCMP
+#
 $CMP TLV713XX_SOT
 D TLV713 Capacitor-Free, 150-mA, Low-Dropout Regulator
 K LDO
@@ -65,11 +71,6 @@ $CMP TPS6102X
 D TPS6102x Synchronous Boost Converter
 K LiPo Buck Voltage
 F https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&ved=0CDUQFjAB&url=http%3A%2F%2Fwww.ti.com%2Flit%2Fds%2Fsymlink%2Ftps61029.pdf&ei=CXY4UufREqWqyQGKloG4Bw&usg=AFQjCNGCdXaADUo7lC82fyLXVkqoxFps4w&sig2=ALmgnA9FEQTkDKG-jdQ4xw&bvm=bv.52164340,d.aWc
-$ENDCMP
-#
-$CMP TPS763XX
-D TPS763xx 150mA Low-Noise LDO Regulator
-F http://www.ti.com/lit/ds/symlink/tps76330.pdf
 $ENDCMP
 #
 #End Doc Library
