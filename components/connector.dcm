@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/6/2013 11:55:28 PM
+EESchema-DOCLIB  Version 2.0
 #
 $CMP 10PIN_JACK
 D 10 pin female jack
@@ -17,6 +17,11 @@ $ENDCMP
 #
 $CMP 2PIN_FEMALE
 D 2 pin female connection
+K header 2 debug
+$ENDCMP
+#
+$CMP 2PIN_MALE
+D 2 pin male connector
 K header 2 debug
 $ENDCMP
 #
