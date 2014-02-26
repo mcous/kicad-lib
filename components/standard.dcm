@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 1/20/2014 7:14:33 PM
+EESchema-DOCLIB  Version 2.0
 #
 $CMP C
 D Non-polarized Capacitor
@@ -91,6 +91,10 @@ $CMP RGB-LED_6PIN
 D Cree SMD PLCC-6 RGB LED
 K RGB LED SMD
 F http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLV6AFKB.pdf
+$ENDCMP
+#
+$CMP SCHOTTKY_DUAL-CC
+D Dual Common-Cathode Schottky Diode
 $ENDCMP
 #
 $CMP SPST
