@@ -9,8 +9,9 @@
   (lib (name bourns)(type KiCad)(uri ${KISYSMOD}/bourns.pretty)(options "")(descr "footprints for unique parts from Bourns"))
   (lib (name connect-sm)(type KiCad)(uri ${KISYSMOD}/connect-sm.pretty)(options "")(descr "surface mount connectors, plugs, and jacks"))
   (lib (name connect-thru)(type KiCad)(uri ${KISYSMOD}/connect-thru.pretty)(options "")(descr "through hole connectors, plugs, and jacks"))
+  (lib (name csp)(type KiCad)(uri ${KISYSMOD}/csp.pretty)(options "")(descr "chip scale packages"))
 
-  (lib (name connect-thru_leg)(type Legacy)(uri ${KISYSMOD}/connect_thru.mod)(options "")(descr "migrating"))
+  (lib (name csp_leg)(type Legacy)(uri ${KISYSMOD}/csp.mod)(options "")(descr "migrating"))
 
 
 )
