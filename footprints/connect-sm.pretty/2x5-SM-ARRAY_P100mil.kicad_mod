@@ -1,7 +1,7 @@
-(module 2x5-SM-PIN-ARRAY_P100mil (layer F.Cu)
+(module 2x5-SM-ARRAY_P100mil (layer F.Cu)
   (solder_paste_margin -0.0762)
   (attr smd)
-  (fp_text reference 2x5-PIN-ARRAY_P100MIL_sm (at 0 11.5) (layer F.SilkS)
+  (fp_text reference 2x5-SM-ARRAY_P100mil (at 0 11.5) (layer F.SilkS)
     (effects (font (size 0.762 0.762) (thickness 0.1524)))
   )
   (fp_text value VAL** (at 0 0) (layer F.SilkS) hide
