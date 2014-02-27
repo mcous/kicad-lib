@@ -5,14 +5,14 @@ D Non-polarized Capacitor
 K cap capacitor
 $ENDCMP
 #
-$CMP C_POL
-D Polarized Capacitor
-K cap capacitor pol polarized
-$ENDCMP
-#
 $CMP CRYSTAL
 D Crystal
 K chrystal xtal oscillator
+$ENDCMP
+#
+$CMP C_POL
+D Polarized Capacitor
+K cap capacitor pol polarized
 $ENDCMP
 #
 $CMP D
@@ -45,6 +45,11 @@ $ENDCMP
 $CMP LED_RGB-CA
 D Common-anode RGB LED
 K RGB CA LED
+$ENDCMP
+#
+$CMP LED_RGB-CC
+D Common-cathode RGB LED
+K RGB CC LED
 $ENDCMP
 #
 $CMP LM1117
@@ -87,14 +92,13 @@ D 8 Resistor Bussed Array
 K resistor array bussed
 $ENDCMP
 #
-$CMP RGB-LED_6PIN
-D Cree SMD PLCC-6 RGB LED
-K RGB LED SMD
-F http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLV6AFKB.pdf
-$ENDCMP
-#
 $CMP SCHOTTKY_DUAL-CC
 D Dual Common-Cathode Schottky Diode
+$ENDCMP
+#
+$CMP SPDT
+D Single Pole Double Throw Switch
+K SPDT
 $ENDCMP
 #
 $CMP SPST

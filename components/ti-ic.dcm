@@ -34,6 +34,11 @@ D TLC5971 12-Channel, 16-Bit, Enhanced Spectrum, PWM, RGB, LED Driver with 3.3V 
 F http://www.ti.com/lit/ds/symlink/tlc5971.pdf
 $ENDCMP
 #
+$CMP TLC5973
+D TLC5973 3-Channel, 12-Bit, PWM Constant-Current LED Driver with Single-Wire Interface
+F http://www.ti.com/lit/ds/symlink/tlc59731.pdf
+$ENDCMP
+#
 $CMP TLC59731
 D TLC59731 3-Channel, 8-Bit, PWM LED Driver with Single-Wire Interface
 K constant current sink TLC

@@ -48,6 +48,16 @@ D 4 pin connection
 K header 4 debug
 $ENDCMP
 #
+$CMP 5PIN_FEMALE
+D 5 pin female connection
+K header 5 debug
+$ENDCMP
+#
+$CMP 5PIN_MALE
+D 5 pin male connection
+K header 5 debug
+$ENDCMP
+#
 $CMP 6PIN_FEMALE
 D 6 pin female connection
 K header 6 debug
