@@ -1,7 +1,7 @@
-(module TE1551573-5_SPRING-FINGER (layer F.Cu)
+(module TE-1551573-5_spring-finger (layer F.Cu)
   (solder_paste_ratio -0.00002)
   (attr smd)
-  (fp_text reference TE1551573-5_SPRING-FINGER (at 0 1.6) (layer F.SilkS)
+  (fp_text reference TE-1551573-5_spring-finger (at 0 1.6) (layer F.SilkS)
     (effects (font (size 0.762 0.762) (thickness 0.1524)))
   )
   (fp_text value VAL** (at 0 0) (layer F.SilkS) hide
