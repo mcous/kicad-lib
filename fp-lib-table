@@ -5,7 +5,7 @@
 (fp_lib_table
   # (lib (name analog-devices)(type Legacy)(uri ${KISYSMOD}/analog-devices.mod)(options "")(descr "footprints for ICs from Analog Devices"))
   (lib (name analog-devices)(type KiCad)(uri ${KISYSMOD}/analog-devices.pretty)(options "")(descr "footprints for ICs from Analog Devices"))
-  # (lib (name asm)(type Legacy)(uri ${KISYSMOD}/asm.mod)(options "")(descr "assembly and mechanical footprints"))
+  (lib (name asm)(type KiCad)(uri ${KISYSMOD}/asm.pretty)(options "")(descr "assembly and mechanical footprints"))
   # (lib (name bluegiga)(type Legacy)(uri ${KISYSMOD}/bluegiga.mod)(options "")(descr "footprints for ICs from Bluegiga"))
 
   # (lib (name Air_Coils_SML_NEOSID)(type Github)(uri ${KIGITHUB}/Air_Coils_SML_NEOSID.pretty)(options "")(descr HAMxx31A_HDMxx31A))

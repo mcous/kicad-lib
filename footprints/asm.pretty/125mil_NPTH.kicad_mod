@@ -1,0 +1,9 @@
+(module asm:125mil_NPTH (layer F.Cu)
+  (fp_text reference 125mil_NPTH (at 0 0) (layer F.SilkS) hide
+    (effects (font (size 0.762 0.762) (thickness 0.1524)))
+  )
+  (fp_text value VAL** (at 0 0) (layer F.SilkS) hide
+    (effects (font (size 0.762 0.762) (thickness 0.1524)))
+  )
+  (pad "" np_thru_hole circle (at 0 0) (size 3.175 3.175) (drill 3.175) (layers *.Cu *.SilkS *.Mask))
+)
