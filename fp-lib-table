@@ -8,8 +8,9 @@
   (lib (name bluegiga)(type KiCad)(uri ${KISYSMOD}/bluegiga.pretty)(options "")(descr "footprints for unique parts from Bluegiga"))
   (lib (name bourns)(type KiCad)(uri ${KISYSMOD}/bourns.pretty)(options "")(descr "footprints for unique parts from Bourns"))
   (lib (name connect-sm)(type KiCad)(uri ${KISYSMOD}/connect-sm.pretty)(options "")(descr "surface mount connectors, plugs, and jacks"))
+  (lib (name connect-thru)(type KiCad)(uri ${KISYSMOD}/connect-thru.pretty)(options "")(descr "through hole connectors, plugs, and jacks"))
 
-  (lib (name connect-sm_leg)(type Legacy)(uri ${KISYSMOD}/connect_sm.mod)(options "")(descr "footprints for unique parts from Bourns"))
+  (lib (name connect-thru_leg)(type Legacy)(uri ${KISYSMOD}/connect_thru.mod)(options "")(descr "migrating"))
 
 
 )
