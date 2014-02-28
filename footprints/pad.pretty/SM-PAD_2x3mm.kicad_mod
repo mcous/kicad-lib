@@ -1,0 +1,10 @@
+(module SM-PAD_2x3mm (layer F.Cu)
+  (attr virtual)
+  (fp_text reference SM-PAD_2x3mm (at 0 2.54) (layer F.SilkS)
+    (effects (font (size 0.762 0.762) (thickness 0.1524)))
+  )
+  (fp_text value VAL** (at 0 0) (layer F.SilkS) hide
+    (effects (font (size 0.762 0.762) (thickness 0.1524)))
+  )
+  (pad 1 smd rect (at 0 0) (size 3 2) (layers F.Cu F.Mask))
+)
