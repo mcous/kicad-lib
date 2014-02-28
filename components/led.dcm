@@ -1,5 +1,10 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP CREE-CLV6A-FKB
+D Cree CLV6A-FKB PLCC6 3-in-1 RGB SMD LED 
+F http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLV6AFKB.pdf
+$ENDCMP
+#
 $CMP LED
 D Light Emitting Diode
 K LED
