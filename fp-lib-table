@@ -12,14 +12,15 @@
   (lib (name csp)(type KiCad)(uri ${KISYSMOD}/csp.pretty)(options "")(descr "chip scale packages"))
   (lib (name dip)(type KiCad)(uri ${KISYSMOD}/dip.pretty)(options "")(descr "dual inline packages"))
   (lib (name fn-ml)(type KiCad)(uri ${KISYSMOD}/fn-ml.pretty)(options "")(descr "flat no-lead / micro leadframe / small outline no-lead packages"))
-  (lib (name led)(type KiCad)(uri ${KISYSMOD}/led.pretty)(options "")(descr "LEDs"))
+  (lib (name led)(type KiCad)(uri ${KISYSMOD}/led.pretty)(options "")(descr "LEDs (surface mount and through hole)"))
   (lib (name linx)(type KiCad)(uri ${KISYSMOD}/linx.pretty)(options "")(descr "unique parts from Linx"))
   (lib (name pad)(type KiCad)(uri ${KISYSMOD}/pad.pretty)(options "")(descr "surface mount pads"))
   (lib (name qfp)(type KiCad)(uri ${KISYSMOD}/qfp.pretty)(options "")(descr "quad flat packages"))
   (lib (name sharp)(type KiCad)(uri ${KISYSMOD}/sharp.pretty)(options "")(descr "unique parts from Sharp"))
   (lib (name sip)(type KiCad)(uri ${KISYSMOD}/sip.pretty)(options "")(descr "single inline packages"))
+  (lib (name capacitor)(type KiCad)(uri ${KISYSMOD}/capacitor.pretty)(options "")(descr "capacitors (surface mount and through hole)"))
 
-  (lib (name sip_leg)(type Legacy)(uri ${KISYSMOD}/sip.mod)(options "")(descr "migrating"))
+  (lib (name cap_leg)(type Legacy)(uri ${KISYSMOD}/sm_cap.mod)(options "")(descr "migrating"))
 
 
 )
