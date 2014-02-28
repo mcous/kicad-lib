@@ -1,0 +1,18 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LED
+D Light Emitting Diode
+K LED
+$ENDCMP
+#
+$CMP LED-RGB-CA
+D Common-anode RGB LED
+K RGB CA LED
+$ENDCMP
+#
+$CMP LED-RGB-CC
+D Common-cathode RGB LED
+K RGB CC LED
+$ENDCMP
+#
+#End Doc Library

@@ -42,16 +42,6 @@ D Light Emitting Diode
 K LED
 $ENDCMP
 #
-$CMP LED_RGB-CA
-D Common-anode RGB LED
-K RGB CA LED
-$ENDCMP
-#
-$CMP LED_RGB-CC
-D Common-cathode RGB LED
-K RGB CC LED
-$ENDCMP
-#
 $CMP LM1117
 D LM1117 1A Adjustable/Fixed Low Dropout Linear Regulator
 K LDO
