@@ -17,8 +17,9 @@
   (lib (name pad)(type KiCad)(uri ${KISYSMOD}/pad.pretty)(options "")(descr "surface mount pads"))
   (lib (name qfp)(type KiCad)(uri ${KISYSMOD}/qfp.pretty)(options "")(descr "quad flat packages"))
   (lib (name sharp)(type KiCad)(uri ${KISYSMOD}/sharp.pretty)(options "")(descr "unique parts from Sharp"))
+  (lib (name sip)(type KiCad)(uri ${KISYSMOD}/sip.pretty)(options "")(descr "single inline packages"))
 
-  (lib (name sharp_leg)(type Legacy)(uri ${KISYSMOD}/sharp.mod)(options "")(descr "migrating"))
+  (lib (name sip_leg)(type Legacy)(uri ${KISYSMOD}/sip.mod)(options "")(descr "migrating"))
 
 
 )
