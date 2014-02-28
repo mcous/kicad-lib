@@ -12,8 +12,9 @@
   (lib (name csp)(type KiCad)(uri ${KISYSMOD}/csp.pretty)(options "")(descr "chip scale packages"))
   (lib (name dip)(type KiCad)(uri ${KISYSMOD}/dip.pretty)(options "")(descr "dual inline packages"))
   (lib (name fn-ml)(type KiCad)(uri ${KISYSMOD}/fn-ml.pretty)(options "")(descr "flat no-lead / micro leadframe / small outline no-lead packages"))
+  (lib (name linx)(type KiCad)(uri ${KISYSMOD}/linx.pretty)(options "")(descr "footprints for unique parts from Linx"))
 
-  (lib (name fn-ml_leg)(type Legacy)(uri ${KISYSMOD}/fn-ml.mod)(options "")(descr "migrating"))
+  (lib (name linx_leg)(type Legacy)(uri ${KISYSMOD}/linx.mod)(options "")(descr "migrating"))
 
 
 )
