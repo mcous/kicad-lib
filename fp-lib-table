@@ -27,9 +27,7 @@
   (lib (name sparkfun)(type KiCad)(uri ${KISYSMOD}/sparkfun.pretty)(options "")(descr "unique parts from SparkFun"))
   (lib (name switch)(type KiCad)(uri ${KISYSMOD}/switch.pretty)(options "")(descr "switches and buttons"))
 
-
-
-  (lib (name switch_leg)(type Legacy)(uri ${KISYSMOD}/switch.mod)(options "")(descr "migrating"))
+  (lib (name texas_leg)(type Legacy)(uri ${KISYSMOD}/texas.mod)(options "")(descr "migrating"))
 
 
 )
