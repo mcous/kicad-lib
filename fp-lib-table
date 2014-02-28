@@ -19,8 +19,9 @@
   (lib (name sharp)(type KiCad)(uri ${KISYSMOD}/sharp.pretty)(options "")(descr "unique parts from Sharp"))
   (lib (name sip)(type KiCad)(uri ${KISYSMOD}/sip.pretty)(options "")(descr "single inline packages"))
   (lib (name capacitor)(type KiCad)(uri ${KISYSMOD}/capacitor.pretty)(options "")(descr "capacitors (surface mount and through hole)"))
+  (lib (name passive-smd)(type KiCad)(uri ${KISYSMOD}/passive-smd.pretty)(options "")(descr "standard two-terminal passive suface mount devices"))
 
-  (lib (name cap_leg)(type Legacy)(uri ${KISYSMOD}/sm_cap.mod)(options "")(descr "migrating"))
+  (lib (name passive-smd_leg)(type Legacy)(uri ${KISYSMOD}/sm_gen.mod)(options "")(descr "migrating"))
 
 
 )
