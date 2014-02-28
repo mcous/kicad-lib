@@ -20,8 +20,13 @@
   (lib (name sip)(type KiCad)(uri ${KISYSMOD}/sip.pretty)(options "")(descr "single inline packages"))
   (lib (name capacitor)(type KiCad)(uri ${KISYSMOD}/capacitor.pretty)(options "")(descr "capacitors (surface mount and through hole)"))
   (lib (name passive-smd)(type KiCad)(uri ${KISYSMOD}/passive-smd.pretty)(options "")(descr "standard two-terminal passive suface mount devices"))
+  (lib (name sot)(type KiCad)(uri ${KISYSMOD}/sot.pretty)(options "")(descr "small outline transistors"))
+  (lib (name sod)(type KiCad)(uri ${KISYSMOD}/sod.pretty)(options "")(descr "small outline diodes"))
+  (lib (name sop)(type KiCad)(uri ${KISYSMOD}/sop.pretty)(options "")(descr "small outline packages"))
+  (lib (name soic)(type KiCad)(uri ${KISYSMOD}/soic.pretty)(options "")(descr "small outline integrated circuits"))
 
-  (lib (name passive-smd_leg)(type Legacy)(uri ${KISYSMOD}/sm_gen.mod)(options "")(descr "migrating"))
+
+  (lib (name small-outline_leg)(type Legacy)(uri ${KISYSMOD}/so.mod)(options "")(descr "migrating"))
 
 
 )
