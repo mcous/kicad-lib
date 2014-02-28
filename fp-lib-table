@@ -12,11 +12,13 @@
   (lib (name csp)(type KiCad)(uri ${KISYSMOD}/csp.pretty)(options "")(descr "chip scale packages"))
   (lib (name dip)(type KiCad)(uri ${KISYSMOD}/dip.pretty)(options "")(descr "dual inline packages"))
   (lib (name fn-ml)(type KiCad)(uri ${KISYSMOD}/fn-ml.pretty)(options "")(descr "flat no-lead / micro leadframe / small outline no-lead packages"))
+  (lib (name led)(type KiCad)(uri ${KISYSMOD}/led.pretty)(options "")(descr "LEDs"))
   (lib (name linx)(type KiCad)(uri ${KISYSMOD}/linx.pretty)(options "")(descr "unique parts from Linx"))
   (lib (name pad)(type KiCad)(uri ${KISYSMOD}/pad.pretty)(options "")(descr "surface mount pads"))
   (lib (name qfp)(type KiCad)(uri ${KISYSMOD}/qfp.pretty)(options "")(descr "quad flat packages"))
 
-  (lib (name qfp_leg)(type Legacy)(uri ${KISYSMOD}/qfp.mod)(options "")(descr "migrating"))
+  (lib (name sm-led_leg)(type Legacy)(uri ${KISYSMOD}/sm_led.mod)(options "")(descr "migrating"))
+  (lib (name thru-led_leg)(type Legacy)(uri ${KISYSMOD}/thru_led.mod)(options "")(descr "migrating"))
 
 
 )
