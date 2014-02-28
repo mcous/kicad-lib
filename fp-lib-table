@@ -3,19 +3,20 @@
 # mc 2/27/2014
 
 (fp_lib_table
-  (lib (name analog-devices)(type KiCad)(uri ${KISYSMOD}/analog-devices.pretty)(options "")(descr "footprints for unique parts from Analog Devices"))
+  (lib (name analog-devices)(type KiCad)(uri ${KISYSMOD}/analog-devices.pretty)(options "")(descr "unique parts from Analog Devices"))
   (lib (name asm)(type KiCad)(uri ${KISYSMOD}/asm.pretty)(options "")(descr "assembly and mechanical footprints"))
-  (lib (name bluegiga)(type KiCad)(uri ${KISYSMOD}/bluegiga.pretty)(options "")(descr "footprints for unique parts from Bluegiga"))
-  (lib (name bourns)(type KiCad)(uri ${KISYSMOD}/bourns.pretty)(options "")(descr "footprints for unique parts from Bourns"))
+  (lib (name bluegiga)(type KiCad)(uri ${KISYSMOD}/bluegiga.pretty)(options "")(descr "unique parts from Bluegiga"))
+  (lib (name bourns)(type KiCad)(uri ${KISYSMOD}/bourns.pretty)(options "")(descr "unique parts from Bourns"))
   (lib (name connect-sm)(type KiCad)(uri ${KISYSMOD}/connect-sm.pretty)(options "")(descr "surface mount connectors, plugs, and jacks"))
   (lib (name connect-thru)(type KiCad)(uri ${KISYSMOD}/connect-thru.pretty)(options "")(descr "through hole connectors, plugs, and jacks"))
   (lib (name csp)(type KiCad)(uri ${KISYSMOD}/csp.pretty)(options "")(descr "chip scale packages"))
   (lib (name dip)(type KiCad)(uri ${KISYSMOD}/dip.pretty)(options "")(descr "dual inline packages"))
   (lib (name fn-ml)(type KiCad)(uri ${KISYSMOD}/fn-ml.pretty)(options "")(descr "flat no-lead / micro leadframe / small outline no-lead packages"))
-  (lib (name linx)(type KiCad)(uri ${KISYSMOD}/linx.pretty)(options "")(descr "footprints for unique parts from Linx"))
+  (lib (name linx)(type KiCad)(uri ${KISYSMOD}/linx.pretty)(options "")(descr "unique parts from Linx"))
   (lib (name pad)(type KiCad)(uri ${KISYSMOD}/pad.pretty)(options "")(descr "surface mount pads"))
+  (lib (name qfp)(type KiCad)(uri ${KISYSMOD}/qfp.pretty)(options "")(descr "quad flat packages"))
 
-  (lib (name pads_leg)(type Legacy)(uri ${KISYSMOD}/pads.mod)(options "")(descr "migrating"))
+  (lib (name qfp_leg)(type Legacy)(uri ${KISYSMOD}/qfp.mod)(options "")(descr "migrating"))
 
 
 )
