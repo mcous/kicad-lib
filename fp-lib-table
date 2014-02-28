@@ -16,9 +16,9 @@
   (lib (name linx)(type KiCad)(uri ${KISYSMOD}/linx.pretty)(options "")(descr "unique parts from Linx"))
   (lib (name pad)(type KiCad)(uri ${KISYSMOD}/pad.pretty)(options "")(descr "surface mount pads"))
   (lib (name qfp)(type KiCad)(uri ${KISYSMOD}/qfp.pretty)(options "")(descr "quad flat packages"))
+  (lib (name sharp)(type KiCad)(uri ${KISYSMOD}/sharp.pretty)(options "")(descr "unique parts from Sharp"))
 
-  (lib (name sm-led_leg)(type Legacy)(uri ${KISYSMOD}/sm_led.mod)(options "")(descr "migrating"))
-  (lib (name thru-led_leg)(type Legacy)(uri ${KISYSMOD}/thru_led.mod)(options "")(descr "migrating"))
+  (lib (name sharp_leg)(type Legacy)(uri ${KISYSMOD}/sharp.mod)(options "")(descr "migrating"))
 
 
 )
