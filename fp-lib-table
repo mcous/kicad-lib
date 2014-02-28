@@ -27,8 +27,5 @@
   (lib (name sparkfun)(type KiCad)(uri ${KISYSMOD}/sparkfun.pretty)(options "")(descr "unique parts from SparkFun"))
   (lib (name switch)(type KiCad)(uri ${KISYSMOD}/switch.pretty)(options "")(descr "switches and buttons"))
   (lib (name to)(type KiCad)(uri ${KISYSMOD}/to.pretty)(options "")(descr "transistor outline packages"))
-
-  (lib (name to_leg)(type Legacy)(uri ${KISYSMOD}/to.mod)(options "")(descr "migrating"))
-
-
+  (lib (name crystal)(type KiCad)(uri ${KISYSMOD}/crystal.pretty)(options "")(descr "crystals and oscillators"))
 )
