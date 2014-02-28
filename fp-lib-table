@@ -25,9 +25,11 @@
   (lib (name sop)(type KiCad)(uri ${KISYSMOD}/sop.pretty)(options "")(descr "small outline packages"))
   (lib (name soic)(type KiCad)(uri ${KISYSMOD}/soic.pretty)(options "")(descr "small outline integrated circuits"))
   (lib (name sparkfun)(type KiCad)(uri ${KISYSMOD}/sparkfun.pretty)(options "")(descr "unique parts from SparkFun"))
+  (lib (name switch)(type KiCad)(uri ${KISYSMOD}/switch.pretty)(options "")(descr "switches and buttons"))
 
 
-  (lib (name sparkfun_leg)(type Legacy)(uri ${KISYSMOD}/sparkfun.mod)(options "")(descr "migrating"))
+
+  (lib (name switch_leg)(type Legacy)(uri ${KISYSMOD}/switch.mod)(options "")(descr "migrating"))
 
 
 )
