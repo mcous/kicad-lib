@@ -4,7 +4,6 @@
 #
 # this script links my kicad footprint table file and environment variable definition script into the proper places
 # (for linux)
-# (will probably need to be run with sudo)
 
 # edit these parameters according to your system
 TABLEDIR="$HOME"
