@@ -1,7 +1,3 @@
-# kicad footprint library table
-# should be linked to ~/fp-lib-table
-# mc 2/27/2014
-
 (fp_lib_table
   (lib (name analog-devices)(type KiCad)(uri ${KISYSMOD}/analog-devices.pretty)(options "")(descr "unique parts from Analog Devices"))
   (lib (name asm)(type KiCad)(uri ${KISYSMOD}/asm.pretty)(options "")(descr "assembly and mechanical footprints"))
@@ -21,11 +17,11 @@
   (lib (name capacitor)(type KiCad)(uri ${KISYSMOD}/capacitor.pretty)(options "")(descr "capacitors (surface mount and through hole)"))
   (lib (name passive-smd)(type KiCad)(uri ${KISYSMOD}/passive-smd.pretty)(options "")(descr "standard two-terminal passive suface mount devices"))
   (lib (name sot)(type KiCad)(uri ${KISYSMOD}/sot.pretty)(options "")(descr "small outline transistors"))
-  # (lib (name sod)(type KiCad)(uri ${KISYSMOD}/sod.pretty)(options "")(descr "small outline diodes"))
   (lib (name sop)(type KiCad)(uri ${KISYSMOD}/sop.pretty)(options "")(descr "small outline packages"))
   (lib (name soic)(type KiCad)(uri ${KISYSMOD}/soic.pretty)(options "")(descr "small outline integrated circuits"))
   (lib (name sparkfun)(type KiCad)(uri ${KISYSMOD}/sparkfun.pretty)(options "")(descr "unique parts from SparkFun"))
   (lib (name switch)(type KiCad)(uri ${KISYSMOD}/switch.pretty)(options "")(descr "switches and buttons"))
   (lib (name to)(type KiCad)(uri ${KISYSMOD}/to.pretty)(options "")(descr "transistor outline packages"))
   (lib (name crystal)(type KiCad)(uri ${KISYSMOD}/crystal.pretty)(options "")(descr "crystals and oscillators"))
+  (lib (name texas)(type KiCad)(uri ${KISYSMOD}/texas.pretty)(options "")(descr "unique parts from Texas Instruments"))
 )
