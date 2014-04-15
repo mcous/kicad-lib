@@ -6,6 +6,12 @@ K RFID DASH7 6LoWPAN
 F http://www.ti.com/lit/ds/symlink/cc1101.pdf
 $ENDCMP
 #
+$CMP CC3000
+D TI CC3000 Module - Wi-Fi 802.11b/g Network Processor
+K wifi wireless
+F http://www.ti.com/lit/gpn/cc3000
+$ENDCMP
+#
 $CMP CC_ISP
 D CC Debugger ISP Header
 K ISP cc debugger
