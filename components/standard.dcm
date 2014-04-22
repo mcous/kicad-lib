@@ -36,6 +36,14 @@ $CMP FUSE
 D Fuse
 $ENDCMP
 #
+$CMP JUMPER
+D 2-pin jumper
+$ENDCMP
+#
+$CMP JUMPER-CLOSED
+D Jumper that is closed by default
+$ENDCMP
+#
 $CMP L
 D Resistor
 K R Resistor
