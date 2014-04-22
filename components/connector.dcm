@@ -38,6 +38,16 @@ $CMP 37PIN_MALE
 D 37-pin male connector
 $ENDCMP
 #
+$CMP 3PIN_FEMALE
+D 3 pin female connector
+K header debug
+$ENDCMP
+#
+$CMP 3PIN_MALE
+D 3 pin male connector
+K header 3 debug
+$ENDCMP
+#
 $CMP 4PIN_FEMALE
 D 4 pin female connection
 K header 4 debug
