@@ -73,6 +73,11 @@ D 8P8C (RJ-45) jack for custom applications
 K 8P8C RJ45 J-45 ethernet cat5 cat6
 $ENDCMP
 #
+$CMP COAX-JACK
+D Coaxial jack
+K SMA UF.L UFL antenna
+$ENDCMP
+#
 $CMP LIPO
 D Lithium Polymer Battery Jack
 K lipo li lithium-ion batter rechargable
