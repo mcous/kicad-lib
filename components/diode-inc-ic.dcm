@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP24x1
+D AP2401/AP2411 Single-channel high-side power switch
+F http://www.diodes.com/datasheets/AP24x1.pdf
+$ENDCMP
+#
+$CMP AP24x1_EP
+D AP2401/AP2411 Single-channel high-side power switch with exposed pad
+F http://www.diodes.com/datasheets/AP24x1.pdf
+$ENDCMP
+#
+#End Doc Library
