@@ -36,20 +36,16 @@ $CMP FUSE
 D Fuse
 $ENDCMP
 #
-$CMP JUMPER
-D 2-pin jumper
-$ENDCMP
-#
-$CMP JUMPER-CLOSED
-D Jumper that is closed by default
-$ENDCMP
-#
 $CMP JUMPER_2-PIN
 D 2-pin jumper
 $ENDCMP
 #
 $CMP JUMPER_2-PIN-CLOSED
 D Jumper that is closed by default
+$ENDCMP
+#
+$CMP JUMPER_3-PIN
+D 3-pin jumper
 $ENDCMP
 #
 $CMP L
