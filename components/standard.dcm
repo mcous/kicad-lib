@@ -48,6 +48,10 @@ $CMP JUMPER_3-PIN
 D 3-pin jumper
 $ENDCMP
 #
+$CMP JUMPER_3-PIN-CLOSED
+D 3-pin jumper
+$ENDCMP
+#
 $CMP L
 D Resistor
 K R Resistor
