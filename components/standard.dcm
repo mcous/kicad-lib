@@ -1,5 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP ANTENNA
+D Antenna
+$ENDCMP
+#
 $CMP C
 D Non-polarized Capacitor
 K cap capacitor
