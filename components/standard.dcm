@@ -24,6 +24,10 @@ D DC Power Supply Input
 K DC VDC voltage
 $ENDCMP
 #
+$CMP D_SCHOTTKY
+D Schottky diode
+$ENDCMP
+#
 $CMP FB
 D Ferrite bead
 $ENDCMP
