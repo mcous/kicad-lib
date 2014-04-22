@@ -1,8 +1,14 @@
-EESchema-DOCLIB  Version 2.0  Date: Fri 19 Jul 2013 11:41:19 AM CDT
+EESchema-DOCLIB  Version 2.0
 #
 $CMP MCP42X2
 D 7/8-bit Dual SPI Digital Rheostat with Volatile Memory
 F http://ww1.microchip.com/downloads/en/DeviceDoc/22060b.pdf
+$ENDCMP
+#
+$CMP MCP73811/2
+D MCP73811/2 Miniature Single-Cell, Fully Integrated Li-Ion / Li-Polymer Charge Management Controller
+K lipo battery charger lithium
+F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en528273
 $ENDCMP
 #
 #End Doc Library
