@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 78LXX_SOT
+D 78LXX Fixed-output 100mA LDO in SOT package
+K votlage regulator 5V 12V 15V
+$ENDCMP
+#
+#End Doc Library

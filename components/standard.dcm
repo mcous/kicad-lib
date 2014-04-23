@@ -66,11 +66,6 @@ D Light Emitting Diode
 K LED
 $ENDCMP
 #
-$CMP LM1117
-D LM1117 1A Adjustable/Fixed Low Dropout Linear Regulator
-K LDO
-$ENDCMP
-#
 $CMP POT
 D Potentiometer
 K pot trimpot variable resistor
