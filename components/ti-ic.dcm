@@ -24,6 +24,12 @@ K stepper hbridge h-bridge step direction
 F http://www.ti.com/lit/ds/symlink/drv8834.pdf
 $ENDCMP
 #
+$CMP LM2623_VSSOP
+D LM2623 General Purpose, Gated Oscillator Based, DC/DC Boost Converter
+K regulator
+F www.ti.com/lit/ds/symlink/lm2623.pdf
+$ENDCMP
+#
 $CMP TLC5940_SOP
 D TI TLC5940 16-channel LED Driver with Dot-correction and Greyscale PWM Brightness control
 K LED Driver 16 PWM
