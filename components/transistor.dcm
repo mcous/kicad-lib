@@ -1,0 +1,28 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NPN-BJT
+D NPN Bipolar Junction Transistor
+K BJT
+$ENDCMP
+#
+$CMP NPN-BJT-BIASED_SOT
+D Pre-biased NPN bipolar junction small-outline transistor
+K bias bjt
+$ENDCMP
+#
+$CMP NPN-BJT_SOT
+D NPN Bipolar Junction Small Outline Transistor
+K BJT
+$ENDCMP
+#
+$CMP PNP-BJT-BIASED_SOT
+D Pre-biased PNP bipolar junction small-outline transistor
+K BJT bias
+$ENDCMP
+#
+$CMP PNP-BJT_SOT
+D PNP Bipolar Junction Small Outline Transistor
+K BJT SOT
+$ENDCMP
+#
+#End Doc Library
