@@ -71,12 +71,21 @@ D LM1117 1A Adjustable/Fixed Low Dropout Linear Regulator
 K LDO
 $ENDCMP
 #
+$CMP N-CHAN-MOSFET_SOT
+D N-channel Power Mosfet Small Outline Transistor
+$ENDCMP
+#
 $CMP NPN-BJT
 D NPN Bipolar Junction Transistor
 K BJT
 $ENDCMP
 #
 $CMP NPN-BJT_SOT
+D NPN Bipolar Junction Small Outline Transistor
+K BJT
+$ENDCMP
+#
+$CMP NPN-MOSFET_SOT
 D NPN Bipolar Junction Small Outline Transistor
 K BJT
 $ENDCMP
