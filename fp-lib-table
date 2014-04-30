@@ -24,4 +24,5 @@
   (lib (name to)(type KiCad)(uri ${KISYSMOD}/to.pretty)(options "")(descr "transistor outline packages"))
   (lib (name crystal)(type KiCad)(uri ${KISYSMOD}/crystal.pretty)(options "")(descr "crystals and oscillators"))
   (lib (name texas)(type KiCad)(uri ${KISYSMOD}/texas.pretty)(options "")(descr "unique parts from Texas Instruments"))
+  (lib (name diode)(type KiCad)(uri ${KISYSMOD}/diode.pretty)(options "")(descr "diodes (surface mount and through-hole)"))
 )
