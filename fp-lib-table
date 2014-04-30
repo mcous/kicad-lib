@@ -26,4 +26,5 @@
   (lib (name texas)(type KiCad)(uri ${KISYSMOD}/texas.pretty)(options "")(descr "unique parts from Texas Instruments"))
   (lib (name diode)(type KiCad)(uri ${KISYSMOD}/diode.pretty)(options "")(descr "diodes (surface mount and through-hole)"))
   (lib (name jumper)(type KiCad)(uri ${KISYSMOD}/jumper.pretty)(options "")(descr "solder jumpers"))
+  (lib (name inductor)(type KiCad)(uri ${KISYSMOD}/inductor.pretty)(options "")(descr inductors))
 )
