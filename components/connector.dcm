@@ -88,6 +88,11 @@ D Coaxial jack
 K SMA UF.L UFL antenna
 $ENDCMP
 #
+$CMP DC-BARREL-JACK
+D DC barrel jack
+K voltage wall wart
+$ENDCMP
+#
 $CMP LIPO
 D Lithium Polymer Battery Jack
 K lipo li lithium-ion batter rechargable
