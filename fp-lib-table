@@ -27,4 +27,5 @@
   (lib (name diode)(type KiCad)(uri ${KISYSMOD}/diode.pretty)(options "")(descr "diodes (surface mount and through-hole)"))
   (lib (name jumper)(type KiCad)(uri ${KISYSMOD}/jumper.pretty)(options "")(descr "solder jumpers"))
   (lib (name inductor)(type KiCad)(uri ${KISYSMOD}/inductor.pretty)(options "")(descr inductors))
+  (lib (name johanson)(type KiCad)(uri ${KISYSMOD}/johanson.pretty)(options "")(descr "unique parts from Johanson Technology"))
 )
