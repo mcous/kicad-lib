@@ -5,6 +5,12 @@ D 7/8-bit Dual SPI Digital Rheostat with Volatile Memory
 F http://ww1.microchip.com/downloads/en/DeviceDoc/22060b.pdf
 $ENDCMP
 #
+$CMP MCP49X1
+D MCP4901/4911/4921 8/10/12-Bit SPI Digital-to-Analog Converter
+K DAC
+F http://ww1.microchip.com/downloads/en/DeviceDoc/22248a.pdf
+$ENDCMP
+#
 $CMP MCP73811/2
 D MCP73811/2 Miniature Single-Cell, Fully Integrated Li-Ion / Li-Polymer Charge Management Controller
 K lipo battery charger lithium
