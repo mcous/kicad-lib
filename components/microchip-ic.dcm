@@ -17,4 +17,10 @@ K lipo battery charger lithium
 F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en528273
 $ENDCMP
 #
+$CMP MCP73831/2
+D MCP73831/2 single-cell Li-ion / Li-polymer charger IC with status pin
+K lipo battery lithium
+F http://ww1.microchip.com/downloads/en/DeviceDoc/20001984F.pdf
+$ENDCMP
+#
 #End Doc Library
