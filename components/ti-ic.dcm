@@ -30,6 +30,18 @@ K regulator
 F www.ti.com/lit/ds/symlink/lm2623.pdf
 $ENDCMP
 #
+$CMP TL071
+D TL071 Low-noise JFET-input op-amp
+K operational amplifier 
+F http://www.ti.com/lit/ds/symlink/tl071.pdf
+$ENDCMP
+#
+$CMP TL971
+D TL971 rail-to-rail very low noise op-amp
+K operational amplifier 
+F http://www.ti.com/lit/ds/symlink/tl971.pdf
+$ENDCMP
+#
 $CMP TLC5940_SOP
 D TI TLC5940 16-channel LED Driver with Dot-correction and Greyscale PWM Brightness control
 K LED Driver 16 PWM
@@ -67,6 +79,12 @@ $CMP TMP006
 D TMP006 IR Thermopile Sensor in Chip-Scale Package
 K temp temperature infrared
 F http://www.ti.com/lit/ds/symlink/tmp006.pdf
+$ENDCMP
+#
+$CMP TPA301
+D TPA301  350mW mono audio amp
+K op amp
+F http://www.ti.com/lit/ds/slos208e/slos208e.pdf
 $ENDCMP
 #
 $CMP TPD4S012
