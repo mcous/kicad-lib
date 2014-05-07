@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NTHD3101F
+D NTHD3101F 20V, 4.4A P−channel MOSFET with 4.1A Schottky diode
+K load
+F http://www.onsemi.com/pub_link/Collateral/NTHD3101F-D.PDF
+$ENDCMP
+#
+#End Doc Library
