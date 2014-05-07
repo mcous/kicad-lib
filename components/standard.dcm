@@ -15,8 +15,8 @@ K chrystal xtal oscillator
 $ENDCMP
 #
 $CMP C_POL
-D Polarized Capacitor
-K cap capacitor pol polarized
+D Polaraized capacitor
+K cap
 $ENDCMP
 #
 $CMP D
@@ -93,6 +93,10 @@ $ENDCMP
 $CMP SPDT
 D Single Pole Double Throw Switch
 K SPDT
+$ENDCMP
+#
+$CMP SPEAKER
+D Speaker
 $ENDCMP
 #
 $CMP SPST
