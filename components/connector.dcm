@@ -104,6 +104,10 @@ K USB MicroUSB
 F http://www.sparkfun.com/datasheets/Prototyping/Micro-USB.pdf
 $ENDCMP
 #
+$CMP SD-CARD
+D SD/MMC card socket
+$ENDCMP
+#
 $CMP THERMOCOUPLE
 D Thermocouple Jack
 $ENDCMP
