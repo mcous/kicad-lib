@@ -93,6 +93,12 @@ K op amp
 F http://www.ti.com/lit/ds/slos208e/slos208e.pdf
 $ENDCMP
 #
+$CMP TPA301_ep
+D TPA301  350mW mono audio amp
+K op amp
+F http://www.ti.com/lit/ds/slos208e/slos208e.pdf
+$ENDCMP
+#
 $CMP TPD4S012
 D TPD4S012 ESD Solution for USB
 F http://www.ti.com/lit/ds/symlink/tpd4s012.pdf
