@@ -6,6 +6,12 @@ K seven
 F http://optoelectronics.liteon.com/upload/download/DS30-2000-185/S_110_LTC-4627JR.pdf
 $ENDCMP
 #
+$CMP 7-SEG-4-DIG-DP+CLK_CC-LED
+D 7 segment, 4 digit common-anode LED display with decimal point, colon, and apostrophe
+K seven
+F http://optoelectronics.liteon.com/upload/download/DS30-2000-185/S_110_LTC-4627JR.pdf
+$ENDCMP
+#
 $CMP CREE-CLV6A-FKB
 D Cree CLV6A-FKB PLCC6 3-in-1 RGB SMD LED 
 F http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLV6AFKB.pdf
