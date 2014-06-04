@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CD4028
+D CD4028 4-to-10 line BCD decoder
+K binary
+F http://www.ti.com/lit/ds/symlink/cd4028b.pdf
+$ENDCMP
+#
+#End Doc Library
