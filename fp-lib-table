@@ -30,4 +30,5 @@
   (lib (name johanson)(type KiCad)(uri ${KISYSMOD}/johanson.pretty)(options "")(descr "unique parts from Johanson Technology"))
   (lib (name cherry)(type KiCad)(uri ${KISYSMOD}/cherry-switch.pretty)(options "")(descr "keyswitches from Cherry"))
   (lib (name resistor)(type KiCad)(uri ${KISYSMOD}/resistor.pretty)(options "")(descr "resistors (surface mount and through-hole)"))
+  (lib (name rohm)(type KiCad)(uri ${KISYSMOD}/rohm.pretty)(options "")(descr "unique parts from Rohm Semiconductor"))
 )

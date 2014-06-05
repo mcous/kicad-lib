@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BP5037B12
+D BP5037 non-isolated 100VAC to 12VDC converter
+F http://rohmfs.rohm.com/en/products/databook/datasheet/module/power_module/acdc_converter/bp5037b12.pdf
+$ENDCMP
+#
+#End Doc Library
