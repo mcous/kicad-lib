@@ -1,5 +1,5 @@
 # kicad-lib
-My component and footprint library for the [KiCad PCB design suite](http://www.kicad-pcb.org/)
+My component and footprint library for the [KiCad PCB design suite](http://www.kicad.org/)
 
 ## Quick start
   1. Clone to wherever (I like `~/projects`) and `$ cd /path/to/kicad-lib`
